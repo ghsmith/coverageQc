@@ -582,9 +582,9 @@
                         exportMap["locus_numOnly"]=match4[1];
                         
                         //Tom edits here
-                        interpText += "&lt;b>POSITIVE for " + exportMap.gene + " " + exportMap.cDna + "("+ exportMap.aminoAcid + ")"+" in approximately ";
+                        interpText += "&lt;b>POSITIVE for " + exportMap.gene + " " + exportMap.cDna + " ("+ exportMap.aminoAcid + ")"+" in approximately ";
                         interpText += + Math.round(exportMap.avf) + "% of alleles." + "&lt;/b>&lt;br/>&lt;br/>";
-                        resultsText += "&lt;b>" + exportMap.gene + " " + exportMap.cDna + "(" + exportMap.aminoAcid + ")" + " details:" + "&lt;/b>&lt;br/>";
+                        resultsText += "&lt;b>" + exportMap.gene + " " + exportMap.cDna + " (" + exportMap.aminoAcid + ")" + " details:" + "&lt;/b>&lt;br/>";
                         resultsText += "Allele frequency: " + exportMap.avf + "%" + "&lt;br/>";
                         resultsText += "Chromosome " + exportMap.chr_num + " coordinate " + exportMap.coordinate_num + "&lt;br/>";
                         resultsText += "In gene region: " + exportMap.gene + " exon " + exportMap.exonName_numOnly + "( Ensembl ID: " + exportMap.exonEnsemblId + "; RefSeq accession no: " + exportMap.refSeqAccNo + "; chromosome " + exportMap.chr_num + ":" + exportMap.locus_numOnly + ")&lt;br/>&lt;br/>";
