@@ -577,7 +577,7 @@
                         var match3 = re3.exec(exportMap.coordinate);
                         exportMap["chr_num"]=match3[1];
                         exportMap["coordinate_num"]=match3[2];
-                        var re4 = /chr[0-9]:(.*)/;
+                        var re4 = /chr\d{1,}:(.*)/;
                         var match4 = re4.exec(exportMap.locus);
                         exportMap["locus_numOnly"]=match4[1];
                         
@@ -616,7 +616,7 @@
                         }
 
                         $("#exportDialog").html("Interpretation&lt;br/>&lt;br/>");
-                        $("#exportDialog").append(interpText.length > 0 ? interpText + '- See comment.&lt;br/>&lt;br/>' : "No clinically significant variants detected by next-generation sequencing.&lt;br/>&lt;br/>");
+                        $("#exportDialog").append(interpText.length > 0 ? interpText + '&lt;b>See comment.&lt;/b>&lt;br/>&lt;br/>' : "No clinically significant variants detected by next-generation sequencing.&lt;br/>&lt;br/>");
                         $("#exportDialog").append("&lt;br/>&lt;br/>&lt;br/>");
                         $("#exportDialog").append("Results&lt;br/>&lt;br/>");
                         $("#exportDialog").append(resultsText.length > 0 ? resultsText : "No clinically significant variants detected by next-generation sequencing.&lt;br/>&lt;br/>");
