@@ -560,6 +560,10 @@
                         exportMap["exonEnsemblId"] = match[2];
                         exportMap["refSeqAccNo"] = match[3];
                         exportMap["exonVendorId"] = match[4];
+                        //Tom Addition
+                        var re2 = /[a-z][a-z](\d*)/;
+                        var match2 = re2.exec(exportMap.exonName);
+                        exportMap["exonName_numOnly"]=match2[1];
                         }
                         else {
                         exportMap[$(this).attr("data-export-label")] = $(this).text();
@@ -568,10 +572,22 @@
                         $(this).parents("tr.filteredAnnotatedVariant").find("td[data-export-label]").each(function() {
                         exportMap[$(this).attr("data-export-label")] = $(this).text();
                         });
-                        interpText += "&lt;b>POSITIVE for detection of " + exportMap.gene + " sequence variant by next generation sequencing: " + exportMap.gene + " " + exportMap.cDna + " / " + exportMap.aminoAcid;
-                        interpText += " in exon " + exportMap.exonName + ".&lt;/b>&lt;br/>&lt;br/>";
-                        resultsText += "&lt;b>" + exportMap.exonName + " (Ensembl ID: " + exportMap.exonEnsemblId + "; RefSeq accession no: " + exportMap.refSeqAccNo + "; " + exportMap.locus + ")&lt;/b>&lt;br/>";
-                        resultsText += "gene: " + exportMap.gene + "; coordinate: " + exportMap.coordinate + "; consequence: " + exportMap.consequence + "; genotype: " + exportMap.genotype + "; alt-variant-freq: " + exportMap.avf + "; cDNA: " + exportMap.cDna + "; amino-acid: " + exportMap.aminoAcid + "&lt;/b>&lt;br/>&lt;br/>";
+                        //Tom addition
+                         var re3 = /chr(.*):(.*)/;
+                        var match3 = re3.exec(exportMap.coordinate);
+                        exportMap["chr_num"]=match3[1];
+                        exportMap["coordinate_num"]=match3[2];
+                        var re4 = /chr[0-9]:(.*)/;
+                        var match4 = re4.exec(exportMap.locus);
+                        exportMap["locus_numOnly"]=match4[1];
+                        
+                        //Tom edits here
+                        interpText += "&lt;b>POSITIVE for " + exportMap.gene + " " + exportMap.cDna + "("+ exportMap.aminoAcid + ")"+" in approximately ";
+                        interpText += + Math.round(exportMap.avf) + "% of alleles." + "&lt;/b>&lt;br/>&lt;br/>";
+                        resultsText += "&lt;b>" + exportMap.gene + " " + exportMap.cDna + "(" + exportMap.aminoAcid + ")" + " details:" + "&lt;/b>&lt;br/>";
+                        resultsText += "Allele frequency: " + exportMap.avf + "%" + "&lt;br/>";
+                        resultsText += "Chromosome " + exportMap.chr_num + " coordinate " + exportMap.coordinate_num + "&lt;br/>";
+                        resultsText += "In gene region: " + exportMap.gene + " exon " + exportMap.exonName_numOnly + "( Ensembl ID: " + exportMap.exonEnsemblId + "; RefSeq accession no: " + exportMap.refSeqAccNo + "; chromosome " + exportMap.chr_num + ":" + exportMap.locus_numOnly + ")&lt;br/>&lt;br/>";
  
                         });
                         }
@@ -606,7 +622,9 @@
                         $("#exportDialog").append(resultsText.length > 0 ? resultsText : "No clinically significant variants detected by next-generation sequencing.&lt;br/>&lt;br/>");
                         $("#exportDialog").append("The reference assembly is hg19, GRCh37.&lt;br/>&lt;br/>");
                         $("#exportDialog").append("&lt;br/>&lt;br/>&lt;br/>");
-                        $("#exportDialog").append(failedExonsText.length > 0 ? "Portions of the following captured regions were not sequenced sufficiently for clinical interpretation (at least one base in the sequenced portion of the coding region was read less than 500 times):&lt;br/>&lt;br/>" + failedExonsText : "");
+                       // $("#exportDialog").append(failedExonsText.length > 0 ? "Portions of the following captured regions were not sequenced sufficiently for clinical interpretation (at least one base in the sequenced portion of the coding region was read less than 500 times):&lt;br/>&lt;br/>" + failedExonsText : "");
+                        //Tom Addition
+                         $("#exportDialog").append(failedExonsText.length > 0 ? "Portions of the following captured regions were not sequenced sufficiently for clinical interpretation (at least one base in the sequenced portion of the coding region was read less than 500 times):&lt;br/>&lt;br/>" + failedExonsText : "All portions of the captured regions were sequenced sufficiently for clinical interpretation (all bases in the sequenced portion of the coding region were read more than 500 times).");
                         $("#exportDialog").append("&lt;br/>&lt;br/>&lt;br/>");
                         $("#exportDialog").append("See Notes and Test Performed sections below for more information.");
 
