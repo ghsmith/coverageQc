@@ -165,26 +165,26 @@
 <h1>Coverage QC Report</h1>
 <table>
 <tr style="vertical-align: top;">
-<td>version</td><td>:</td><td style="font-weight: bold;">1.1 (build 20140716)</td>
+<td>version</td><td>:</td><td style="font-weight: bold;">1.15 (build 20150318)</td>
 </tr>
 <tr style="vertical-align: top;">
-<td>report run date</td><td>:</td><td style="font-weight: bold;">2014-07-16T23:50</td>
+<td>report run date</td><td>:</td><td style="font-weight: bold;">2015-03-19T09:31</td>
 </tr>
 <tr style="vertical-align: top;">
-<td>gVCF file</td><td>:</td><td style="font-weight: bold;">C:\Users\Tom\Documents\GitHub\coverageQc\data\sample.genome.vcf</td>
+<td>gVCF file</td><td>:</td><td style="font-weight: bold;">/home/tom/git/coverageQc/data/sample.genome.vcf</td>
 </tr>
 <tr style="vertical-align: top;">
-<td>variant TSV file</td><td>:</td><td style="font-weight: bold;">C:\Users\Tom\Documents\GitHub\coverageQc\data\sample.variant.tsv<span style="font-weight: normal;">
+<td>variant TSV file</td><td>:</td><td style="font-weight: bold;">/home/tom/git/coverageQc/data/sample.variant.tsv<span style="font-weight: normal;">
 <br>variant TSV file line count (including header): 9<br>number of annotated variants displayed below: 8</span></td>
 </tr>
 <tr style="vertical-align: top;">
-<td>exon BED file</td><td>:</td><td style="font-weight: bold;">C:\Users\Tom\Documents\GitHub\coverageQc\data\cancer_panel_26.20140620.exons.bed</td>
+<td>exon BED file</td><td>:</td><td style="font-weight: bold;">/home/tom/git/coverageQc/data/cancer_panel_26.20140620.exons.bed</td>
 </tr>
 <tr style="vertical-align: top;">
-<td>amplicon BED file</td><td>:</td><td style="font-weight: bold;">C:\Users\Tom\Documents\GitHub\coverageQc\data\cancer_panel_26.20140716.amplicons.bed</td>
+<td>amplicon BED file</td><td>:</td><td style="font-weight: bold;">/home/tom/git/coverageQc/data/cancer_panel_26.20140717.amplicons.bed</td>
 </tr>
 <tr style="vertical-align: top;">
-<td>Do NOT Call file</td><td>:</td><td style="font-weight: bold;">C:\Users\Tom\Documents\GitHub\coverageQc\data\Do not call_26.20140716.list.xlsx</td>
+<td>Do NOT Call file</td><td>:</td><td style="font-weight: bold;">NO DO NOT CALL FILE USED!</td>
 </tr>
 </table>
 <ul>
@@ -216,7 +216,7 @@
 <br>
                                     RefSeq accession no.: <a href="http://www.ncbi.nlm.nih.gov/nuccore/NM_005163">NM_005163</a>
 <br>
-                                    vendor ID: AKT1ex2</span></td><td style="text-align: right;">100</td><td data-export-label="locus"><a href="http://127.0.0.1:60151/load?file=file:///C:/Users/Tom/Documents/GitHub/coverageQc/data/cancer_panel_26.20140716.amplicons.bed&amp;locus=chr14:105246420-105246558&amp;genome=hg19&amp;merge=false">chr14:105246420-105246558</a></td><td>true (annotated)</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="100">128</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td>
+                                    vendor ID: AKT1ex2</span></td><td style="text-align: right;">100</td><td data-export-label="locus"><a href="http://127.0.0.1:60151/load?file=file:///home/tom/git/coverageQc/data/cancer_panel_26.20140717.amplicons.bed&amp;locus=chr14:105246420-105246558&amp;genome=hg19&amp;merge=false">chr14:105246420-105246558</a></td><td>true (annotated)</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="100">128</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td>
 </tr>
 <tr style="display: none;" class="tablesorter-childRow geneExon_child geneExon1_child">
 <td colspan="10" style="background: white;">
@@ -395,8 +395,8 @@
                                         // add the amplicon guides to chart (custom SVG)
                                         var amplicons = [
                                         {name:'AKT1ex2_coding', startPos:105246426, endPos:'105246553'}
-                                        ,{name:'AKTex2_c49_snapshot_Lung', startPos:105246551, endPos:'105246552'}
                                         ,{name:'AKT1ex2_tile_1', startPos:105246403, endPos:'105246591'}
+                                        ,{name:'AKTex2_c49_snapshot_Lung', startPos:105246551, endPos:'105246552'}
                                         
                                         ];
                                         var svg = $('#geneExon1_div svg');
@@ -457,7 +457,7 @@
 <th>export?</th><th>gene</th><th>coordinate</th><th>filters<sup>*</sup></th><th>consequence</th><th>genotype</th><th>AVF</th><th>cDNA</th><th>amino acid</th><th>dbSNP</th><th>MAF</th><th>COSMIC ID</th>
 <!--//TOM ADDITION
                                                         //adding this because sometimes the tsv file from variant studio is wrong and it is really in cosmic, creating a work around
-                                                    --><th>Cosmic_Dblchk</th><th>Call_Status</th>
+                                                    --><th>COSMIC (alternate)</th><th>call status</th>
 </tr>
 </thead>
 <tbody>
@@ -465,7 +465,7 @@
 <td style="text-align: center;"><input type="checkbox" class="exportCheckbox"></td><td data-export-label="gene">AKT1</td><td data-export-label="coordinate">chr14:105246528</td><td data-export-label="filters">XXXX</td><td data-export-label="consequence">XXXXXXXXXXXXXXXXXXX</td><td data-export-label="genotype">XXX</td><td data-export-label="avf" style="text-align: right;">0.0</td><td data-export-label="cDna">XXXXXXXXXXXXXXXXXXXX</td><td data-export-label="aminoAcid"></td><td><a href="http://www.ncbi.nlm.nih.gov/projects/SNP/snp_ref.cgi?XXXXXXXXX=">XXXXXXXXX</a></td><td data-export-label="maf" style="text-align: right;">0.0</td><td><a href="http://cancer.sanger.ac.uk/cosmic/search?q="></a></td>
 <!-- //TOM ADDITION
                                                             //I created a new string stating the gene mutation to be searched in Cosmic ie KIT c.2586G>C 
-                                                        --><td><a href="http://cancer.sanger.ac.uk/cosmic/search?q=AKT1 XXXXXXXXXXXXXXXXXXXX">AKT1 XXXXXXXXXXXXXXXXXXXX</a></td><td>Not on do not call list/Potentially Valid</td>
+                                                        --><td><a href="http://cancer.sanger.ac.uk/cosmic/search?q=AKT1 XXXXXXXXXXXXXXXXXXXX">AKT1 XXXXXXXXXXXXXXXXXXXX</a></td><td width="5%">Not on lab list /Potentially Valid</td>
 </tr>
 </tbody>
 </table>
@@ -495,7 +495,7 @@
 <br>
                                     RefSeq accession no.: <a href="http://www.ncbi.nlm.nih.gov/nuccore/NM_004304">NM_004304</a>
 <br>
-                                    vendor ID: ALKex23</span></td><td style="text-align: right;">49</td><td data-export-label="locus"><a href="http://127.0.0.1:60151/load?file=file:///C:/Users/Tom/Documents/GitHub/coverageQc/data/cancer_panel_26.20140716.amplicons.bed&amp;locus=chr2:29443643-29443706&amp;genome=hg19&amp;merge=false">chr2:29443643-29443706</a></td><td>false</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="68">40</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="32">19</td>
+                                    vendor ID: ALKex23</span></td><td style="text-align: right;">49</td><td data-export-label="locus"><a href="http://127.0.0.1:60151/load?file=file:///home/tom/git/coverageQc/data/cancer_panel_26.20140717.amplicons.bed&amp;locus=chr2:29443643-29443706&amp;genome=hg19&amp;merge=false">chr2:29443643-29443706</a></td><td>false</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="68">40</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="32">19</td>
 </tr>
 <tr style="display: none;" class="tablesorter-childRow geneExon_child geneExon2_child">
 <td colspan="10" style="background: white;">
@@ -662,7 +662,7 @@
 <br>
                                     RefSeq accession no.: <a href="http://www.ncbi.nlm.nih.gov/nuccore/NM_000038">NM_000038</a>
 <br>
-                                    vendor ID: APCex15_hotspot1</span></td><td style="text-align: right;">3</td><td data-export-label="locus"><a href="http://127.0.0.1:60151/load?file=file:///C:/Users/Tom/Documents/GitHub/coverageQc/data/cancer_panel_26.20140716.amplicons.bed&amp;locus=chr5:112173744-112173988&amp;genome=hg19&amp;merge=false">chr5:112173744-112173988</a></td><td>false</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="100">245</td>
+                                    vendor ID: APCex15_hotspot1</span></td><td style="text-align: right;">3</td><td data-export-label="locus"><a href="http://127.0.0.1:60151/load?file=file:///home/tom/git/coverageQc/data/cancer_panel_26.20140717.amplicons.bed&amp;locus=chr5:112173744-112173988&amp;genome=hg19&amp;merge=false">chr5:112173744-112173988</a></td><td>false</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="100">245</td>
 </tr>
 <tr style="display: none;" class="tablesorter-childRow geneExon_child geneExon3_child">
 <td colspan="10" style="background: white;">
@@ -1011,7 +1011,7 @@
 <br>
                                     RefSeq accession no.: <a href="http://www.ncbi.nlm.nih.gov/nuccore/NM_000038">NM_000038</a>
 <br>
-                                    vendor ID: APCex15_hotspot2</span></td><td style="text-align: right;">3</td><td data-export-label="locus"><a href="http://127.0.0.1:60151/load?file=file:///C:/Users/Tom/Documents/GitHub/coverageQc/data/cancer_panel_26.20140716.amplicons.bed&amp;locus=chr5:112174527-112174778&amp;genome=hg19&amp;merge=false">chr5:112174527-112174778</a></td><td>false</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="100">252</td>
+                                    vendor ID: APCex15_hotspot2</span></td><td style="text-align: right;">3</td><td data-export-label="locus"><a href="http://127.0.0.1:60151/load?file=file:///home/tom/git/coverageQc/data/cancer_panel_26.20140717.amplicons.bed&amp;locus=chr5:112174527-112174778&amp;genome=hg19&amp;merge=false">chr5:112174527-112174778</a></td><td>false</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="100">252</td>
 </tr>
 <tr style="display: none;" class="tablesorter-childRow geneExon_child geneExon4_child">
 <td colspan="10" style="background: white;">
@@ -1367,7 +1367,7 @@
 <br>
                                     RefSeq accession no.: <a href="http://www.ncbi.nlm.nih.gov/nuccore/NM_000038">NM_000038</a>
 <br>
-                                    vendor ID: APCex15_hotspot3</span></td><td style="text-align: right;">5</td><td data-export-label="locus"><a href="http://127.0.0.1:60151/load?file=file:///C:/Users/Tom/Documents/GitHub/coverageQc/data/cancer_panel_26.20140716.amplicons.bed&amp;locus=chr5:112174976-112175370&amp;genome=hg19&amp;merge=false">chr5:112174976-112175370</a></td><td>false</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="5">18</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="27">105</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="69">272</td>
+                                    vendor ID: APCex15_hotspot3</span></td><td style="text-align: right;">5</td><td data-export-label="locus"><a href="http://127.0.0.1:60151/load?file=file:///home/tom/git/coverageQc/data/cancer_panel_26.20140717.amplicons.bed&amp;locus=chr5:112174976-112175370&amp;genome=hg19&amp;merge=false">chr5:112174976-112175370</a></td><td>false</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="5">18</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="27">105</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="69">272</td>
 </tr>
 <tr style="display: none;" class="tablesorter-childRow geneExon_child geneExon5_child">
 <td colspan="10" style="background: white;">
@@ -1862,13 +1862,13 @@
 </tr>
 <!--Tom Addition of test doNotCall-->
 <tr style="font-weight: bold;" class="geneExon_parent">
-<td style="text-align: center; width: 20px;"><a href="#" id="geneExon6" class="geneExonExpandCollapseButton" style="color: blue; text-decoration: none; font-size: large; font-weight: bold;">+</a></td><td style="background-color: blue;" data-export-label="qc">warn</td><td data-export-label="exon">APCex16_hotspot4<br>
+<td style="text-align: center; width: 20px;"><a href="#" id="geneExon6" class="geneExonExpandCollapseButton" style="color: blue; text-decoration: none; font-size: large; font-weight: bold;">+</a></td><td style="background-color: yellow;" data-export-label="qc">warn</td><td data-export-label="exon">APCex16_hotspot4<br>
 <span style="font-size: x-small">
                                     Ensembl ID: <a href="http://www.ensembl.org/id/ENST00000257430.4">ENSE00000972230.5</a>
 <br>
                                     RefSeq accession no.: <a href="http://www.ncbi.nlm.nih.gov/nuccore/NM_000038">NM_000038</a>
 <br>
-                                    vendor ID: APCex15_hotspot4</span></td><td style="text-align: right;">8</td><td data-export-label="locus"><a href="http://127.0.0.1:60151/load?file=file:///C:/Users/Tom/Documents/GitHub/coverageQc/data/cancer_panel_26.20140716.amplicons.bed&amp;locus=chr5:112175470-112176130&amp;genome=hg19&amp;merge=false">chr5:112175470-112176130</a></td><td>true (annotated) Warning all do not call</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="4">24</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="96">637</td>
+                                    vendor ID: APCex15_hotspot4</span></td><td style="text-align: right;">8</td><td data-export-label="locus"><a href="http://127.0.0.1:60151/load?file=file:///home/tom/git/coverageQc/data/cancer_panel_26.20140717.amplicons.bed&amp;locus=chr5:112175470-112176130&amp;genome=hg19&amp;merge=false">chr5:112175470-112176130</a></td><td>true (annotated)</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="4">24</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="96">637</td>
 </tr>
 <tr style="display: none;" class="tablesorter-childRow geneExon_child geneExon6_child">
 <td colspan="10" style="background: white;">
@@ -2635,7 +2635,7 @@
 <th>export?</th><th>gene</th><th>coordinate</th><th>filters<sup>*</sup></th><th>consequence</th><th>genotype</th><th>AVF</th><th>cDNA</th><th>amino acid</th><th>dbSNP</th><th>MAF</th><th>COSMIC ID</th>
 <!--//TOM ADDITION
                                                         //adding this because sometimes the tsv file from variant studio is wrong and it is really in cosmic, creating a work around
-                                                    --><th>Cosmic_Dblchk</th><th>Call_Status</th>
+                                                    --><th>COSMIC (alternate)</th><th>call status</th>
 </tr>
 </thead>
 <tbody>
@@ -2643,7 +2643,7 @@
 <td style="text-align: center;"><input type="checkbox" class="exportCheckbox"></td><td data-export-label="gene">APC</td><td data-export-label="coordinate">chr5:112175770</td><td data-export-label="filters">PASS</td><td data-export-label="consequence">synonymous_variant</td><td data-export-label="genotype">hom</td><td data-export-label="avf" style="text-align: right;">99.64</td><td data-export-label="cDna">c.4479G&gt;A</td><td data-export-label="aminoAcid">c.4479G&gt;A(p.=)</td><td><a href="http://www.ncbi.nlm.nih.gov/projects/SNP/snp_ref.cgi?rs=41115">rs41115</a></td><td data-export-label="maf" style="text-align: right;">33.84</td><td><a href="http://cancer.sanger.ac.uk/cosmic/search?q="></a></td>
 <!-- //TOM ADDITION
                                                             //I created a new string stating the gene mutation to be searched in Cosmic ie KIT c.2586G>C 
-                                                        --><td><a href="http://cancer.sanger.ac.uk/cosmic/search?q=APC c.4479G>A">APC c.4479G&gt;A</a></td><td>Don't call, always</td>
+                                                        --><td><a href="http://cancer.sanger.ac.uk/cosmic/search?q=APC c.4479G>A">APC c.4479G&gt;A</a></td><td width="5%">Not on lab list /Potentially Valid</td>
 </tr>
 </tbody>
 </table>
@@ -2673,7 +2673,7 @@
 <br>
                                     RefSeq accession no.: <a href="http://www.ncbi.nlm.nih.gov/nuccore/NM_004333">NM_004333</a>
 <br>
-                                    vendor ID: BRAFex11</span></td><td style="text-align: right;">100</td><td data-export-label="locus"><a href="http://127.0.0.1:60151/load?file=file:///C:/Users/Tom/Documents/GitHub/coverageQc/data/cancer_panel_26.20140716.amplicons.bed&amp;locus=chr7:140481371-140481498&amp;genome=hg19&amp;merge=false">chr7:140481371-140481498</a></td><td>false</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="100">117</td>
+                                    vendor ID: BRAFex11</span></td><td style="text-align: right;">100</td><td data-export-label="locus"><a href="http://127.0.0.1:60151/load?file=file:///home/tom/git/coverageQc/data/cancer_panel_26.20140717.amplicons.bed&amp;locus=chr7:140481371-140481498&amp;genome=hg19&amp;merge=false">chr7:140481371-140481498</a></td><td>false</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="100">117</td>
 </tr>
 <tr style="display: none;" class="tablesorter-childRow geneExon_child geneExon7_child">
 <td colspan="10" style="background: white;">
@@ -2841,10 +2841,10 @@
                                         // add the amplicon guides to chart (custom SVG)
                                         var amplicons = [
                                         {name:'BRAFex11_coding', startPos:140481377, endPos:'140481493'}
-                                        ,{name:'BRAFex11_c1397_snapshot_Lung', startPos:140481411, endPos:'140481412'}
-                                        ,{name:'BRAFex11_c1406_snapshot_Lung', startPos:140481402, endPos:'140481403'}
                                         ,{name:'BRAFex11_tile_1', startPos:140481248, endPos:'140481412'}
                                         ,{name:'BRAFex11_tile_2', startPos:140481358, endPos:'140481547'}
+                                        ,{name:'BRAFex11_c1397_snapshot_Lung', startPos:140481411, endPos:'140481412'}
+                                        ,{name:'BRAFex11_c1406_snapshot_Lung', startPos:140481402, endPos:'140481403'}
                                         
                                         ];
                                         var svg = $('#geneExon7_div svg');
@@ -2907,7 +2907,7 @@
 <br>
                                     RefSeq accession no.: <a href="http://www.ncbi.nlm.nih.gov/nuccore/NM_004333">NM_004333</a>
 <br>
-                                    vendor ID: BRAFex15</span></td><td style="text-align: right;">100</td><td data-export-label="locus"><a href="http://127.0.0.1:60151/load?file=file:///C:/Users/Tom/Documents/GitHub/coverageQc/data/cancer_panel_26.20140716.amplicons.bed&amp;locus=chr7:140453070-140453198&amp;genome=hg19&amp;merge=false">chr7:140453070-140453198</a></td><td>false</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="100">118</td>
+                                    vendor ID: BRAFex15</span></td><td style="text-align: right;">100</td><td data-export-label="locus"><a href="http://127.0.0.1:60151/load?file=file:///home/tom/git/coverageQc/data/cancer_panel_26.20140717.amplicons.bed&amp;locus=chr7:140453070-140453198&amp;genome=hg19&amp;merge=false">chr7:140453070-140453198</a></td><td>false</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="100">118</td>
 </tr>
 <tr style="display: none;" class="tablesorter-childRow geneExon_child geneExon8_child">
 <td colspan="10" style="background: white;">
@@ -3076,9 +3076,9 @@
                                         // add the amplicon guides to chart (custom SVG)
                                         var amplicons = [
                                         {name:'BRAFex15_coding', startPos:140453076, endPos:'140453193'}
+                                        ,{name:'BRAFex15_tile_1', startPos:140453045, endPos:'140453222'}
                                         ,{name:'BRAFex15_c1799_snapshot_Lung', startPos:140453136, endPos:'140453137'}
                                         ,{name:'BRAFex15_c1789_snapshot_Lung', startPos:140453146, endPos:'140453147'}
-                                        ,{name:'BRAFex15_tile_1', startPos:140453045, endPos:'140453222'}
                                         
                                         ];
                                         var svg = $('#geneExon8_div svg');
@@ -3141,7 +3141,7 @@
 <br>
                                     RefSeq accession no.: <a href="http://www.ncbi.nlm.nih.gov/nuccore/NM_004360">NM_004360</a>
 <br>
-                                    vendor ID: CDH1ex8</span></td><td style="text-align: right;">100</td><td data-export-label="locus"><a href="http://127.0.0.1:60151/load?file=file:///C:/Users/Tom/Documents/GitHub/coverageQc/data/cancer_panel_26.20140716.amplicons.bed&amp;locus=chr16:68846033-68846171&amp;genome=hg19&amp;merge=false">chr16:68846033-68846171</a></td><td>false</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="14">18</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="86">110</td>
+                                    vendor ID: CDH1ex8</span></td><td style="text-align: right;">100</td><td data-export-label="locus"><a href="http://127.0.0.1:60151/load?file=file:///home/tom/git/coverageQc/data/cancer_panel_26.20140717.amplicons.bed&amp;locus=chr16:68846033-68846171&amp;genome=hg19&amp;merge=false">chr16:68846033-68846171</a></td><td>false</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="14">18</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="86">110</td>
 </tr>
 <tr style="display: none;" class="tablesorter-childRow geneExon_child geneExon9_child">
 <td colspan="10" style="background: white;">
@@ -3384,7 +3384,7 @@
 <br>
                                     RefSeq accession no.: <a href="http://www.ncbi.nlm.nih.gov/nuccore/NM_004360">NM_004360</a>
 <br>
-                                    vendor ID: CDH1ex9</span></td><td style="text-align: right;">100</td><td data-export-label="locus"><a href="http://127.0.0.1:60151/load?file=file:///C:/Users/Tom/Documents/GitHub/coverageQc/data/cancer_panel_26.20140716.amplicons.bed&amp;locus=chr16:68847211-68847403&amp;genome=hg19&amp;merge=false">chr16:68847211-68847403</a></td><td>false</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="24">43</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="60">110</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="16">29</td>
+                                    vendor ID: CDH1ex9</span></td><td style="text-align: right;">100</td><td data-export-label="locus"><a href="http://127.0.0.1:60151/load?file=file:///home/tom/git/coverageQc/data/cancer_panel_26.20140717.amplicons.bed&amp;locus=chr16:68847211-68847403&amp;genome=hg19&amp;merge=false">chr16:68847211-68847403</a></td><td>false</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="24">43</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="60">110</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="16">29</td>
 </tr>
 <tr style="display: none;" class="tablesorter-childRow geneExon_child geneExon10_child">
 <td colspan="10" style="background: white;">
@@ -3681,7 +3681,7 @@
 <br>
                                     RefSeq accession no.: <a href="http://www.ncbi.nlm.nih.gov/nuccore/NM_004360">NM_004360</a>
 <br>
-                                    vendor ID: CDH1ex12</span></td><td style="text-align: right;">100</td><td data-export-label="locus"><a href="http://127.0.0.1:60151/load?file=file:///C:/Users/Tom/Documents/GitHub/coverageQc/data/cancer_panel_26.20140716.amplicons.bed&amp;locus=chr16:68855899-68856133&amp;genome=hg19&amp;merge=false">chr16:68855899-68856133</a></td><td>false</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="100">224</td>
+                                    vendor ID: CDH1ex12</span></td><td style="text-align: right;">100</td><td data-export-label="locus"><a href="http://127.0.0.1:60151/load?file=file:///home/tom/git/coverageQc/data/cancer_panel_26.20140717.amplicons.bed&amp;locus=chr16:68855899-68856133&amp;genome=hg19&amp;merge=false">chr16:68855899-68856133</a></td><td>false</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="100">224</td>
 </tr>
 <tr style="display: none;" class="tablesorter-childRow geneExon_child geneExon11_child">
 <td colspan="10" style="background: white;">
@@ -4020,7 +4020,7 @@
 <br>
                                     RefSeq accession no.: <a href="http://www.ncbi.nlm.nih.gov/nuccore/NM_001904">NM_001904</a>
 <br>
-                                    vendor ID: CTNNB1ex2</span></td><td style="text-align: right;">65</td><td data-export-label="locus"><a href="http://127.0.0.1:60151/load?file=file:///C:/Users/Tom/Documents/GitHub/coverageQc/data/cancer_panel_26.20140716.amplicons.bed&amp;locus=chr3:41266013-41266161&amp;genome=hg19&amp;merge=false">chr3:41266013-41266161</a></td><td>false</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="51">74</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="49">70</td>
+                                    vendor ID: CTNNB1ex2</span></td><td style="text-align: right;">65</td><td data-export-label="locus"><a href="http://127.0.0.1:60151/load?file=file:///home/tom/git/coverageQc/data/cancer_panel_26.20140717.amplicons.bed&amp;locus=chr3:41266013-41266161&amp;genome=hg19&amp;merge=false">chr3:41266013-41266161</a></td><td>false</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="51">74</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="49">70</td>
 </tr>
 <tr style="display: none;" class="tablesorter-childRow geneExon_child geneExon12_child">
 <td colspan="10" style="background: white;">
@@ -4273,7 +4273,7 @@
 <br>
                                     RefSeq accession no.: <a href="http://www.ncbi.nlm.nih.gov/nuccore/NM_005228">NM_005228</a>
 <br>
-                                    vendor ID: EGFRex18</span></td><td style="text-align: right;">100</td><td data-export-label="locus"><a href="http://127.0.0.1:60151/load?file=file:///C:/Users/Tom/Documents/GitHub/coverageQc/data/cancer_panel_26.20140716.amplicons.bed&amp;locus=chr7:55241609-55241741&amp;genome=hg19&amp;merge=false">chr7:55241609-55241741</a></td><td>false</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="13">16</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="87">106</td>
+                                    vendor ID: EGFRex18</span></td><td style="text-align: right;">100</td><td data-export-label="locus"><a href="http://127.0.0.1:60151/load?file=file:///home/tom/git/coverageQc/data/cancer_panel_26.20140717.amplicons.bed&amp;locus=chr7:55241609-55241741&amp;genome=hg19&amp;merge=false">chr7:55241609-55241741</a></td><td>false</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="13">16</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="87">106</td>
 </tr>
 <tr style="display: none;" class="tablesorter-childRow geneExon_child geneExon13_child">
 <td colspan="10" style="background: white;">
@@ -4446,10 +4446,10 @@
                                         // add the amplicon guides to chart (custom SVG)
                                         var amplicons = [
                                         {name:'EGFRex18_coding', startPos:55241615, endPos:'55241736'}
-                                        ,{name:'EGFRex18_c2156_snapshot_Lung', startPos:55241708, endPos:'55241709'}
-                                        ,{name:'EGFRex18_c2155_snapshot_Lung', startPos:55241707, endPos:'55241708'}
                                         ,{name:'EGFRex18_tile_1', startPos:55241537, endPos:'55241703'}
                                         ,{name:'EGFRex18_tile_2', startPos:55241647, endPos:'55241828'}
+                                        ,{name:'EGFRex18_c2156_snapshot_Lung', startPos:55241708, endPos:'55241709'}
+                                        ,{name:'EGFRex18_c2155_snapshot_Lung', startPos:55241707, endPos:'55241708'}
                                         
                                         ];
                                         var svg = $('#geneExon13_div svg');
@@ -4512,7 +4512,7 @@
 <br>
                                     RefSeq accession no.: <a href="http://www.ncbi.nlm.nih.gov/nuccore/NM_005228">NM_005228</a>
 <br>
-                                    vendor ID: EGFRex19</span></td><td style="text-align: right;">100</td><td data-export-label="locus"><a href="http://127.0.0.1:60151/load?file=file:///C:/Users/Tom/Documents/GitHub/coverageQc/data/cancer_panel_26.20140716.amplicons.bed&amp;locus=chr7:55242410-55242518&amp;genome=hg19&amp;merge=false">chr7:55242410-55242518</a></td><td>false</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="76">74</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="24">24</td>
+                                    vendor ID: EGFRex19</span></td><td style="text-align: right;">100</td><td data-export-label="locus"><a href="http://127.0.0.1:60151/load?file=file:///home/tom/git/coverageQc/data/cancer_panel_26.20140717.amplicons.bed&amp;locus=chr7:55242410-55242518&amp;genome=hg19&amp;merge=false">chr7:55242410-55242518</a></td><td>false</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="76">74</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="24">24</td>
 </tr>
 <tr style="display: none;" class="tablesorter-childRow geneExon_child geneExon14_child">
 <td colspan="10" style="background: white;">
@@ -4724,7 +4724,7 @@
 <br>
                                     RefSeq accession no.: <a href="http://www.ncbi.nlm.nih.gov/nuccore/NM_005228">NM_005228</a>
 <br>
-                                    vendor ID: EGFRex20</span></td><td style="text-align: right;">100</td><td data-export-label="locus"><a href="http://127.0.0.1:60151/load?file=file:///C:/Users/Tom/Documents/GitHub/coverageQc/data/cancer_panel_26.20140716.amplicons.bed&amp;locus=chr7:55248981-55249177&amp;genome=hg19&amp;merge=false">chr7:55248981-55249177</a></td><td>false</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="23">42</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="77">143</td>
+                                    vendor ID: EGFRex20</span></td><td style="text-align: right;">100</td><td data-export-label="locus"><a href="http://127.0.0.1:60151/load?file=file:///home/tom/git/coverageQc/data/cancer_panel_26.20140717.amplicons.bed&amp;locus=chr7:55248981-55249177&amp;genome=hg19&amp;merge=false">chr7:55248981-55249177</a></td><td>false</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="23">42</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="77">143</td>
 </tr>
 <tr style="display: none;" class="tablesorter-childRow geneExon_child geneExon15_child">
 <td colspan="10" style="background: white;">
@@ -4961,9 +4961,9 @@
                                         // add the amplicon guides to chart (custom SVG)
                                         var amplicons = [
                                         {name:'EGFRex20_coding', startPos:55248987, endPos:'55249171'}
-                                        ,{name:'EGFRex20_c2369_snapshot_Lung', startPos:55249071, endPos:'55249072'}
                                         ,{name:'EGFRex20_tile_1', startPos:55248913, endPos:'55249105'}
                                         ,{name:'EGFRex20_tile_2', startPos:55249053, endPos:'55249233'}
+                                        ,{name:'EGFRex20_c2369_snapshot_Lung', startPos:55249071, endPos:'55249072'}
                                         
                                         ];
                                         var svg = $('#geneExon15_div svg');
@@ -5026,7 +5026,7 @@
 <br>
                                     RefSeq accession no.: <a href="http://www.ncbi.nlm.nih.gov/nuccore/NM_005228">NM_005228</a>
 <br>
-                                    vendor ID: EGFRex21</span></td><td style="text-align: right;">100</td><td data-export-label="locus"><a href="http://127.0.0.1:60151/load?file=file:///C:/Users/Tom/Documents/GitHub/coverageQc/data/cancer_panel_26.20140716.amplicons.bed&amp;locus=chr7:55259407-55259573&amp;genome=hg19&amp;merge=false">chr7:55259407-55259573</a></td><td>false</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="100">155</td>
+                                    vendor ID: EGFRex21</span></td><td style="text-align: right;">100</td><td data-export-label="locus"><a href="http://127.0.0.1:60151/load?file=file:///home/tom/git/coverageQc/data/cancer_panel_26.20140717.amplicons.bed&amp;locus=chr7:55259407-55259573&amp;genome=hg19&amp;merge=false">chr7:55259407-55259573</a></td><td>false</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="100">155</td>
 </tr>
 <tr style="display: none;" class="tablesorter-childRow geneExon_child geneExon16_child">
 <td colspan="10" style="background: white;">
@@ -5233,10 +5233,10 @@
                                         // add the amplicon guides to chart (custom SVG)
                                         var amplicons = [
                                         {name:'EGFRex21_coding', startPos:55259413, endPos:'55259567'}
-                                        ,{name:'EGFRex21_c2582_snapshot_Lung', startPos:55259524, endPos:'55259525'}
-                                        ,{name:'EGFRex21_c2573_snapshot_Lung', startPos:55259515, endPos:'55259516'}
                                         ,{name:'EGFRex21_tile_1', startPos:55259321, endPos:'55259514'}
                                         ,{name:'EGFRex21_tile_2', startPos:55259465, endPos:'55259650'}
+                                        ,{name:'EGFRex21_c2582_snapshot_Lung', startPos:55259524, endPos:'55259525'}
+                                        ,{name:'EGFRex21_c2573_snapshot_Lung', startPos:55259515, endPos:'55259516'}
                                         
                                         ];
                                         var svg = $('#geneExon16_div svg');
@@ -5299,7 +5299,7 @@
 <br>
                                     RefSeq accession no.: <a href="http://www.ncbi.nlm.nih.gov/nuccore/NM_004448">NM_004448</a>
 <br>
-                                    vendor ID: ERBB2ex20</span></td><td style="text-align: right;">100</td><td data-export-label="locus"><a href="http://127.0.0.1:60151/load?file=file:///C:/Users/Tom/Documents/GitHub/coverageQc/data/cancer_panel_26.20140716.amplicons.bed&amp;locus=chr17:37880974-37881169&amp;genome=hg19&amp;merge=false">chr17:37880974-37881169</a></td><td>true</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="58">107</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="42">78</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td>
+                                    vendor ID: ERBB2ex20</span></td><td style="text-align: right;">100</td><td data-export-label="locus"><a href="http://127.0.0.1:60151/load?file=file:///home/tom/git/coverageQc/data/cancer_panel_26.20140717.amplicons.bed&amp;locus=chr17:37880974-37881169&amp;genome=hg19&amp;merge=false">chr17:37880974-37881169</a></td><td>true</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="58">107</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="42">78</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td>
 </tr>
 <tr style="display: none;" class="tablesorter-childRow geneExon_child geneExon17_child">
 <td colspan="10" style="background: white;">
@@ -5599,7 +5599,7 @@
 <br>
                                     RefSeq accession no.: <a href="http://www.ncbi.nlm.nih.gov/nuccore/NM_033632">NM_033632</a>
 <br>
-                                    vendor ID: FBXW7ex7</span></td><td style="text-align: right;">100</td><td data-export-label="locus"><a href="http://127.0.0.1:60151/load?file=file:///C:/Users/Tom/Documents/GitHub/coverageQc/data/cancer_panel_26.20140716.amplicons.bed&amp;locus=chr4:153250819-153250942&amp;genome=hg19&amp;merge=false">chr4:153250819-153250942</a></td><td>false</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="100">113</td>
+                                    vendor ID: FBXW7ex7</span></td><td style="text-align: right;">100</td><td data-export-label="locus"><a href="http://127.0.0.1:60151/load?file=file:///home/tom/git/coverageQc/data/cancer_panel_26.20140717.amplicons.bed&amp;locus=chr4:153250819-153250942&amp;genome=hg19&amp;merge=false">chr4:153250819-153250942</a></td><td>false</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="100">113</td>
 </tr>
 <tr style="display: none;" class="tablesorter-childRow geneExon_child geneExon18_child">
 <td colspan="10" style="background: white;">
@@ -5827,7 +5827,7 @@
 <br>
                                     RefSeq accession no.: <a href="http://www.ncbi.nlm.nih.gov/nuccore/NM_033632">NM_033632</a>
 <br>
-                                    vendor ID: FBXW7ex8</span></td><td style="text-align: right;">100</td><td data-export-label="locus"><a href="http://127.0.0.1:60151/load?file=file:///C:/Users/Tom/Documents/GitHub/coverageQc/data/cancer_panel_26.20140716.amplicons.bed&amp;locus=chr4:153249355-153249546&amp;genome=hg19&amp;merge=false">chr4:153249355-153249546</a></td><td>false</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="100">181</td>
+                                    vendor ID: FBXW7ex8</span></td><td style="text-align: right;">100</td><td data-export-label="locus"><a href="http://127.0.0.1:60151/load?file=file:///home/tom/git/coverageQc/data/cancer_panel_26.20140717.amplicons.bed&amp;locus=chr4:153249355-153249546&amp;genome=hg19&amp;merge=false">chr4:153249355-153249546</a></td><td>false</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="100">181</td>
 </tr>
 <tr style="display: none;" class="tablesorter-childRow geneExon_child geneExon19_child">
 <td colspan="10" style="background: white;">
@@ -6124,7 +6124,7 @@
 <br>
                                     RefSeq accession no.: <a href="http://www.ncbi.nlm.nih.gov/nuccore/NM_033632">NM_033632</a>
 <br>
-                                    vendor ID: FBXW7ex9</span></td><td style="text-align: right;">100</td><td data-export-label="locus"><a href="http://127.0.0.1:60151/load?file=file:///C:/Users/Tom/Documents/GitHub/coverageQc/data/cancer_panel_26.20140716.amplicons.bed&amp;locus=chr4:153247153-153247388&amp;genome=hg19&amp;merge=false">chr4:153247153-153247388</a></td><td>false</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="100">225</td>
+                                    vendor ID: FBXW7ex9</span></td><td style="text-align: right;">100</td><td data-export-label="locus"><a href="http://127.0.0.1:60151/load?file=file:///home/tom/git/coverageQc/data/cancer_panel_26.20140717.amplicons.bed&amp;locus=chr4:153247153-153247388&amp;genome=hg19&amp;merge=false">chr4:153247153-153247388</a></td><td>false</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="100">225</td>
 </tr>
 <tr style="display: none;" class="tablesorter-childRow geneExon_child geneExon20_child">
 <td colspan="10" style="background: white;">
@@ -6465,7 +6465,7 @@
 <br>
                                     RefSeq accession no.: <a href="http://www.ncbi.nlm.nih.gov/nuccore/NM_033632">NM_033632</a>
 <br>
-                                    vendor ID: FBXW7ex10</span></td><td style="text-align: right;">100</td><td data-export-label="locus"><a href="http://127.0.0.1:60151/load?file=file:///C:/Users/Tom/Documents/GitHub/coverageQc/data/cancer_panel_26.20140716.amplicons.bed&amp;locus=chr4:153245331-153245551&amp;genome=hg19&amp;merge=false">chr4:153245331-153245551</a></td><td>false</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="100">210</td>
+                                    vendor ID: FBXW7ex10</span></td><td style="text-align: right;">100</td><td data-export-label="locus"><a href="http://127.0.0.1:60151/load?file=file:///home/tom/git/coverageQc/data/cancer_panel_26.20140717.amplicons.bed&amp;locus=chr4:153245331-153245551&amp;genome=hg19&amp;merge=false">chr4:153245331-153245551</a></td><td>false</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="100">210</td>
 </tr>
 <tr style="display: none;" class="tablesorter-childRow geneExon_child geneExon21_child">
 <td colspan="10" style="background: white;">
@@ -6790,7 +6790,7 @@
 <br>
                                     RefSeq accession no.: <a href="http://www.ncbi.nlm.nih.gov/nuccore/NM_033632">NM_033632</a>
 <br>
-                                    vendor ID: FBXW7ex11</span></td><td style="text-align: right;">15</td><td data-export-label="locus"><a href="http://127.0.0.1:60151/load?file=file:///C:/Users/Tom/Documents/GitHub/coverageQc/data/cancer_panel_26.20140716.amplicons.bed&amp;locus=chr4:153244029-153244303&amp;genome=hg19&amp;merge=false">chr4:153244029-153244303</a></td><td>false</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="100">268</td>
+                                    vendor ID: FBXW7ex11</span></td><td style="text-align: right;">15</td><td data-export-label="locus"><a href="http://127.0.0.1:60151/load?file=file:///home/tom/git/coverageQc/data/cancer_panel_26.20140717.amplicons.bed&amp;locus=chr4:153244029-153244303&amp;genome=hg19&amp;merge=false">chr4:153244029-153244303</a></td><td>false</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="100">268</td>
 </tr>
 <tr style="display: none;" class="tablesorter-childRow geneExon_child geneExon22_child">
 <td colspan="10" style="background: white;">
@@ -7170,7 +7170,7 @@
 <br>
                                     RefSeq accession no.: <a href="http://www.ncbi.nlm.nih.gov/nuccore/NM_000141">NM_000141</a>
 <br>
-                                    vendor ID: FGFR2ex6</span></td><td style="text-align: right;">100</td><td data-export-label="locus"><a href="http://127.0.0.1:60151/load?file=file:///C:/Users/Tom/Documents/GitHub/coverageQc/data/cancer_panel_26.20140716.amplicons.bed&amp;locus=chr10:123279488-123279688&amp;genome=hg19&amp;merge=false">chr10:123279488-123279688</a></td><td>false</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="29">56</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="47">89</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="24">45</td>
+                                    vendor ID: FGFR2ex6</span></td><td style="text-align: right;">100</td><td data-export-label="locus"><a href="http://127.0.0.1:60151/load?file=file:///home/tom/git/coverageQc/data/cancer_panel_26.20140717.amplicons.bed&amp;locus=chr10:123279488-123279688&amp;genome=hg19&amp;merge=false">chr10:123279488-123279688</a></td><td>false</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="29">56</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="47">89</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="24">45</td>
 </tr>
 <tr style="display: none;" class="tablesorter-childRow geneExon_child geneExon23_child">
 <td colspan="10" style="background: white;">
@@ -7475,7 +7475,7 @@
 <br>
                                     RefSeq accession no.: <a href="http://www.ncbi.nlm.nih.gov/nuccore/NM_023067">NM_023067</a>
 <br>
-                                    vendor ID: FOXL2ex1</span></td><td style="text-align: right;">4</td><td data-export-label="locus"><a href="http://127.0.0.1:60151/load?file=file:///C:/Users/Tom/Documents/GitHub/coverageQc/data/cancer_panel_26.20140716.amplicons.bed&amp;locus=chr3:138665110-138665221&amp;genome=hg19&amp;merge=false">chr3:138665110-138665221</a></td><td>false</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="100">112</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td>
+                                    vendor ID: FOXL2ex1</span></td><td style="text-align: right;">4</td><td data-export-label="locus"><a href="http://127.0.0.1:60151/load?file=file:///home/tom/git/coverageQc/data/cancer_panel_26.20140717.amplicons.bed&amp;locus=chr3:138665110-138665221&amp;genome=hg19&amp;merge=false">chr3:138665110-138665221</a></td><td>false</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="100">112</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td>
 </tr>
 <tr style="display: none;" class="tablesorter-childRow geneExon_child geneExon24_child">
 <td colspan="10" style="background: white;">
@@ -7690,7 +7690,7 @@
 <br>
                                     RefSeq accession no.: <a href="http://www.ncbi.nlm.nih.gov/nuccore/NM_002072">NM_002072</a>
 <br>
-                                    vendor ID: GNAQex4</span></td><td style="text-align: right;">100</td><td data-export-label="locus"><a href="http://127.0.0.1:60151/load?file=file:///C:/Users/Tom/Documents/GitHub/coverageQc/data/cancer_panel_26.20140716.amplicons.bed&amp;locus=chr9:80412431-80412569&amp;genome=hg19&amp;merge=false">chr9:80412431-80412569</a></td><td>false</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="41">53</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="59">75</td>
+                                    vendor ID: GNAQex4</span></td><td style="text-align: right;">100</td><td data-export-label="locus"><a href="http://127.0.0.1:60151/load?file=file:///home/tom/git/coverageQc/data/cancer_panel_26.20140717.amplicons.bed&amp;locus=chr9:80412431-80412569&amp;genome=hg19&amp;merge=false">chr9:80412431-80412569</a></td><td>false</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="41">53</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="59">75</td>
 </tr>
 <tr style="display: none;" class="tablesorter-childRow geneExon_child geneExon25_child">
 <td colspan="10" style="background: white;">
@@ -7933,7 +7933,7 @@
 <br>
                                     RefSeq accession no.: <a href="http://www.ncbi.nlm.nih.gov/nuccore/NM_002072">NM_002072</a>
 <br>
-                                    vendor ID: GNAQex5</span></td><td style="text-align: right;">100</td><td data-export-label="locus"><a href="http://127.0.0.1:60151/load?file=file:///C:/Users/Tom/Documents/GitHub/coverageQc/data/cancer_panel_26.20140716.amplicons.bed&amp;locus=chr9:80409374-80409513&amp;genome=hg19&amp;merge=false">chr9:80409374-80409513</a></td><td>false</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="100">129</td>
+                                    vendor ID: GNAQex5</span></td><td style="text-align: right;">100</td><td data-export-label="locus"><a href="http://127.0.0.1:60151/load?file=file:///home/tom/git/coverageQc/data/cancer_panel_26.20140717.amplicons.bed&amp;locus=chr9:80409374-80409513&amp;genome=hg19&amp;merge=false">chr9:80409374-80409513</a></td><td>false</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="100">129</td>
 </tr>
 <tr style="display: none;" class="tablesorter-childRow geneExon_child geneExon26_child">
 <td colspan="10" style="background: white;">
@@ -8177,7 +8177,7 @@
 <br>
                                     RefSeq accession no.: <a href="http://www.ncbi.nlm.nih.gov/nuccore/NM_002072">NM_002072</a>
 <br>
-                                    vendor ID: GNAQex6</span></td><td style="text-align: right;">100</td><td data-export-label="locus"><a href="http://127.0.0.1:60151/load?file=file:///C:/Users/Tom/Documents/GitHub/coverageQc/data/cancer_panel_26.20140716.amplicons.bed&amp;locus=chr9:80343425-80343588&amp;genome=hg19&amp;merge=false">chr9:80343425-80343588</a></td><td>true</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="100">153</td>
+                                    vendor ID: GNAQex6</span></td><td style="text-align: right;">100</td><td data-export-label="locus"><a href="http://127.0.0.1:60151/load?file=file:///home/tom/git/coverageQc/data/cancer_panel_26.20140717.amplicons.bed&amp;locus=chr9:80343425-80343588&amp;genome=hg19&amp;merge=false">chr9:80343425-80343588</a></td><td>true</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="100">153</td>
 </tr>
 <tr style="display: none;" class="tablesorter-childRow geneExon_child geneExon27_child">
 <td colspan="10" style="background: white;">
@@ -8445,7 +8445,7 @@
 <br>
                                     RefSeq accession no.: <a href="http://www.ncbi.nlm.nih.gov/nuccore/NM_000516">NM_000516</a>
 <br>
-                                    vendor ID: GNASex6</span></td><td style="text-align: right;">100</td><td data-export-label="locus"><a href="http://127.0.0.1:60151/load?file=file:///C:/Users/Tom/Documents/GitHub/coverageQc/data/cancer_panel_26.20140716.amplicons.bed&amp;locus=chr20:57480433-57480540&amp;genome=hg19&amp;merge=false">chr20:57480433-57480540</a></td><td>false</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="100">97</td>
+                                    vendor ID: GNASex6</span></td><td style="text-align: right;">100</td><td data-export-label="locus"><a href="http://127.0.0.1:60151/load?file=file:///home/tom/git/coverageQc/data/cancer_panel_26.20140717.amplicons.bed&amp;locus=chr20:57480433-57480540&amp;genome=hg19&amp;merge=false">chr20:57480433-57480540</a></td><td>false</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="100">97</td>
 </tr>
 <tr style="display: none;" class="tablesorter-childRow geneExon_child geneExon28_child">
 <td colspan="10" style="background: white;">
@@ -8656,7 +8656,7 @@
 <br>
                                     RefSeq accession no.: <a href="http://www.ncbi.nlm.nih.gov/nuccore/NM_000516">NM_000516</a>
 <br>
-                                    vendor ID: GNASex8</span></td><td style="text-align: right;">100</td><td data-export-label="locus"><a href="http://127.0.0.1:60151/load?file=file:///C:/Users/Tom/Documents/GitHub/coverageQc/data/cancer_panel_26.20140716.amplicons.bed&amp;locus=chr20:57484400-57484483&amp;genome=hg19&amp;merge=false">chr20:57484400-57484483</a></td><td>false</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="100">73</td>
+                                    vendor ID: GNASex8</span></td><td style="text-align: right;">100</td><td data-export-label="locus"><a href="http://127.0.0.1:60151/load?file=file:///home/tom/git/coverageQc/data/cancer_panel_26.20140717.amplicons.bed&amp;locus=chr20:57484400-57484483&amp;genome=hg19&amp;merge=false">chr20:57484400-57484483</a></td><td>false</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="100">73</td>
 </tr>
 <tr style="display: none;" class="tablesorter-childRow geneExon_child geneExon29_child">
 <td colspan="10" style="background: white;">
@@ -8843,7 +8843,7 @@
 <br>
                                     RefSeq accession no.: <a href="http://www.ncbi.nlm.nih.gov/nuccore/NM_000222">NM_000222</a>
 <br>
-                                    vendor ID: KITex9</span></td><td style="text-align: right;">100</td><td data-export-label="locus"><a href="http://127.0.0.1:60151/load?file=file:///C:/Users/Tom/Documents/GitHub/coverageQc/data/cancer_panel_26.20140716.amplicons.bed&amp;locus=chr4:55592018-55592221&amp;genome=hg19&amp;merge=false">chr4:55592018-55592221</a></td><td>false</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="100">193</td>
+                                    vendor ID: KITex9</span></td><td style="text-align: right;">100</td><td data-export-label="locus"><a href="http://127.0.0.1:60151/load?file=file:///home/tom/git/coverageQc/data/cancer_panel_26.20140717.amplicons.bed&amp;locus=chr4:55592018-55592221&amp;genome=hg19&amp;merge=false">chr4:55592018-55592221</a></td><td>false</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="100">193</td>
 </tr>
 <tr style="display: none;" class="tablesorter-childRow geneExon_child geneExon30_child">
 <td colspan="10" style="background: white;">
@@ -9152,7 +9152,7 @@
 <br>
                                     RefSeq accession no.: <a href="http://www.ncbi.nlm.nih.gov/nuccore/NM_000222">NM_000222</a>
 <br>
-                                    vendor ID: KITex11</span></td><td style="text-align: right;">100</td><td data-export-label="locus"><a href="http://127.0.0.1:60151/load?file=file:///C:/Users/Tom/Documents/GitHub/coverageQc/data/cancer_panel_26.20140716.amplicons.bed&amp;locus=chr4:55593577-55593713&amp;genome=hg19&amp;merge=false">chr4:55593577-55593713</a></td><td>false</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="100">126</td>
+                                    vendor ID: KITex11</span></td><td style="text-align: right;">100</td><td data-export-label="locus"><a href="http://127.0.0.1:60151/load?file=file:///home/tom/git/coverageQc/data/cancer_panel_26.20140717.amplicons.bed&amp;locus=chr4:55593577-55593713&amp;genome=hg19&amp;merge=false">chr4:55593577-55593713</a></td><td>false</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="100">126</td>
 </tr>
 <tr style="display: none;" class="tablesorter-childRow geneExon_child geneExon31_child">
 <td colspan="10" style="background: white;">
@@ -9393,7 +9393,7 @@
 <br>
                                     RefSeq accession no.: <a href="http://www.ncbi.nlm.nih.gov/nuccore/NM_000222">NM_000222</a>
 <br>
-                                    vendor ID: KITex13</span></td><td style="text-align: right;">100</td><td data-export-label="locus"><a href="http://127.0.0.1:60151/load?file=file:///C:/Users/Tom/Documents/GitHub/coverageQc/data/cancer_panel_26.20140716.amplicons.bed&amp;locus=chr4:55594172-55594292&amp;genome=hg19&amp;merge=false">chr4:55594172-55594292</a></td><td>false</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="100">110</td>
+                                    vendor ID: KITex13</span></td><td style="text-align: right;">100</td><td data-export-label="locus"><a href="http://127.0.0.1:60151/load?file=file:///home/tom/git/coverageQc/data/cancer_panel_26.20140717.amplicons.bed&amp;locus=chr4:55594172-55594292&amp;genome=hg19&amp;merge=false">chr4:55594172-55594292</a></td><td>false</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="100">110</td>
 </tr>
 <tr style="display: none;" class="tablesorter-childRow geneExon_child geneExon32_child">
 <td colspan="10" style="background: white;">
@@ -9617,7 +9617,7 @@
 <br>
                                     RefSeq accession no.: <a href="http://www.ncbi.nlm.nih.gov/nuccore/NM_000222">NM_000222</a>
 <br>
-                                    vendor ID: KITex17</span></td><td style="text-align: right;">100</td><td data-export-label="locus"><a href="http://127.0.0.1:60151/load?file=file:///C:/Users/Tom/Documents/GitHub/coverageQc/data/cancer_panel_26.20140716.amplicons.bed&amp;locus=chr4:55599231-55599363&amp;genome=hg19&amp;merge=false">chr4:55599231-55599363</a></td><td>false</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="100">122</td>
+                                    vendor ID: KITex17</span></td><td style="text-align: right;">100</td><td data-export-label="locus"><a href="http://127.0.0.1:60151/load?file=file:///home/tom/git/coverageQc/data/cancer_panel_26.20140717.amplicons.bed&amp;locus=chr4:55599231-55599363&amp;genome=hg19&amp;merge=false">chr4:55599231-55599363</a></td><td>false</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="100">122</td>
 </tr>
 <tr style="display: none;" class="tablesorter-childRow geneExon_child geneExon33_child">
 <td colspan="10" style="background: white;">
@@ -9854,7 +9854,7 @@
 <br>
                                     RefSeq accession no.: <a href="http://www.ncbi.nlm.nih.gov/nuccore/NM_000222">NM_000222</a>
 <br>
-                                    vendor ID: KITex18</span></td><td style="text-align: right;">100</td><td data-export-label="locus"><a href="http://127.0.0.1:60151/load?file=file:///C:/Users/Tom/Documents/GitHub/coverageQc/data/cancer_panel_26.20140716.amplicons.bed&amp;locus=chr4:55602659-55602780&amp;genome=hg19&amp;merge=false">chr4:55602659-55602780</a></td><td>true (annotated)</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="100">111</td>
+                                    vendor ID: KITex18</span></td><td style="text-align: right;">100</td><td data-export-label="locus"><a href="http://127.0.0.1:60151/load?file=file:///home/tom/git/coverageQc/data/cancer_panel_26.20140717.amplicons.bed&amp;locus=chr4:55602659-55602780&amp;genome=hg19&amp;merge=false">chr4:55602659-55602780</a></td><td>true (annotated)</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="100">111</td>
 </tr>
 <tr style="display: none;" class="tablesorter-childRow geneExon_child geneExon34_child">
 <td colspan="10" style="background: white;">
@@ -10077,7 +10077,7 @@
 <th>export?</th><th>gene</th><th>coordinate</th><th>filters<sup>*</sup></th><th>consequence</th><th>genotype</th><th>AVF</th><th>cDNA</th><th>amino acid</th><th>dbSNP</th><th>MAF</th><th>COSMIC ID</th>
 <!--//TOM ADDITION
                                                         //adding this because sometimes the tsv file from variant studio is wrong and it is really in cosmic, creating a work around
-                                                    --><th>Cosmic_Dblchk</th><th>Call_Status</th>
+                                                    --><th>COSMIC (alternate)</th><th>call status</th>
 </tr>
 </thead>
 <tbody>
@@ -10085,7 +10085,7 @@
 <td style="text-align: center;"><input type="checkbox" class="exportCheckbox"></td><td data-export-label="gene">KIT</td><td data-export-label="coordinate">chr4:55602765</td><td data-export-label="filters">PASS</td><td data-export-label="consequence">synonymous_variant</td><td data-export-label="genotype">het</td><td data-export-label="avf" style="text-align: right;">47.98</td><td data-export-label="cDna">c.2586G&gt;C</td><td data-export-label="aminoAcid">c.2586G&gt;C(p.=)</td><td><a href="http://www.ncbi.nlm.nih.gov/projects/SNP/snp_ref.cgi?rs=3733542">rs3733542</a></td><td data-export-label="maf" style="text-align: right;">14.33</td><td><a href="http://cancer.sanger.ac.uk/cosmic/search?q=COSM1325">COSM1325</a></td>
 <!-- //TOM ADDITION
                                                             //I created a new string stating the gene mutation to be searched in Cosmic ie KIT c.2586G>C 
-                                                        --><td><a href="http://cancer.sanger.ac.uk/cosmic/search?q=KIT c.2586G>C">KIT c.2586G&gt;C</a></td><td>Not on do not call list/Potentially Valid</td>
+                                                        --><td><a href="http://cancer.sanger.ac.uk/cosmic/search?q=KIT c.2586G>C">KIT c.2586G&gt;C</a></td><td width="5%">Not on lab list /Potentially Valid</td>
 </tr>
 </tbody>
 </table>
@@ -10115,7 +10115,7 @@
 <br>
                                     RefSeq accession no.: <a href="http://www.ncbi.nlm.nih.gov/nuccore/NM_004985">NM_004985</a>
 <br>
-                                    vendor ID: KRASex1</span></td><td style="text-align: right;">100</td><td data-export-label="locus"><a href="http://127.0.0.1:60151/load?file=file:///C:/Users/Tom/Documents/GitHub/coverageQc/data/cancer_panel_26.20140716.amplicons.bed&amp;locus=chr12:25398203-25398334&amp;genome=hg19&amp;merge=false">chr12:25398203-25398334</a></td><td>false</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="100">110</td>
+                                    vendor ID: KRASex1</span></td><td style="text-align: right;">100</td><td data-export-label="locus"><a href="http://127.0.0.1:60151/load?file=file:///home/tom/git/coverageQc/data/cancer_panel_26.20140717.amplicons.bed&amp;locus=chr12:25398203-25398334&amp;genome=hg19&amp;merge=false">chr12:25398203-25398334</a></td><td>false</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="100">110</td>
 </tr>
 <tr style="display: none;" class="tablesorter-childRow geneExon_child geneExon35_child">
 <td colspan="10" style="background: white;">
@@ -10287,12 +10287,12 @@
                                         // add the amplicon guides to chart (custom SVG)
                                         var amplicons = [
                                         {name:'KRASex1_coding', startPos:25398209, endPos:'25398318'}
+                                        ,{name:'KRASex1_tile_1', startPos:25398112, endPos:'25398278'}
+                                        ,{name:'KRASex1_tile_2', startPos:25398226, endPos:'25398414'}
                                         ,{name:'KRASex1_c34_snapshot_Lung', startPos:25398285, endPos:'25398286'}
                                         ,{name:'KRASex1_c38_snapshot_Lung', startPos:25398281, endPos:'25398282'}
                                         ,{name:'KRASex1_c35_snapshot_Lung', startPos:25398284, endPos:'25398285'}
                                         ,{name:'KRASex1_c37_snapshot_Lung', startPos:25398282, endPos:'25398283'}
-                                        ,{name:'KRASex1_tile_1', startPos:25398112, endPos:'25398278'}
-                                        ,{name:'KRASex1_tile_2', startPos:25398226, endPos:'25398414'}
                                         
                                         ];
                                         var svg = $('#geneExon35_div svg');
@@ -10355,7 +10355,7 @@
 <br>
                                     RefSeq accession no.: <a href="http://www.ncbi.nlm.nih.gov/nuccore/NM_004985">NM_004985</a>
 <br>
-                                    vendor ID: KRASex2</span></td><td style="text-align: right;">100</td><td data-export-label="locus"><a href="http://127.0.0.1:60151/load?file=file:///C:/Users/Tom/Documents/GitHub/coverageQc/data/cancer_panel_26.20140716.amplicons.bed&amp;locus=chr12:25380163-25380351&amp;genome=hg19&amp;merge=false">chr12:25380163-25380351</a></td><td>true (annotated)</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="100">178</td>
+                                    vendor ID: KRASex2</span></td><td style="text-align: right;">100</td><td data-export-label="locus"><a href="http://127.0.0.1:60151/load?file=file:///home/tom/git/coverageQc/data/cancer_panel_26.20140717.amplicons.bed&amp;locus=chr12:25380163-25380351&amp;genome=hg19&amp;merge=false">chr12:25380163-25380351</a></td><td>true (annotated)</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="100">178</td>
 </tr>
 <tr style="display: none;" class="tablesorter-childRow geneExon_child geneExon36_child">
 <td colspan="10" style="background: white;">
@@ -10584,11 +10584,11 @@
                                         // add the amplicon guides to chart (custom SVG)
                                         var amplicons = [
                                         {name:'KRASex2_coding', startPos:25380169, endPos:'25380346'}
+                                        ,{name:'KRASex2_tile_1', startPos:25380076, endPos:'25380263'}
+                                        ,{name:'KRASex2_tile_2', startPos:25380200, endPos:'25380384'}
                                         ,{name:'KRASex2_c182_snapshot_Lung', startPos:25380276, endPos:'25380277'}
                                         ,{name:'KRASex2_c183_snapshot_Lung', startPos:25380275, endPos:'25380276'}
                                         ,{name:'KRASex2_c181_snapshot_Lung', startPos:25380277, endPos:'25380278'}
-                                        ,{name:'KRASex2_tile_1', startPos:25380076, endPos:'25380263'}
-                                        ,{name:'KRASex2_tile_2', startPos:25380200, endPos:'25380384'}
                                         
                                         ];
                                         var svg = $('#geneExon36_div svg');
@@ -10649,7 +10649,7 @@
 <th>export?</th><th>gene</th><th>coordinate</th><th>filters<sup>*</sup></th><th>consequence</th><th>genotype</th><th>AVF</th><th>cDNA</th><th>amino acid</th><th>dbSNP</th><th>MAF</th><th>COSMIC ID</th>
 <!--//TOM ADDITION
                                                         //adding this because sometimes the tsv file from variant studio is wrong and it is really in cosmic, creating a work around
-                                                    --><th>Cosmic_Dblchk</th><th>Call_Status</th>
+                                                    --><th>COSMIC (alternate)</th><th>call status</th>
 </tr>
 </thead>
 <tbody>
@@ -10657,7 +10657,7 @@
 <td style="text-align: center;"><input type="checkbox" class="exportCheckbox"></td><td data-export-label="gene">KRAS</td><td data-export-label="coordinate">chr12:25380275</td><td data-export-label="filters">PASS</td><td data-export-label="consequence">missense_variant</td><td data-export-label="genotype">het</td><td data-export-label="avf" style="text-align: right;">7.0</td><td data-export-label="cDna">c.183A&gt;C</td><td data-export-label="aminoAcid">p.Gln61His</td><td><a href="http://www.ncbi.nlm.nih.gov/projects/SNP/snp_ref.cgi?rs=17851045">rs17851045</a></td><td data-export-label="maf" style="text-align: right;">0.0</td><td><a href="http://cancer.sanger.ac.uk/cosmic/search?q=COSM1135364">COSM1135364</a></td>
 <!-- //TOM ADDITION
                                                             //I created a new string stating the gene mutation to be searched in Cosmic ie KIT c.2586G>C 
-                                                        --><td><a href="http://cancer.sanger.ac.uk/cosmic/search?q=KRAS c.183A>C">KRAS c.183A&gt;C</a></td><td>Not on do not call list/Potentially Valid</td>
+                                                        --><td><a href="http://cancer.sanger.ac.uk/cosmic/search?q=KRAS c.183A>C">KRAS c.183A&gt;C</a></td><td width="5%">Not on lab list /Potentially Valid</td>
 </tr>
 </tbody>
 </table>
@@ -10687,7 +10687,7 @@
 <br>
                                     RefSeq accession no.: <a href="http://www.ncbi.nlm.nih.gov/nuccore/NM_004985">NM_004985</a>
 <br>
-                                    vendor ID: KRASex3</span></td><td style="text-align: right;">100</td><td data-export-label="locus"><a href="http://127.0.0.1:60151/load?file=file:///C:/Users/Tom/Documents/GitHub/coverageQc/data/cancer_panel_26.20140716.amplicons.bed&amp;locus=chr12:25378543-25378712&amp;genome=hg19&amp;merge=false">chr12:25378543-25378712</a></td><td>false</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="100">159</td>
+                                    vendor ID: KRASex3</span></td><td style="text-align: right;">100</td><td data-export-label="locus"><a href="http://127.0.0.1:60151/load?file=file:///home/tom/git/coverageQc/data/cancer_panel_26.20140717.amplicons.bed&amp;locus=chr12:25378543-25378712&amp;genome=hg19&amp;merge=false">chr12:25378543-25378712</a></td><td>false</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="100">159</td>
 </tr>
 <tr style="display: none;" class="tablesorter-childRow geneExon_child geneExon37_child">
 <td colspan="10" style="background: white;">
@@ -10955,13 +10955,13 @@
 </tr>
 <!--Tom Addition of test doNotCall-->
 <tr style="font-weight: bold;" class="geneExon_parent">
-<td style="text-align: center; width: 20px;"><a href="#" id="geneExon38" class="geneExonExpandCollapseButton" style="color: blue; text-decoration: none; font-size: large; font-weight: bold;">+</a></td><td style="background-color: blue;" data-export-label="qc">pass</td><td data-export-label="exon">KRASex5<br>
+<td style="text-align: center; width: 20px;"><a href="#" id="geneExon38" class="geneExonExpandCollapseButton" style="color: blue; text-decoration: none; font-size: large; font-weight: bold;">+</a></td><td style="background-color: green;" data-export-label="qc">pass</td><td data-export-label="exon">KRASex5<br>
 <span style="font-size: x-small">
                                     Ensembl ID: <a href="http://www.ensembl.org/id/ENST00000311936.3">ENSE00002456976.1</a>
 <br>
                                     RefSeq accession no.: <a href="http://www.ncbi.nlm.nih.gov/nuccore/NM_004985">NM_004985</a>
 <br>
-                                    vendor ID: KRASex4</span></td><td style="text-align: right;">2</td><td data-export-label="locus"><a href="http://127.0.0.1:60151/load?file=file:///C:/Users/Tom/Documents/GitHub/coverageQc/data/cancer_panel_26.20140716.amplicons.bed&amp;locus=chr12:25362725-25362850&amp;genome=hg19&amp;merge=false">chr12:25362725-25362850</a></td><td>true (annotated) Warning all do not call</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="100">116</td>
+                                    vendor ID: KRASex4</span></td><td style="text-align: right;">2</td><td data-export-label="locus"><a href="http://127.0.0.1:60151/load?file=file:///home/tom/git/coverageQc/data/cancer_panel_26.20140717.amplicons.bed&amp;locus=chr12:25362725-25362850&amp;genome=hg19&amp;merge=false">chr12:25362725-25362850</a></td><td>true (annotated)</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="100">116</td>
 </tr>
 <tr style="display: none;" class="tablesorter-childRow geneExon_child geneExon38_child">
 <td colspan="10" style="background: white;">
@@ -11189,7 +11189,7 @@
 <th>export?</th><th>gene</th><th>coordinate</th><th>filters<sup>*</sup></th><th>consequence</th><th>genotype</th><th>AVF</th><th>cDNA</th><th>amino acid</th><th>dbSNP</th><th>MAF</th><th>COSMIC ID</th>
 <!--//TOM ADDITION
                                                         //adding this because sometimes the tsv file from variant studio is wrong and it is really in cosmic, creating a work around
-                                                    --><th>Cosmic_Dblchk</th><th>Call_Status</th>
+                                                    --><th>COSMIC (alternate)</th><th>call status</th>
 </tr>
 </thead>
 <tbody>
@@ -11197,13 +11197,13 @@
 <td style="text-align: center;"><input type="checkbox" class="exportCheckbox"></td><td data-export-label="gene">KRAS</td><td data-export-label="coordinate">chr12:25362777</td><td data-export-label="filters">PASS</td><td data-export-label="consequence">3_prime_UTR_variant</td><td data-export-label="genotype">hom</td><td data-export-label="avf" style="text-align: right;">99.79</td><td data-export-label="cDna">c.*73T&gt;C</td><td data-export-label="aminoAcid"></td><td><a href="http://www.ncbi.nlm.nih.gov/projects/SNP/snp_ref.cgi?rs=1137282">rs1137282</a></td><td data-export-label="maf" style="text-align: right;">16.58</td><td><a href="http://cancer.sanger.ac.uk/cosmic/search?q="></a></td>
 <!-- //TOM ADDITION
                                                             //I created a new string stating the gene mutation to be searched in Cosmic ie KIT c.2586G>C 
-                                                        --><td><a href="http://cancer.sanger.ac.uk/cosmic/search?q=KRAS c.*73T>C">KRAS c.*73T&gt;C</a></td><td>Don't call, always</td>
+                                                        --><td><a href="http://cancer.sanger.ac.uk/cosmic/search?q=KRAS c.*73T>C">KRAS c.*73T&gt;C</a></td><td width="5%">Not on lab list /Potentially Valid</td>
 </tr>
 <tr class="filteredAnnotatedVariant">
 <td style="text-align: center;"><input type="checkbox" class="exportCheckbox"></td><td data-export-label="gene">KRAS</td><td data-export-label="coordinate">chr12:25362777</td><td data-export-label="filters">PASS</td><td data-export-label="consequence">XXXXXXXXXXXXXXXXXXX</td><td data-export-label="genotype">XXX</td><td data-export-label="avf" style="text-align: right;">99.79</td><td data-export-label="cDna">c.*73T&gt;C</td><td data-export-label="aminoAcid"></td><td><a href="http://www.ncbi.nlm.nih.gov/projects/SNP/snp_ref.cgi?rs=1137282">rs1137282</a></td><td data-export-label="maf" style="text-align: right;">16.58</td><td><a href="http://cancer.sanger.ac.uk/cosmic/search?q="></a></td>
 <!-- //TOM ADDITION
                                                             //I created a new string stating the gene mutation to be searched in Cosmic ie KIT c.2586G>C 
-                                                        --><td><a href="http://cancer.sanger.ac.uk/cosmic/search?q=KRAS c.*73T>C">KRAS c.*73T&gt;C</a></td><td>Don't call, always</td>
+                                                        --><td><a href="http://cancer.sanger.ac.uk/cosmic/search?q=KRAS c.*73T>C">KRAS c.*73T&gt;C</a></td><td width="5%">Not on lab list /Potentially Valid</td>
 </tr>
 </tbody>
 </table>
@@ -11233,7 +11233,7 @@
 <br>
                                     RefSeq accession no.: <a href="http://www.ncbi.nlm.nih.gov/nuccore/NM_002755">NM_002755</a>
 <br>
-                                    vendor ID: MAP2K1ex2</span></td><td style="text-align: right;">59</td><td data-export-label="locus"><a href="http://127.0.0.1:60151/load?file=file:///C:/Users/Tom/Documents/GitHub/coverageQc/data/cancer_panel_26.20140716.amplicons.bed&amp;locus=chr15:66727438-66727561&amp;genome=hg19&amp;merge=false">chr15:66727438-66727561</a></td><td>false</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="1">1</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="52">65</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="47">58</td>
+                                    vendor ID: MAP2K1ex2</span></td><td style="text-align: right;">59</td><td data-export-label="locus"><a href="http://127.0.0.1:60151/load?file=file:///home/tom/git/coverageQc/data/cancer_panel_26.20140717.amplicons.bed&amp;locus=chr15:66727438-66727561&amp;genome=hg19&amp;merge=false">chr15:66727438-66727561</a></td><td>false</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="1">1</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="52">65</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="47">58</td>
 </tr>
 <tr style="display: none;" class="tablesorter-childRow geneExon_child geneExon39_child">
 <td colspan="10" style="background: white;">
@@ -11397,10 +11397,10 @@
                                         // add the amplicon guides to chart (custom SVG)
                                         var amplicons = [
                                         {name:'MAP2K1ex2_coding', startPos:66727366, endPos:'66727575'}
+                                        ,{name:'MAP2K1ex2_tile_1', startPos:66727411, endPos:'66727588'}
                                         ,{name:'MAP2K1ex2_c167_snapshot_Lung', startPos:66727446, endPos:'66727447'}
                                         ,{name:'MAP2K1ex2_c171_snapshot_Lung', startPos:66727454, endPos:'66727455'}
                                         ,{name:'MAP2K1ex2_c199_snapshot_Lung', startPos:66727482, endPos:'66727483'}
-                                        ,{name:'MAP2K1ex2_tile_1', startPos:66727411, endPos:'66727588'}
                                         
                                         ];
                                         var svg = $('#geneExon39_div svg');
@@ -11463,7 +11463,7 @@
 <br>
                                     RefSeq accession no.: <a href="http://www.ncbi.nlm.nih.gov/nuccore/NM_000245">NM_000245</a>
 <br>
-                                    vendor ID: METex1</span></td><td style="text-align: right;">62</td><td data-export-label="locus"><a href="http://127.0.0.1:60151/load?file=file:///C:/Users/Tom/Documents/GitHub/coverageQc/data/cancer_panel_26.20140716.amplicons.bed&amp;locus=chr7:116339544-116340298&amp;genome=hg19&amp;merge=false">chr7:116339544-116340298</a></td><td>false</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="9">66</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="91">689</td>
+                                    vendor ID: METex1</span></td><td style="text-align: right;">62</td><td data-export-label="locus"><a href="http://127.0.0.1:60151/load?file=file:///home/tom/git/coverageQc/data/cancer_panel_26.20140717.amplicons.bed&amp;locus=chr7:116339544-116340298&amp;genome=hg19&amp;merge=false">chr7:116339544-116340298</a></td><td>false</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="9">66</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="91">689</td>
 </tr>
 <tr style="display: none;" class="tablesorter-childRow geneExon_child geneExon40_child">
 <td colspan="10" style="background: white;">
@@ -12327,7 +12327,7 @@
 <br>
                                     RefSeq accession no.: <a href="http://www.ncbi.nlm.nih.gov/nuccore/NM_000245">NM_000245</a>
 <br>
-                                    vendor ID: METex4</span></td><td style="text-align: right;">100</td><td data-export-label="locus"><a href="http://127.0.0.1:60151/load?file=file:///C:/Users/Tom/Documents/GitHub/coverageQc/data/cancer_panel_26.20140716.amplicons.bed&amp;locus=chr7:116380901-116381084&amp;genome=hg19&amp;merge=false">chr7:116380901-116381084</a></td><td>false</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="100">173</td>
+                                    vendor ID: METex4</span></td><td style="text-align: right;">100</td><td data-export-label="locus"><a href="http://127.0.0.1:60151/load?file=file:///home/tom/git/coverageQc/data/cancer_panel_26.20140717.amplicons.bed&amp;locus=chr7:116380901-116381084&amp;genome=hg19&amp;merge=false">chr7:116380901-116381084</a></td><td>false</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="100">173</td>
 </tr>
 <tr style="display: none;" class="tablesorter-childRow geneExon_child geneExon41_child">
 <td colspan="10" style="background: white;">
@@ -12616,7 +12616,7 @@
 <br>
                                     RefSeq accession no.: <a href="http://www.ncbi.nlm.nih.gov/nuccore/NM_000245">NM_000245</a>
 <br>
-                                    vendor ID: METex13</span></td><td style="text-align: right;">100</td><td data-export-label="locus"><a href="http://127.0.0.1:60151/load?file=file:///C:/Users/Tom/Documents/GitHub/coverageQc/data/cancer_panel_26.20140716.amplicons.bed&amp;locus=chr7:116411898-116412048&amp;genome=hg19&amp;merge=false">chr7:116411898-116412048</a></td><td>false</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="100">140</td>
+                                    vendor ID: METex13</span></td><td style="text-align: right;">100</td><td data-export-label="locus"><a href="http://127.0.0.1:60151/load?file=file:///home/tom/git/coverageQc/data/cancer_panel_26.20140717.amplicons.bed&amp;locus=chr7:116411898-116412048&amp;genome=hg19&amp;merge=false">chr7:116411898-116412048</a></td><td>false</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="100">140</td>
 </tr>
 <tr style="display: none;" class="tablesorter-childRow geneExon_child geneExon42_child">
 <td colspan="10" style="background: white;">
@@ -12871,7 +12871,7 @@
 <br>
                                     RefSeq accession no.: <a href="http://www.ncbi.nlm.nih.gov/nuccore/NM_000245">NM_000245</a>
 <br>
-                                    vendor ID: METex15</span></td><td style="text-align: right;">100</td><td data-export-label="locus"><a href="http://127.0.0.1:60151/load?file=file:///C:/Users/Tom/Documents/GitHub/coverageQc/data/cancer_panel_26.20140716.amplicons.bed&amp;locus=chr7:116417438-116417528&amp;genome=hg19&amp;merge=false">chr7:116417438-116417528</a></td><td>false</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="100">80</td>
+                                    vendor ID: METex15</span></td><td style="text-align: right;">100</td><td data-export-label="locus"><a href="http://127.0.0.1:60151/load?file=file:///home/tom/git/coverageQc/data/cancer_panel_26.20140717.amplicons.bed&amp;locus=chr7:116417438-116417528&amp;genome=hg19&amp;merge=false">chr7:116417438-116417528</a></td><td>false</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="100">80</td>
 </tr>
 <tr style="display: none;" class="tablesorter-childRow geneExon_child geneExon43_child">
 <td colspan="10" style="background: white;">
@@ -13065,7 +13065,7 @@
 <br>
                                     RefSeq accession no.: <a href="http://www.ncbi.nlm.nih.gov/nuccore/NM_000245">NM_000245</a>
 <br>
-                                    vendor ID: METex16</span></td><td style="text-align: right;">100</td><td data-export-label="locus"><a href="http://127.0.0.1:60151/load?file=file:///C:/Users/Tom/Documents/GitHub/coverageQc/data/cancer_panel_26.20140716.amplicons.bed&amp;locus=chr7:116418825-116419016&amp;genome=hg19&amp;merge=false">chr7:116418825-116419016</a></td><td>false</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="100">181</td>
+                                    vendor ID: METex16</span></td><td style="text-align: right;">100</td><td data-export-label="locus"><a href="http://127.0.0.1:60151/load?file=file:///home/tom/git/coverageQc/data/cancer_panel_26.20140717.amplicons.bed&amp;locus=chr7:116418825-116419016&amp;genome=hg19&amp;merge=false">chr7:116418825-116419016</a></td><td>false</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="100">181</td>
 </tr>
 <tr style="display: none;" class="tablesorter-childRow geneExon_child geneExon44_child">
 <td colspan="10" style="background: white;">
@@ -13361,7 +13361,7 @@
 <br>
                                     RefSeq accession no.: <a href="http://www.ncbi.nlm.nih.gov/nuccore/NM_000245">NM_000245</a>
 <br>
-                                    vendor ID: METex17</span></td><td style="text-align: right;">100</td><td data-export-label="locus"><a href="http://127.0.0.1:60151/load?file=file:///C:/Users/Tom/Documents/GitHub/coverageQc/data/cancer_panel_26.20140716.amplicons.bed&amp;locus=chr7:116422037-116422156&amp;genome=hg19&amp;merge=false">chr7:116422037-116422156</a></td><td>false</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="17">18</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="83">91</td>
+                                    vendor ID: METex17</span></td><td style="text-align: right;">100</td><td data-export-label="locus"><a href="http://127.0.0.1:60151/load?file=file:///home/tom/git/coverageQc/data/cancer_panel_26.20140717.amplicons.bed&amp;locus=chr7:116422037-116422156&amp;genome=hg19&amp;merge=false">chr7:116422037-116422156</a></td><td>false</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="17">18</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="83">91</td>
 </tr>
 <tr style="display: none;" class="tablesorter-childRow geneExon_child geneExon45_child">
 <td colspan="10" style="background: white;">
@@ -13585,7 +13585,7 @@
 <br>
                                     RefSeq accession no.: <a href="http://www.ncbi.nlm.nih.gov/nuccore/NM_000245">NM_000245</a>
 <br>
-                                    vendor ID: METex18</span></td><td style="text-align: right;">100</td><td data-export-label="locus"><a href="http://127.0.0.1:60151/load?file=file:///C:/Users/Tom/Documents/GitHub/coverageQc/data/cancer_panel_26.20140716.amplicons.bed&amp;locus=chr7:116423353-116423528&amp;genome=hg19&amp;merge=false">chr7:116423353-116423528</a></td><td>false</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="100">165</td>
+                                    vendor ID: METex18</span></td><td style="text-align: right;">100</td><td data-export-label="locus"><a href="http://127.0.0.1:60151/load?file=file:///home/tom/git/coverageQc/data/cancer_panel_26.20140717.amplicons.bed&amp;locus=chr7:116423353-116423528&amp;genome=hg19&amp;merge=false">chr7:116423353-116423528</a></td><td>false</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="100">165</td>
 </tr>
 <tr style="display: none;" class="tablesorter-childRow geneExon_child geneExon46_child">
 <td colspan="10" style="background: white;">
@@ -13865,7 +13865,7 @@
 <br>
                                     RefSeq accession no.: <a href="http://www.ncbi.nlm.nih.gov/nuccore/NM_000245">NM_000245</a>
 <br>
-                                    vendor ID: METex20</span></td><td style="text-align: right;">10</td><td data-export-label="locus"><a href="http://127.0.0.1:60151/load?file=file:///C:/Users/Tom/Documents/GitHub/coverageQc/data/cancer_panel_26.20140716.amplicons.bed&amp;locus=chr7:116435937-116436183&amp;genome=hg19&amp;merge=false">chr7:116435937-116436183</a></td><td>false</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="100">237</td>
+                                    vendor ID: METex20</span></td><td style="text-align: right;">10</td><td data-export-label="locus"><a href="http://127.0.0.1:60151/load?file=file:///home/tom/git/coverageQc/data/cancer_panel_26.20140717.amplicons.bed&amp;locus=chr7:116435937-116436183&amp;genome=hg19&amp;merge=false">chr7:116435937-116436183</a></td><td>false</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="100">237</td>
 </tr>
 <tr style="display: none;" class="tablesorter-childRow geneExon_child geneExon47_child">
 <td colspan="10" style="background: white;">
@@ -14217,7 +14217,7 @@
 <br>
                                     RefSeq accession no.: <a href="http://www.ncbi.nlm.nih.gov/nuccore/NM_000179">NM_000179</a>
 <br>
-                                    vendor ID: MSH6ex5</span></td><td style="text-align: right;">100</td><td data-export-label="locus"><a href="http://127.0.0.1:60151/load?file=file:///C:/Users/Tom/Documents/GitHub/coverageQc/data/cancer_panel_26.20140716.amplicons.bed&amp;locus=chr2:48030554-48030829&amp;genome=hg19&amp;merge=false">chr2:48030554-48030829</a></td><td>true</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="7">19</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="93">246</td>
+                                    vendor ID: MSH6ex5</span></td><td style="text-align: right;">100</td><td data-export-label="locus"><a href="http://127.0.0.1:60151/load?file=file:///home/tom/git/coverageQc/data/cancer_panel_26.20140717.amplicons.bed&amp;locus=chr2:48030554-48030829&amp;genome=hg19&amp;merge=false">chr2:48030554-48030829</a></td><td>true</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="7">19</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="93">246</td>
 </tr>
 <tr style="display: none;" class="tablesorter-childRow geneExon_child geneExon48_child">
 <td colspan="10" style="background: white;">
@@ -14598,7 +14598,7 @@
 <br>
                                     RefSeq accession no.: <a href="http://www.ncbi.nlm.nih.gov/nuccore/NM_002524">NM_002524</a>
 <br>
-                                    vendor ID: NRASex1</span></td><td style="text-align: right;">85</td><td data-export-label="locus"><a href="http://127.0.0.1:60151/load?file=file:///C:/Users/Tom/Documents/GitHub/coverageQc/data/cancer_panel_26.20140716.amplicons.bed&amp;locus=chr1:115258678-115258786&amp;genome=hg19&amp;merge=false">chr1:115258678-115258786</a></td><td>false</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="100">104</td>
+                                    vendor ID: NRASex1</span></td><td style="text-align: right;">85</td><td data-export-label="locus"><a href="http://127.0.0.1:60151/load?file=file:///home/tom/git/coverageQc/data/cancer_panel_26.20140717.amplicons.bed&amp;locus=chr1:115258678-115258786&amp;genome=hg19&amp;merge=false">chr1:115258678-115258786</a></td><td>false</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="100">104</td>
 </tr>
 <tr style="display: none;" class="tablesorter-childRow geneExon_child geneExon49_child">
 <td colspan="10" style="background: white;">
@@ -14810,7 +14810,7 @@
 <br>
                                     RefSeq accession no.: <a href="http://www.ncbi.nlm.nih.gov/nuccore/NM_002524">NM_002524</a>
 <br>
-                                    vendor ID: NRASex2</span></td><td style="text-align: right;">100</td><td data-export-label="locus"><a href="http://127.0.0.1:60151/load?file=file:///C:/Users/Tom/Documents/GitHub/coverageQc/data/cancer_panel_26.20140716.amplicons.bed&amp;locus=chr1:115256416-115256604&amp;genome=hg19&amp;merge=false">chr1:115256416-115256604</a></td><td>false</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="3">5</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="97">173</td>
+                                    vendor ID: NRASex2</span></td><td style="text-align: right;">100</td><td data-export-label="locus"><a href="http://127.0.0.1:60151/load?file=file:///home/tom/git/coverageQc/data/cancer_panel_26.20140717.amplicons.bed&amp;locus=chr1:115256416-115256604&amp;genome=hg19&amp;merge=false">chr1:115256416-115256604</a></td><td>false</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="3">5</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="97">173</td>
 </tr>
 <tr style="display: none;" class="tablesorter-childRow geneExon_child geneExon50_child">
 <td colspan="10" style="background: white;">
@@ -15039,11 +15039,11 @@
                                         // add the amplicon guides to chart (custom SVG)
                                         var amplicons = [
                                         {name:'NRASex2_coding', startPos:115256422, endPos:'115256599'}
-                                        ,{name:'NRASex2_c181_snapshot_Lung', startPos:115256530, endPos:'115256531'}
-                                        ,{name:'NRASex2_c182_snapshot_Lung', startPos:115256529, endPos:'115256530'}
                                         ,{name:'NRASex2_tile_2', startPos:115256336, endPos:'115256507'}
                                         ,{name:'NRASex2_tile_3', startPos:115256436, endPos:'115256604'}
                                         ,{name:'NRASex2_tile_4', startPos:115256540, endPos:'115256722'}
+                                        ,{name:'NRASex2_c181_snapshot_Lung', startPos:115256530, endPos:'115256531'}
+                                        ,{name:'NRASex2_c182_snapshot_Lung', startPos:115256529, endPos:'115256530'}
                                         
                                         ];
                                         var svg = $('#geneExon50_div svg');
@@ -15106,7 +15106,7 @@
 <br>
                                     RefSeq accession no.: <a href="http://www.ncbi.nlm.nih.gov/nuccore/NM_002524">NM_002524</a>
 <br>
-                                    vendor ID: NRASex3</span></td><td style="text-align: right;">100</td><td data-export-label="locus"><a href="http://127.0.0.1:60151/load?file=file:///C:/Users/Tom/Documents/GitHub/coverageQc/data/cancer_panel_26.20140716.amplicons.bed&amp;locus=chr1:115252185-115252354&amp;genome=hg19&amp;merge=false">chr1:115252185-115252354</a></td><td>false</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="13">20</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="87">139</td>
+                                    vendor ID: NRASex3</span></td><td style="text-align: right;">100</td><td data-export-label="locus"><a href="http://127.0.0.1:60151/load?file=file:///home/tom/git/coverageQc/data/cancer_panel_26.20140717.amplicons.bed&amp;locus=chr1:115252185-115252354&amp;genome=hg19&amp;merge=false">chr1:115252185-115252354</a></td><td>false</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="13">20</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="87">139</td>
 </tr>
 <tr style="display: none;" class="tablesorter-childRow geneExon_child geneExon51_child">
 <td colspan="10" style="background: white;">
@@ -15380,7 +15380,7 @@
 <br>
                                     RefSeq accession no.: <a href="http://www.ncbi.nlm.nih.gov/nuccore/NM_002524">NM_002524</a>
 <br>
-                                    vendor ID: NRASex4</span></td><td style="text-align: right;">100</td><td data-export-label="locus"><a href="http://127.0.0.1:60151/load?file=file:///C:/Users/Tom/Documents/GitHub/coverageQc/data/cancer_panel_26.20140716.amplicons.bed&amp;locus=chr1:115251147-115251280&amp;genome=hg19&amp;merge=false">chr1:115251147-115251280</a></td><td>false</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="45">54</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="55">65</td>
+                                    vendor ID: NRASex4</span></td><td style="text-align: right;">100</td><td data-export-label="locus"><a href="http://127.0.0.1:60151/load?file=file:///home/tom/git/coverageQc/data/cancer_panel_26.20140717.amplicons.bed&amp;locus=chr1:115251147-115251280&amp;genome=hg19&amp;merge=false">chr1:115251147-115251280</a></td><td>false</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="45">54</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="55">65</td>
 </tr>
 <tr style="display: none;" class="tablesorter-childRow geneExon_child geneExon52_child">
 <td colspan="10" style="background: white;">
@@ -15612,13 +15612,13 @@
 </tr>
 <!--Tom Addition of test doNotCall-->
 <tr style="font-weight: bold;" class="geneExon_parent">
-<td style="text-align: center; width: 20px;"><a href="#" id="geneExon53" class="geneExonExpandCollapseButton" style="color: blue; text-decoration: none; font-size: large; font-weight: bold;">+</a></td><td style="background-color: blue;" data-export-label="qc">pass</td><td data-export-label="exon">PDGFRAex12<br>
+<td style="text-align: center; width: 20px;"><a href="#" id="geneExon53" class="geneExonExpandCollapseButton" style="color: blue; text-decoration: none; font-size: large; font-weight: bold;">+</a></td><td style="background-color: green;" data-export-label="qc">pass</td><td data-export-label="exon">PDGFRAex12<br>
 <span style="font-size: x-small">
                                     Ensembl ID: <a href="http://www.ensembl.org/id/ENST00000257290.5">ENSE00003571737.1</a>
 <br>
                                     RefSeq accession no.: <a href="http://www.ncbi.nlm.nih.gov/nuccore/NM_006206">NM_006206</a>
 <br>
-                                    vendor ID: PDGFRAex11</span></td><td style="text-align: right;">100</td><td data-export-label="locus"><a href="http://127.0.0.1:60151/load?file=file:///C:/Users/Tom/Documents/GitHub/coverageQc/data/cancer_panel_26.20140716.amplicons.bed&amp;locus=chr4:55141003-55141145&amp;genome=hg19&amp;merge=false">chr4:55141003-55141145</a></td><td>true (annotated) Warning all do not call</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="100">132</td>
+                                    vendor ID: PDGFRAex11</span></td><td style="text-align: right;">100</td><td data-export-label="locus"><a href="http://127.0.0.1:60151/load?file=file:///home/tom/git/coverageQc/data/cancer_panel_26.20140717.amplicons.bed&amp;locus=chr4:55141003-55141145&amp;genome=hg19&amp;merge=false">chr4:55141003-55141145</a></td><td>true (annotated)</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="100">132</td>
 </tr>
 <tr style="display: none;" class="tablesorter-childRow geneExon_child geneExon53_child">
 <td colspan="10" style="background: white;">
@@ -15863,7 +15863,7 @@
 <th>export?</th><th>gene</th><th>coordinate</th><th>filters<sup>*</sup></th><th>consequence</th><th>genotype</th><th>AVF</th><th>cDNA</th><th>amino acid</th><th>dbSNP</th><th>MAF</th><th>COSMIC ID</th>
 <!--//TOM ADDITION
                                                         //adding this because sometimes the tsv file from variant studio is wrong and it is really in cosmic, creating a work around
-                                                    --><th>Cosmic_Dblchk</th><th>Call_Status</th>
+                                                    --><th>COSMIC (alternate)</th><th>call status</th>
 </tr>
 </thead>
 <tbody>
@@ -15871,7 +15871,7 @@
 <td style="text-align: center;"><input type="checkbox" class="exportCheckbox"></td><td data-export-label="gene">PDGFRA</td><td data-export-label="coordinate">chr4:55141055</td><td data-export-label="filters">PASS</td><td data-export-label="consequence">synonymous_variant</td><td data-export-label="genotype">hom</td><td data-export-label="avf" style="text-align: right;">99.68</td><td data-export-label="cDna">c.1701A&gt;G</td><td data-export-label="aminoAcid">c.1701A&gt;G(p.=)</td><td><a href="http://www.ncbi.nlm.nih.gov/projects/SNP/snp_ref.cgi?rs=1873778">rs1873778</a></td><td data-export-label="maf" style="text-align: right;">3.66</td><td><a href="http://cancer.sanger.ac.uk/cosmic/search?q=COSM1430082">COSM1430082</a></td>
 <!-- //TOM ADDITION
                                                             //I created a new string stating the gene mutation to be searched in Cosmic ie KIT c.2586G>C 
-                                                        --><td><a href="http://cancer.sanger.ac.uk/cosmic/search?q=PDGFRA c.1701A>G">PDGFRA c.1701A&gt;G</a></td><td>Don't call, always</td>
+                                                        --><td><a href="http://cancer.sanger.ac.uk/cosmic/search?q=PDGFRA c.1701A>G">PDGFRA c.1701A&gt;G</a></td><td width="5%">Not on lab list /Potentially Valid</td>
 </tr>
 </tbody>
 </table>
@@ -15901,7 +15901,7 @@
 <br>
                                     RefSeq accession no.: <a href="http://www.ncbi.nlm.nih.gov/nuccore/NM_006206">NM_006206</a>
 <br>
-                                    vendor ID: PDGFRAex13</span></td><td style="text-align: right;">100</td><td data-export-label="locus"><a href="http://127.0.0.1:60151/load?file=file:///C:/Users/Tom/Documents/GitHub/coverageQc/data/cancer_panel_26.20140716.amplicons.bed&amp;locus=chr4:55144058-55144178&amp;genome=hg19&amp;merge=false">chr4:55144058-55144178</a></td><td>false</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="100">110</td>
+                                    vendor ID: PDGFRAex13</span></td><td style="text-align: right;">100</td><td data-export-label="locus"><a href="http://127.0.0.1:60151/load?file=file:///home/tom/git/coverageQc/data/cancer_panel_26.20140717.amplicons.bed&amp;locus=chr4:55144058-55144178&amp;genome=hg19&amp;merge=false">chr4:55144058-55144178</a></td><td>false</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="100">110</td>
 </tr>
 <tr style="display: none;" class="tablesorter-childRow geneExon_child geneExon54_child">
 <td colspan="10" style="background: white;">
@@ -16125,7 +16125,7 @@
 <br>
                                     RefSeq accession no.: <a href="http://www.ncbi.nlm.nih.gov/nuccore/NM_006206">NM_006206</a>
 <br>
-                                    vendor ID: PDGFRAex17</span></td><td style="text-align: right;">100</td><td data-export-label="locus"><a href="http://127.0.0.1:60151/load?file=file:///C:/Users/Tom/Documents/GitHub/coverageQc/data/cancer_panel_26.20140716.amplicons.bed&amp;locus=chr4:55152003-55152135&amp;genome=hg19&amp;merge=false">chr4:55152003-55152135</a></td><td>true</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="54">66</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="46">56</td>
+                                    vendor ID: PDGFRAex17</span></td><td style="text-align: right;">100</td><td data-export-label="locus"><a href="http://127.0.0.1:60151/load?file=file:///home/tom/git/coverageQc/data/cancer_panel_26.20140717.amplicons.bed&amp;locus=chr4:55152003-55152135&amp;genome=hg19&amp;merge=false">chr4:55152003-55152135</a></td><td>true</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="54">66</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="46">56</td>
 </tr>
 <tr style="display: none;" class="tablesorter-childRow geneExon_child geneExon55_child">
 <td colspan="10" style="background: white;">
@@ -16362,7 +16362,7 @@
 <br>
                                     RefSeq accession no.: <a href="http://www.ncbi.nlm.nih.gov/nuccore/NM_006218">NM_006218</a>
 <br>
-                                    vendor ID: PIK3CAex1</span></td><td style="text-align: right;">84</td><td data-export-label="locus"><a href="http://127.0.0.1:60151/load?file=file:///C:/Users/Tom/Documents/GitHub/coverageQc/data/cancer_panel_26.20140716.amplicons.bed&amp;locus=chr3:178916610-178916970&amp;genome=hg19&amp;merge=false">chr3:178916610-178916970</a></td><td>false</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="100">351</td>
+                                    vendor ID: PIK3CAex1</span></td><td style="text-align: right;">84</td><td data-export-label="locus"><a href="http://127.0.0.1:60151/load?file=file:///home/tom/git/coverageQc/data/cancer_panel_26.20140717.amplicons.bed&amp;locus=chr3:178916610-178916970&amp;genome=hg19&amp;merge=false">chr3:178916610-178916970</a></td><td>false</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="100">351</td>
 </tr>
 <tr style="display: none;" class="tablesorter-childRow geneExon_child geneExon56_child">
 <td colspan="10" style="background: white;">
@@ -16829,7 +16829,7 @@
 <br>
                                     RefSeq accession no.: <a href="http://www.ncbi.nlm.nih.gov/nuccore/NM_006218">NM_006218</a>
 <br>
-                                    vendor ID: PIK3CAex2</span></td><td style="text-align: right;">100</td><td data-export-label="locus"><a href="http://127.0.0.1:60151/load?file=file:///C:/Users/Tom/Documents/GitHub/coverageQc/data/cancer_panel_26.20140716.amplicons.bed&amp;locus=chr3:178917473-178917692&amp;genome=hg19&amp;merge=false">chr3:178917473-178917692</a></td><td>false</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="100">209</td>
+                                    vendor ID: PIK3CAex2</span></td><td style="text-align: right;">100</td><td data-export-label="locus"><a href="http://127.0.0.1:60151/load?file=file:///home/tom/git/coverageQc/data/cancer_panel_26.20140717.amplicons.bed&amp;locus=chr3:178917473-178917692&amp;genome=hg19&amp;merge=false">chr3:178917473-178917692</a></td><td>false</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="100">209</td>
 </tr>
 <tr style="display: none;" class="tablesorter-childRow geneExon_child geneExon57_child">
 <td colspan="10" style="background: white;">
@@ -17154,7 +17154,7 @@
 <br>
                                     RefSeq accession no.: <a href="http://www.ncbi.nlm.nih.gov/nuccore/NM_006218">NM_006218</a>
 <br>
-                                    vendor ID: PIK3CAex7</span></td><td style="text-align: right;">100</td><td data-export-label="locus"><a href="http://127.0.0.1:60151/load?file=file:///C:/Users/Tom/Documents/GitHub/coverageQc/data/cancer_panel_26.20140716.amplicons.bed&amp;locus=chr3:178927969-178928131&amp;genome=hg19&amp;merge=false">chr3:178927969-178928131</a></td><td>false</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="100">152</td>
+                                    vendor ID: PIK3CAex7</span></td><td style="text-align: right;">100</td><td data-export-label="locus"><a href="http://127.0.0.1:60151/load?file=file:///home/tom/git/coverageQc/data/cancer_panel_26.20140717.amplicons.bed&amp;locus=chr3:178927969-178928131&amp;genome=hg19&amp;merge=false">chr3:178927969-178928131</a></td><td>false</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="100">152</td>
 </tr>
 <tr style="display: none;" class="tablesorter-childRow geneExon_child geneExon58_child">
 <td colspan="10" style="background: white;">
@@ -17421,7 +17421,7 @@
 <br>
                                     RefSeq accession no.: <a href="http://www.ncbi.nlm.nih.gov/nuccore/NM_006218">NM_006218</a>
 <br>
-                                    vendor ID: PIK3CAex9</span></td><td style="text-align: right;">70</td><td data-export-label="locus"><a href="http://127.0.0.1:60151/load?file=file:///C:/Users/Tom/Documents/GitHub/coverageQc/data/cancer_panel_26.20140716.amplicons.bed&amp;locus=chr3:178936040-178936127&amp;genome=hg19&amp;merge=false">chr3:178936040-178936127</a></td><td>false</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="100">83</td>
+                                    vendor ID: PIK3CAex9</span></td><td style="text-align: right;">70</td><td data-export-label="locus"><a href="http://127.0.0.1:60151/load?file=file:///home/tom/git/coverageQc/data/cancer_panel_26.20140717.amplicons.bed&amp;locus=chr3:178936040-178936127&amp;genome=hg19&amp;merge=false">chr3:178936040-178936127</a></td><td>false</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="100">83</td>
 </tr>
 <tr style="display: none;" class="tablesorter-childRow geneExon_child geneExon59_child">
 <td colspan="10" style="background: white;">
@@ -17549,9 +17549,9 @@
                                         // add the amplicon guides to chart (custom SVG)
                                         var amplicons = [
                                         {name:'PIK3CAex9_coding', startPos:178935999, endPos:'178936122'}
+                                        ,{name:'PIK3CAex9_tile_2', startPos:178936012, endPos:'178936201'}
                                         ,{name:'PIK3CAex9_c1633_snapshot_Lung', startPos:178936091, endPos:'178936092'}
                                         ,{name:'PIK3CAex9_c1624_snapshot_Lung', startPos:178936082, endPos:'178936083'}
-                                        ,{name:'PIK3CAex9_tile_2', startPos:178936012, endPos:'178936201'}
                                         
                                         ];
                                         var svg = $('#geneExon59_div svg');
@@ -17614,7 +17614,7 @@
 <br>
                                     RefSeq accession no.: <a href="http://www.ncbi.nlm.nih.gov/nuccore/NM_006218">NM_006218</a>
 <br>
-                                    vendor ID: PIK3CAex20</span></td><td style="text-align: right;">5</td><td data-export-label="locus"><a href="http://127.0.0.1:60151/load?file=file:///C:/Users/Tom/Documents/GitHub/coverageQc/data/cancer_panel_26.20140716.amplicons.bed&amp;locus=chr3:178951878-178952157&amp;genome=hg19&amp;merge=false">chr3:178951878-178952157</a></td><td>false</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="100">270</td>
+                                    vendor ID: PIK3CAex20</span></td><td style="text-align: right;">5</td><td data-export-label="locus"><a href="http://127.0.0.1:60151/load?file=file:///home/tom/git/coverageQc/data/cancer_panel_26.20140717.amplicons.bed&amp;locus=chr3:178951878-178952157&amp;genome=hg19&amp;merge=false">chr3:178951878-178952157</a></td><td>false</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="100">270</td>
 </tr>
 <tr style="display: none;" class="tablesorter-childRow geneExon_child geneExon60_child">
 <td colspan="10" style="background: white;">
@@ -17934,11 +17934,11 @@
                                         // add the amplicon guides to chart (custom SVG)
                                         var amplicons = [
                                         {name:'PIK3CAex20_coding', startPos:178951883, endPos:'178952152'}
-                                        ,{name:'PIK3CAex20_c3140_snapshot_Lung', startPos:178952085, endPos:'178952086'}
                                         ,{name:'PIK3CAex20_tile_1', startPos:178951770, endPos:'178951934'}
                                         ,{name:'PIK3CAex20_tile_2', startPos:178951854, endPos:'178952017'}
                                         ,{name:'PIK3CAex20_tile_3', startPos:178951940, endPos:'178952112'}
                                         ,{name:'PIK3CAex20_tile_4', startPos:178952058, endPos:'178952243'}
+                                        ,{name:'PIK3CAex20_c3140_snapshot_Lung', startPos:178952085, endPos:'178952086'}
                                         
                                         ];
                                         var svg = $('#geneExon60_div svg');
@@ -18001,7 +18001,7 @@
 <br>
                                     RefSeq accession no.: <a href="http://www.ncbi.nlm.nih.gov/nuccore/NM_000314">NM_000314</a>
 <br>
-                                    vendor ID: PTENex1</span></td><td style="text-align: right;">6</td><td data-export-label="locus"><a href="http://127.0.0.1:60151/load?file=file:///C:/Users/Tom/Documents/GitHub/coverageQc/data/cancer_panel_26.20140716.amplicons.bed&amp;locus=chr10:89624223-89624310&amp;genome=hg19&amp;merge=false">chr10:89624223-89624310</a></td><td>false</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="100">78</td>
+                                    vendor ID: PTENex1</span></td><td style="text-align: right;">6</td><td data-export-label="locus"><a href="http://127.0.0.1:60151/load?file=file:///home/tom/git/coverageQc/data/cancer_panel_26.20140717.amplicons.bed&amp;locus=chr10:89624223-89624310&amp;genome=hg19&amp;merge=false">chr10:89624223-89624310</a></td><td>false</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="100">78</td>
 </tr>
 <tr style="display: none;" class="tablesorter-childRow geneExon_child geneExon61_child">
 <td colspan="10" style="background: white;">
@@ -18192,7 +18192,7 @@
 <br>
                                     RefSeq accession no.: <a href="http://www.ncbi.nlm.nih.gov/nuccore/NM_000314">NM_000314</a>
 <br>
-                                    vendor ID: PTENex2</span></td><td style="text-align: right;">100</td><td data-export-label="locus"><a href="http://127.0.0.1:60151/load?file=file:///C:/Users/Tom/Documents/GitHub/coverageQc/data/cancer_panel_26.20140716.amplicons.bed&amp;locus=chr10:89653777-89653871&amp;genome=hg19&amp;merge=false">chr10:89653777-89653871</a></td><td>false</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="38">32</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="62">52</td>
+                                    vendor ID: PTENex2</span></td><td style="text-align: right;">100</td><td data-export-label="locus"><a href="http://127.0.0.1:60151/load?file=file:///home/tom/git/coverageQc/data/cancer_panel_26.20140717.amplicons.bed&amp;locus=chr10:89653777-89653871&amp;genome=hg19&amp;merge=false">chr10:89653777-89653871</a></td><td>false</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="38">32</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="62">52</td>
 </tr>
 <tr style="display: none;" class="tablesorter-childRow geneExon_child geneExon62_child">
 <td colspan="10" style="background: white;">
@@ -18391,7 +18391,7 @@
 <br>
                                     RefSeq accession no.: <a href="http://www.ncbi.nlm.nih.gov/nuccore/NM_000314">NM_000314</a>
 <br>
-                                    vendor ID: PTENex3</span></td><td style="text-align: right;">100</td><td data-export-label="locus"><a href="http://127.0.0.1:60151/load?file=file:///C:/Users/Tom/Documents/GitHub/coverageQc/data/cancer_panel_26.20140716.amplicons.bed&amp;locus=chr10:89685265-89685319&amp;genome=hg19&amp;merge=false">chr10:89685265-89685319</a></td><td>false</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="100">44</td>
+                                    vendor ID: PTENex3</span></td><td style="text-align: right;">100</td><td data-export-label="locus"><a href="http://127.0.0.1:60151/load?file=file:///home/tom/git/coverageQc/data/cancer_panel_26.20140717.amplicons.bed&amp;locus=chr10:89685265-89685319&amp;genome=hg19&amp;merge=false">chr10:89685265-89685319</a></td><td>false</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="100">44</td>
 </tr>
 <tr style="display: none;" class="tablesorter-childRow geneExon_child geneExon63_child">
 <td colspan="10" style="background: white;">
@@ -18549,7 +18549,7 @@
 <br>
                                     RefSeq accession no.: <a href="http://www.ncbi.nlm.nih.gov/nuccore/NM_000314">NM_000314</a>
 <br>
-                                    vendor ID: PTENex4</span></td><td style="text-align: right;">100</td><td data-export-label="locus"><a href="http://127.0.0.1:60151/load?file=file:///C:/Users/Tom/Documents/GitHub/coverageQc/data/cancer_panel_26.20140716.amplicons.bed&amp;locus=chr10:89690798-89690851&amp;genome=hg19&amp;merge=false">chr10:89690798-89690851</a></td><td>false</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="100">43</td>
+                                    vendor ID: PTENex4</span></td><td style="text-align: right;">100</td><td data-export-label="locus"><a href="http://127.0.0.1:60151/load?file=file:///home/tom/git/coverageQc/data/cancer_panel_26.20140717.amplicons.bed&amp;locus=chr10:89690798-89690851&amp;genome=hg19&amp;merge=false">chr10:89690798-89690851</a></td><td>false</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="100">43</td>
 </tr>
 <tr style="display: none;" class="tablesorter-childRow geneExon_child geneExon64_child">
 <td colspan="10" style="background: white;">
@@ -18706,7 +18706,7 @@
 <br>
                                     RefSeq accession no.: <a href="http://www.ncbi.nlm.nih.gov/nuccore/NM_000314">NM_000314</a>
 <br>
-                                    vendor ID: PTENex5</span></td><td style="text-align: right;">100</td><td data-export-label="locus"><a href="http://127.0.0.1:60151/load?file=file:///C:/Users/Tom/Documents/GitHub/coverageQc/data/cancer_panel_26.20140716.amplicons.bed&amp;locus=chr10:89692765-89693013&amp;genome=hg19&amp;merge=false">chr10:89692765-89693013</a></td><td>false</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="100">238</td>
+                                    vendor ID: PTENex5</span></td><td style="text-align: right;">100</td><td data-export-label="locus"><a href="http://127.0.0.1:60151/load?file=file:///home/tom/git/coverageQc/data/cancer_panel_26.20140717.amplicons.bed&amp;locus=chr10:89692765-89693013&amp;genome=hg19&amp;merge=false">chr10:89692765-89693013</a></td><td>false</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="100">238</td>
 </tr>
 <tr style="display: none;" class="tablesorter-childRow geneExon_child geneExon65_child">
 <td colspan="10" style="background: white;">
@@ -19060,7 +19060,7 @@
 <br>
                                     RefSeq accession no.: <a href="http://www.ncbi.nlm.nih.gov/nuccore/NM_000314">NM_000314</a>
 <br>
-                                    vendor ID: PTENex6</span></td><td style="text-align: right;">100</td><td data-export-label="locus"><a href="http://127.0.0.1:60151/load?file=file:///C:/Users/Tom/Documents/GitHub/coverageQc/data/cancer_panel_26.20140716.amplicons.bed&amp;locus=chr10:89711870-89712021&amp;genome=hg19&amp;merge=false">chr10:89711870-89712021</a></td><td>false</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="100">141</td>
+                                    vendor ID: PTENex6</span></td><td style="text-align: right;">100</td><td data-export-label="locus"><a href="http://127.0.0.1:60151/load?file=file:///home/tom/git/coverageQc/data/cancer_panel_26.20140717.amplicons.bed&amp;locus=chr10:89711870-89712021&amp;genome=hg19&amp;merge=false">chr10:89711870-89712021</a></td><td>false</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="100">141</td>
 </tr>
 <tr style="display: none;" class="tablesorter-childRow geneExon_child geneExon66_child">
 <td colspan="10" style="background: white;">
@@ -19316,7 +19316,7 @@
 <br>
                                     RefSeq accession no.: <a href="http://www.ncbi.nlm.nih.gov/nuccore/NM_000314">NM_000314</a>
 <br>
-                                    vendor ID: PTENex7</span></td><td style="text-align: right;">100</td><td data-export-label="locus"><a href="http://127.0.0.1:60151/load?file=file:///C:/Users/Tom/Documents/GitHub/coverageQc/data/cancer_panel_26.20140716.amplicons.bed&amp;locus=chr10:89717605-89717781&amp;genome=hg19&amp;merge=false">chr10:89717605-89717781</a></td><td>false</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="100">166</td>
+                                    vendor ID: PTENex7</span></td><td style="text-align: right;">100</td><td data-export-label="locus"><a href="http://127.0.0.1:60151/load?file=file:///home/tom/git/coverageQc/data/cancer_panel_26.20140717.amplicons.bed&amp;locus=chr10:89717605-89717781&amp;genome=hg19&amp;merge=false">chr10:89717605-89717781</a></td><td>false</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="100">166</td>
 </tr>
 <tr style="display: none;" class="tablesorter-childRow geneExon_child geneExon67_child">
 <td colspan="10" style="background: white;">
@@ -19533,10 +19533,10 @@
                                         // add the amplicon guides to chart (custom SVG)
                                         var amplicons = [
                                         {name:'PTENex7_coding', startPos:89717611, endPos:'89717776'}
-                                        ,{name:'PTENex7_c697_snapshot_Lung', startPos:89717672, endPos:'89717673'}
                                         ,{name:'PTENex7_tile_1', startPos:89717484, endPos:'89717647'}
                                         ,{name:'PTENex7_tile_2', startPos:89717584, endPos:'89717750'}
                                         ,{name:'PTENex7_tile_3', startPos:89717698, endPos:'89717891'}
+                                        ,{name:'PTENex7_c697_snapshot_Lung', startPos:89717672, endPos:'89717673'}
                                         
                                         ];
                                         var svg = $('#geneExon67_div svg');
@@ -19599,7 +19599,7 @@
 <br>
                                     RefSeq accession no.: <a href="http://www.ncbi.nlm.nih.gov/nuccore/NM_000314">NM_000314</a>
 <br>
-                                    vendor ID: PTENex9</span></td><td style="text-align: right;">2</td><td data-export-label="locus"><a href="http://127.0.0.1:60151/load?file=file:///C:/Users/Tom/Documents/GitHub/coverageQc/data/cancer_panel_26.20140716.amplicons.bed&amp;locus=chr10:89725042-89725152&amp;genome=hg19&amp;merge=false">chr10:89725042-89725152</a></td><td>false</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="100">108</td>
+                                    vendor ID: PTENex9</span></td><td style="text-align: right;">2</td><td data-export-label="locus"><a href="http://127.0.0.1:60151/load?file=file:///home/tom/git/coverageQc/data/cancer_panel_26.20140717.amplicons.bed&amp;locus=chr10:89725042-89725152&amp;genome=hg19&amp;merge=false">chr10:89725042-89725152</a></td><td>false</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="100">108</td>
 </tr>
 <tr style="display: none;" class="tablesorter-childRow geneExon_child geneExon68_child">
 <td colspan="10" style="background: white;">
@@ -19813,7 +19813,7 @@
 <br>
                                     RefSeq accession no.: <a href="http://www.ncbi.nlm.nih.gov/nuccore/NM_005359">NM_005359</a>
 <br>
-                                    vendor ID: SMAD4ex8</span></td><td style="text-align: right;">100</td><td data-export-label="locus"><a href="http://127.0.0.1:60151/load?file=file:///C:/Users/Tom/Documents/GitHub/coverageQc/data/cancer_panel_26.20140716.amplicons.bed&amp;locus=chr18:48591788-48591981&amp;genome=hg19&amp;merge=false">chr18:48591788-48591981</a></td><td>false</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="100">183</td>
+                                    vendor ID: SMAD4ex8</span></td><td style="text-align: right;">100</td><td data-export-label="locus"><a href="http://127.0.0.1:60151/load?file=file:///home/tom/git/coverageQc/data/cancer_panel_26.20140717.amplicons.bed&amp;locus=chr18:48591788-48591981&amp;genome=hg19&amp;merge=false">chr18:48591788-48591981</a></td><td>false</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="100">183</td>
 </tr>
 <tr style="display: none;" class="tablesorter-childRow geneExon_child geneExon69_child">
 <td colspan="10" style="background: white;">
@@ -20112,7 +20112,7 @@
 <br>
                                     RefSeq accession no.: <a href="http://www.ncbi.nlm.nih.gov/nuccore/NM_005359">NM_005359</a>
 <br>
-                                    vendor ID: SMAD4ex11</span></td><td style="text-align: right;">3</td><td data-export-label="locus"><a href="http://127.0.0.1:60151/load?file=file:///C:/Users/Tom/Documents/GitHub/coverageQc/data/cancer_panel_26.20140716.amplicons.bed&amp;locus=chr18:48604622-48604842&amp;genome=hg19&amp;merge=false">chr18:48604622-48604842</a></td><td>false</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="100">211</td>
+                                    vendor ID: SMAD4ex11</span></td><td style="text-align: right;">3</td><td data-export-label="locus"><a href="http://127.0.0.1:60151/load?file=file:///home/tom/git/coverageQc/data/cancer_panel_26.20140717.amplicons.bed&amp;locus=chr18:48604622-48604842&amp;genome=hg19&amp;merge=false">chr18:48604622-48604842</a></td><td>false</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="100">211</td>
 </tr>
 <tr style="display: none;" class="tablesorter-childRow geneExon_child geneExon70_child">
 <td colspan="10" style="background: white;">
@@ -20437,7 +20437,7 @@
 <br>
                                     RefSeq accession no.: <a href="http://www.ncbi.nlm.nih.gov/nuccore/NM_005417">NM_005417</a>
 <br>
-                                    vendor ID: SRCex14</span></td><td style="text-align: right;">9</td><td data-export-label="locus"><a href="http://127.0.0.1:60151/load?file=file:///C:/Users/Tom/Documents/GitHub/coverageQc/data/cancer_panel_26.20140716.amplicons.bed&amp;locus=chr20:36031585-36031787&amp;genome=hg19&amp;merge=false">chr20:36031585-36031787</a></td><td>false</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="76">151</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="24">47</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td>
+                                    vendor ID: SRCex14</span></td><td style="text-align: right;">9</td><td data-export-label="locus"><a href="http://127.0.0.1:60151/load?file=file:///home/tom/git/coverageQc/data/cancer_panel_26.20140717.amplicons.bed&amp;locus=chr20:36031585-36031787&amp;genome=hg19&amp;merge=false">chr20:36031585-36031787</a></td><td>false</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="76">151</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="24">47</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td>
 </tr>
 <tr style="display: none;" class="tablesorter-childRow geneExon_child geneExon71_child">
 <td colspan="10" style="background: white;">
@@ -20744,7 +20744,7 @@
 <br>
                                     RefSeq accession no.: <a href="http://www.ncbi.nlm.nih.gov/nuccore/NM_000455">NM_000455</a>
 <br>
-                                    vendor ID: STK11ex1</span></td><td style="text-align: right;">16</td><td data-export-label="locus"><a href="http://127.0.0.1:60151/load?file=file:///C:/Users/Tom/Documents/GitHub/coverageQc/data/cancer_panel_26.20140716.amplicons.bed&amp;locus=chr19:1206909-1207149&amp;genome=hg19&amp;merge=false">chr19:1206909-1207149</a></td><td>true</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="24">56</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="69">163</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="7">17</td>
+                                    vendor ID: STK11ex1</span></td><td style="text-align: right;">16</td><td data-export-label="locus"><a href="http://127.0.0.1:60151/load?file=file:///home/tom/git/coverageQc/data/cancer_panel_26.20140717.amplicons.bed&amp;locus=chr19:1206909-1207149&amp;genome=hg19&amp;merge=false">chr19:1206909-1207149</a></td><td>true</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="24">56</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="69">163</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="7">17</td>
 </tr>
 <tr style="display: none;" class="tablesorter-childRow geneExon_child geneExon72_child">
 <td colspan="10" style="background: white;">
@@ -21090,7 +21090,7 @@
 <br>
                                     RefSeq accession no.: <a href="http://www.ncbi.nlm.nih.gov/nuccore/NM_000455">NM_000455</a>
 <br>
-                                    vendor ID: STK11ex4</span></td><td style="text-align: right;">25</td><td data-export-label="locus"><a href="http://127.0.0.1:60151/load?file=file:///C:/Users/Tom/Documents/GitHub/coverageQc/data/cancer_panel_26.20140716.amplicons.bed&amp;locus=chr19:1220368-1220400&amp;genome=hg19&amp;merge=false">chr19:1220368-1220400</a></td><td>false</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="100">28</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td>
+                                    vendor ID: STK11ex4</span></td><td style="text-align: right;">25</td><td data-export-label="locus"><a href="http://127.0.0.1:60151/load?file=file:///home/tom/git/coverageQc/data/cancer_panel_26.20140717.amplicons.bed&amp;locus=chr19:1220368-1220400&amp;genome=hg19&amp;merge=false">chr19:1220368-1220400</a></td><td>false</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="100">28</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td>
 </tr>
 <tr style="display: none;" class="tablesorter-childRow geneExon_child geneExon73_child">
 <td colspan="10" style="background: white;">
@@ -21226,7 +21226,7 @@
 <br>
                                     RefSeq accession no.: <a href="http://www.ncbi.nlm.nih.gov/nuccore/NM_000455">NM_000455</a>
 <br>
-                                    vendor ID: STK11ex6</span></td><td style="text-align: right;">100</td><td data-export-label="locus"><a href="http://127.0.0.1:60151/load?file=file:///C:/Users/Tom/Documents/GitHub/coverageQc/data/cancer_panel_26.20140716.amplicons.bed&amp;locus=chr19:1221207-1221344&amp;genome=hg19&amp;merge=false">chr19:1221207-1221344</a></td><td>false</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="7">9</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="93">118</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td>
+                                    vendor ID: STK11ex6</span></td><td style="text-align: right;">100</td><td data-export-label="locus"><a href="http://127.0.0.1:60151/load?file=file:///home/tom/git/coverageQc/data/cancer_panel_26.20140717.amplicons.bed&amp;locus=chr19:1221207-1221344&amp;genome=hg19&amp;merge=false">chr19:1221207-1221344</a></td><td>false</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="7">9</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="93">118</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td>
 </tr>
 <tr style="display: none;" class="tablesorter-childRow geneExon_child geneExon74_child">
 <td colspan="10" style="background: white;">
@@ -21467,7 +21467,7 @@
 <br>
                                     RefSeq accession no.: <a href="http://www.ncbi.nlm.nih.gov/nuccore/NM_000455">NM_000455</a>
 <br>
-                                    vendor ID: STK11ex8</span></td><td style="text-align: right;">100</td><td data-export-label="locus"><a href="http://127.0.0.1:60151/load?file=file:///C:/Users/Tom/Documents/GitHub/coverageQc/data/cancer_panel_26.20140716.amplicons.bed&amp;locus=chr19:1222979-1223176&amp;genome=hg19&amp;merge=false">chr19:1222979-1223176</a></td><td>false</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="41">76</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="59">111</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td>
+                                    vendor ID: STK11ex8</span></td><td style="text-align: right;">100</td><td data-export-label="locus"><a href="http://127.0.0.1:60151/load?file=file:///home/tom/git/coverageQc/data/cancer_panel_26.20140717.amplicons.bed&amp;locus=chr19:1222979-1223176&amp;genome=hg19&amp;merge=false">chr19:1222979-1223176</a></td><td>false</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="41">76</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="59">111</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td>
 </tr>
 <tr style="display: none;" class="tablesorter-childRow geneExon_child geneExon75_child">
 <td colspan="10" style="background: white;">
@@ -21769,7 +21769,7 @@
 <br>
                                     RefSeq accession no.: <a href="http://www.ncbi.nlm.nih.gov/nuccore/NM_000546">NM_000546</a>
 <br>
-                                    vendor ID: TP53ex2</span></td><td style="text-align: right;">81</td><td data-export-label="locus"><a href="http://127.0.0.1:60151/load?file=file:///C:/Users/Tom/Documents/GitHub/coverageQc/data/cancer_panel_26.20140716.amplicons.bed&amp;locus=chr17:7579835-7579917&amp;genome=hg19&amp;merge=false">chr17:7579835-7579917</a></td><td>false</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="100">73</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td>
+                                    vendor ID: TP53ex2</span></td><td style="text-align: right;">81</td><td data-export-label="locus"><a href="http://127.0.0.1:60151/load?file=file:///home/tom/git/coverageQc/data/cancer_panel_26.20140717.amplicons.bed&amp;locus=chr17:7579835-7579917&amp;genome=hg19&amp;merge=false">chr17:7579835-7579917</a></td><td>false</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="100">73</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td>
 </tr>
 <tr style="display: none;" class="tablesorter-childRow geneExon_child geneExon76_child">
 <td colspan="10" style="background: white;">
@@ -21957,7 +21957,7 @@
 <br>
                                     RefSeq accession no.: <a href="http://www.ncbi.nlm.nih.gov/nuccore/NM_000546">NM_000546</a>
 <br>
-                                    vendor ID: TP53ex3</span></td><td style="text-align: right;">100</td><td data-export-label="locus"><a href="http://127.0.0.1:60151/load?file=file:///C:/Users/Tom/Documents/GitHub/coverageQc/data/cancer_panel_26.20140716.amplicons.bed&amp;locus=chr17:7579695-7579726&amp;genome=hg19&amp;merge=false">chr17:7579695-7579726</a></td><td>false</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="100">21</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td>
+                                    vendor ID: TP53ex3</span></td><td style="text-align: right;">100</td><td data-export-label="locus"><a href="http://127.0.0.1:60151/load?file=file:///home/tom/git/coverageQc/data/cancer_panel_26.20140717.amplicons.bed&amp;locus=chr17:7579695-7579726&amp;genome=hg19&amp;merge=false">chr17:7579695-7579726</a></td><td>false</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="100">21</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td>
 </tr>
 <tr style="display: none;" class="tablesorter-childRow geneExon_child geneExon77_child">
 <td colspan="10" style="background: white;">
@@ -22086,13 +22086,13 @@
 </tr>
 <!--Tom Addition of test doNotCall-->
 <tr style="font-weight: bold;" class="geneExon_parent">
-<td style="text-align: center; width: 20px;"><a href="#" id="geneExon78" class="geneExonExpandCollapseButton" style="color: blue; text-decoration: none; font-size: large; font-weight: bold;">+</a></td><td style="background-color: blue;" data-export-label="qc">fail</td><td data-export-label="exon">TP53ex4<br>
+<td style="text-align: center; width: 20px;"><a href="#" id="geneExon78" class="geneExonExpandCollapseButton" style="color: blue; text-decoration: none; font-size: large; font-weight: bold;">+</a></td><td style="background-color: red;" data-export-label="qc">fail</td><td data-export-label="exon">TP53ex4<br>
 <span style="font-size: x-small">
                                     Ensembl ID: <a href="http://www.ensembl.org/id/ENST00000269305.4">ENSE00003625790.1</a>
 <br>
                                     RefSeq accession no.: <a href="http://www.ncbi.nlm.nih.gov/nuccore/NM_000546">NM_000546</a>
 <br>
-                                    vendor ID: TP53ex4</span></td><td style="text-align: right;">100</td><td data-export-label="locus"><a href="http://127.0.0.1:60151/load?file=file:///C:/Users/Tom/Documents/GitHub/coverageQc/data/cancer_panel_26.20140716.amplicons.bed&amp;locus=chr17:7579307-7579595&amp;genome=hg19&amp;merge=false">chr17:7579307-7579595</a></td><td>true (annotated) Warning all do not call</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="1">3</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="8">21</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="62">172</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="29">82</td>
+                                    vendor ID: TP53ex4</span></td><td style="text-align: right;">100</td><td data-export-label="locus"><a href="http://127.0.0.1:60151/load?file=file:///home/tom/git/coverageQc/data/cancer_panel_26.20140717.amplicons.bed&amp;locus=chr17:7579307-7579595&amp;genome=hg19&amp;merge=false">chr17:7579307-7579595</a></td><td>true (annotated)</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="1">3</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="8">21</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="62">172</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="29">82</td>
 </tr>
 <tr style="display: none;" class="tablesorter-childRow geneExon_child geneExon78_child">
 <td colspan="10" style="background: white;">
@@ -22484,7 +22484,7 @@
 <th>export?</th><th>gene</th><th>coordinate</th><th>filters<sup>*</sup></th><th>consequence</th><th>genotype</th><th>AVF</th><th>cDNA</th><th>amino acid</th><th>dbSNP</th><th>MAF</th><th>COSMIC ID</th>
 <!--//TOM ADDITION
                                                         //adding this because sometimes the tsv file from variant studio is wrong and it is really in cosmic, creating a work around
-                                                    --><th>Cosmic_Dblchk</th><th>Call_Status</th>
+                                                    --><th>COSMIC (alternate)</th><th>call status</th>
 </tr>
 </thead>
 <tbody>
@@ -22492,7 +22492,7 @@
 <td style="text-align: center;"><input type="checkbox" class="exportCheckbox"></td><td data-export-label="gene">TP53</td><td data-export-label="coordinate">chr17:7579472</td><td data-export-label="filters">PASS</td><td data-export-label="consequence">missense_variant</td><td data-export-label="genotype">hom</td><td data-export-label="avf" style="text-align: right;">99.41</td><td data-export-label="cDna">c.215C&gt;G</td><td data-export-label="aminoAcid">p.Pro72Arg</td><td><a href="http://www.ncbi.nlm.nih.gov/projects/SNP/snp_ref.cgi?rs=1042522">rs1042522</a></td><td data-export-label="maf" style="text-align: right;">39.79</td><td><a href="http://cancer.sanger.ac.uk/cosmic/search?q=COSM45985">COSM45985</a></td>
 <!-- //TOM ADDITION
                                                             //I created a new string stating the gene mutation to be searched in Cosmic ie KIT c.2586G>C 
-                                                        --><td><a href="http://cancer.sanger.ac.uk/cosmic/search?q=TP53 c.215C>G">TP53 c.215C&gt;G</a></td><td>Don't call, always</td>
+                                                        --><td><a href="http://cancer.sanger.ac.uk/cosmic/search?q=TP53 c.215C>G">TP53 c.215C&gt;G</a></td><td width="5%">Not on lab list /Potentially Valid</td>
 </tr>
 </tbody>
 </table>
@@ -22522,7 +22522,7 @@
 <br>
                                     RefSeq accession no.: <a href="http://www.ncbi.nlm.nih.gov/nuccore/NM_000546">NM_000546</a>
 <br>
-                                    vendor ID: TP53ex5</span></td><td style="text-align: right;">100</td><td data-export-label="locus"><a href="http://127.0.0.1:60151/load?file=file:///C:/Users/Tom/Documents/GitHub/coverageQc/data/cancer_panel_26.20140716.amplicons.bed&amp;locus=chr17:7578366-7578559&amp;genome=hg19&amp;merge=false">chr17:7578366-7578559</a></td><td>false</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="68">124</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="20">36</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="13">23</td>
+                                    vendor ID: TP53ex5</span></td><td style="text-align: right;">100</td><td data-export-label="locus"><a href="http://127.0.0.1:60151/load?file=file:///home/tom/git/coverageQc/data/cancer_panel_26.20140717.amplicons.bed&amp;locus=chr17:7578366-7578559&amp;genome=hg19&amp;merge=false">chr17:7578366-7578559</a></td><td>false</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="68">124</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="20">36</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="13">23</td>
 </tr>
 <tr style="display: none;" class="tablesorter-childRow geneExon_child geneExon79_child">
 <td colspan="10" style="background: white;">
@@ -22821,7 +22821,7 @@
 <br>
                                     RefSeq accession no.: <a href="http://www.ncbi.nlm.nih.gov/nuccore/NM_000546">NM_000546</a>
 <br>
-                                    vendor ID: TP53ex6</span></td><td style="text-align: right;">100</td><td data-export-label="locus"><a href="http://127.0.0.1:60151/load?file=file:///C:/Users/Tom/Documents/GitHub/coverageQc/data/cancer_panel_26.20140716.amplicons.bed&amp;locus=chr17:7578172-7578294&amp;genome=hg19&amp;merge=false">chr17:7578172-7578294</a></td><td>false</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="17">19</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="29">33</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="54">60</td>
+                                    vendor ID: TP53ex6</span></td><td style="text-align: right;">100</td><td data-export-label="locus"><a href="http://127.0.0.1:60151/load?file=file:///home/tom/git/coverageQc/data/cancer_panel_26.20140717.amplicons.bed&amp;locus=chr17:7578172-7578294&amp;genome=hg19&amp;merge=false">chr17:7578172-7578294</a></td><td>false</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="17">19</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="29">33</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="54">60</td>
 </tr>
 <tr style="display: none;" class="tablesorter-childRow geneExon_child geneExon80_child">
 <td colspan="10" style="background: white;">
@@ -23048,7 +23048,7 @@
 <br>
                                     RefSeq accession no.: <a href="http://www.ncbi.nlm.nih.gov/nuccore/NM_000546">NM_000546</a>
 <br>
-                                    vendor ID: TP53ex7</span></td><td style="text-align: right;">100</td><td data-export-label="locus"><a href="http://127.0.0.1:60151/load?file=file:///C:/Users/Tom/Documents/GitHub/coverageQc/data/cancer_panel_26.20140716.amplicons.bed&amp;locus=chr17:7577494-7577613&amp;genome=hg19&amp;merge=false">chr17:7577494-7577613</a></td><td>false</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="1">1</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="99">108</td>
+                                    vendor ID: TP53ex7</span></td><td style="text-align: right;">100</td><td data-export-label="locus"><a href="http://127.0.0.1:60151/load?file=file:///home/tom/git/coverageQc/data/cancer_panel_26.20140717.amplicons.bed&amp;locus=chr17:7577494-7577613&amp;genome=hg19&amp;merge=false">chr17:7577494-7577613</a></td><td>false</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="1">1</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="99">108</td>
 </tr>
 <tr style="display: none;" class="tablesorter-childRow geneExon_child geneExon81_child">
 <td colspan="10" style="background: white;">
@@ -23271,7 +23271,7 @@
 <br>
                                     RefSeq accession no.: <a href="http://www.ncbi.nlm.nih.gov/nuccore/NM_000546">NM_000546</a>
 <br>
-                                    vendor ID: TP53ex8</span></td><td style="text-align: right;">100</td><td data-export-label="locus"><a href="http://127.0.0.1:60151/load?file=file:///C:/Users/Tom/Documents/GitHub/coverageQc/data/cancer_panel_26.20140716.amplicons.bed&amp;locus=chr17:7577014-7577160&amp;genome=hg19&amp;merge=false">chr17:7577014-7577160</a></td><td>false</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="43">59</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="57">77</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td>
+                                    vendor ID: TP53ex8</span></td><td style="text-align: right;">100</td><td data-export-label="locus"><a href="http://127.0.0.1:60151/load?file=file:///home/tom/git/coverageQc/data/cancer_panel_26.20140717.amplicons.bed&amp;locus=chr17:7577014-7577160&amp;genome=hg19&amp;merge=false">chr17:7577014-7577160</a></td><td>false</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="43">59</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="57">77</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td>
 </tr>
 <tr style="display: none;" class="tablesorter-childRow geneExon_child geneExon82_child">
 <td colspan="10" style="background: white;">
@@ -23522,7 +23522,7 @@
 <br>
                                     RefSeq accession no.: <a href="http://www.ncbi.nlm.nih.gov/nuccore/NM_000546">NM_000546</a>
 <br>
-                                    vendor ID: TP53ex9</span></td><td style="text-align: right;">100</td><td data-export-label="locus"><a href="http://127.0.0.1:60151/load?file=file:///C:/Users/Tom/Documents/GitHub/coverageQc/data/cancer_panel_26.20140716.amplicons.bed&amp;locus=chr17:7576848-7576931&amp;genome=hg19&amp;merge=false">chr17:7576848-7576931</a></td><td>false</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="1">1</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="99">72</td>
+                                    vendor ID: TP53ex9</span></td><td style="text-align: right;">100</td><td data-export-label="locus"><a href="http://127.0.0.1:60151/load?file=file:///home/tom/git/coverageQc/data/cancer_panel_26.20140717.amplicons.bed&amp;locus=chr17:7576848-7576931&amp;genome=hg19&amp;merge=false">chr17:7576848-7576931</a></td><td>false</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="1">1</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="99">72</td>
 </tr>
 <tr style="display: none;" class="tablesorter-childRow geneExon_child geneExon83_child">
 <td colspan="10" style="background: white;">
@@ -23710,7 +23710,7 @@
 <br>
                                     RefSeq accession no.: <a href="http://www.ncbi.nlm.nih.gov/nuccore/NM_000546">NM_000546</a>
 <br>
-                                    vendor ID: TP53ex10</span></td><td style="text-align: right;">100</td><td data-export-label="locus"><a href="http://127.0.0.1:60151/load?file=file:///C:/Users/Tom/Documents/GitHub/coverageQc/data/cancer_panel_26.20140716.amplicons.bed&amp;locus=chr17:7573922-7574038&amp;genome=hg19&amp;merge=false">chr17:7573922-7574038</a></td><td>false</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="8">9</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="92">97</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td>
+                                    vendor ID: TP53ex10</span></td><td style="text-align: right;">100</td><td data-export-label="locus"><a href="http://127.0.0.1:60151/load?file=file:///home/tom/git/coverageQc/data/cancer_panel_26.20140717.amplicons.bed&amp;locus=chr17:7573922-7574038&amp;genome=hg19&amp;merge=false">chr17:7573922-7574038</a></td><td>false</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="8">9</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="92">97</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td>
 </tr>
 <tr style="display: none;" class="tablesorter-childRow geneExon_child geneExon84_child">
 <td colspan="10" style="background: white;">
@@ -23930,7 +23930,7 @@
 <br>
                                     RefSeq accession no.: <a href="http://www.ncbi.nlm.nih.gov/nuccore/NM_000546">NM_000546</a>
 <br>
-                                    vendor ID: TP53ex11</span></td><td style="text-align: right;">7</td><td data-export-label="locus"><a href="http://127.0.0.1:60151/load?file=file:///C:/Users/Tom/Documents/GitHub/coverageQc/data/cancer_panel_26.20140716.amplicons.bed&amp;locus=chr17:7572923-7573013&amp;genome=hg19&amp;merge=false">chr17:7572923-7573013</a></td><td>false</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="9">7</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="91">74</td>
+                                    vendor ID: TP53ex11</span></td><td style="text-align: right;">7</td><td data-export-label="locus"><a href="http://127.0.0.1:60151/load?file=file:///home/tom/git/coverageQc/data/cancer_panel_26.20140717.amplicons.bed&amp;locus=chr17:7572923-7573013&amp;genome=hg19&amp;merge=false">chr17:7572923-7573013</a></td><td>false</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="0">0</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="9">7</td><td class="readHistogram" style="text-align: right; width: 40px;" data-pct="91">74</td>
 </tr>
 <tr style="display: none;" class="tablesorter-childRow geneExon_child geneExon85_child">
 <td colspan="10" style="background: white;">
@@ -24138,6 +24138,10 @@
                         exportMap["exonEnsemblId"] = match[2];
                         exportMap["refSeqAccNo"] = match[3];
                         exportMap["exonVendorId"] = match[4];
+                        //Tom Addition
+                        var re2 = /[a-z][a-z](\d*)/;
+                        var match2 = re2.exec(exportMap.exonName);
+                        exportMap["exonName_numOnly"]=match2[1];
                         }
                         else {
                         exportMap[$(this).attr("data-export-label")] = $(this).text();
@@ -24146,10 +24150,22 @@
                         $(this).parents("tr.filteredAnnotatedVariant").find("td[data-export-label]").each(function() {
                         exportMap[$(this).attr("data-export-label")] = $(this).text();
                         });
-                        interpText += "<b>POSITIVE for detection of " + exportMap.gene + " sequence variant by next generation sequencing: " + exportMap.gene + " " + exportMap.cDna + " / " + exportMap.aminoAcid;
-                        interpText += " in exon " + exportMap.exonName + ".</b><br/><br/>";
-                        resultsText += "<b>" + exportMap.exonName + " (Ensembl ID: " + exportMap.exonEnsemblId + "; RefSeq accession no: " + exportMap.refSeqAccNo + "; " + exportMap.locus + ")</b><br/>";
-                        resultsText += "gene: " + exportMap.gene + "; coordinate: " + exportMap.coordinate + "; consequence: " + exportMap.consequence + "; genotype: " + exportMap.genotype + "; alt-variant-freq: " + exportMap.avf + "; cDNA: " + exportMap.cDna + "; amino-acid: " + exportMap.aminoAcid + "</b><br/><br/>";
+                        //Tom addition
+                         var re3 = /chr(.*):(.*)/;
+                        var match3 = re3.exec(exportMap.coordinate);
+                        exportMap["chr_num"]=match3[1];
+                        exportMap["coordinate_num"]=match3[2];
+                        var re4 = /chr\d{1,}:(.*)/;
+                        var match4 = re4.exec(exportMap.locus);
+                        exportMap["locus_numOnly"]=match4[1];
+                        
+                        //Tom edits here
+                        interpText += "<b>POSITIVE for " + exportMap.gene + " " + exportMap.cDna + " ("+ exportMap.aminoAcid + ")"+" in approximately ";
+                        interpText += + Math.round(exportMap.avf) + "% of alleles." + "</b><br/><br/>";
+                        resultsText += "<b>" + exportMap.gene + " " + exportMap.cDna + " (" + exportMap.aminoAcid + ")" + " details:" + "</b><br/>";
+                        resultsText += "Allele frequency: " + exportMap.avf + "%" + "<br/>";
+                        resultsText += "Chromosome " + exportMap.chr_num + " coordinate " + exportMap.coordinate_num + "<br/>";
+                        resultsText += "In gene region: " + exportMap.gene + " exon " + exportMap.exonName_numOnly + "( Ensembl ID: " + exportMap.exonEnsemblId + "; RefSeq accession no: " + exportMap.refSeqAccNo + "; chromosome " + exportMap.chr_num + ":" + exportMap.locus_numOnly + ")<br/><br/>";
  
                         });
                         }
@@ -24178,13 +24194,15 @@
                         }
 
                         $("#exportDialog").html("Interpretation<br/><br/>");
-                        $("#exportDialog").append(interpText.length > 0 ? interpText + '- See comment.<br/><br/>' : "No variants detected by next-generation sequencing.<br/><br/>");
+                        $("#exportDialog").append(interpText.length > 0 ? interpText + '<b>See comment.</b><br/><br/>' : "No clinically significant variants detected by next-generation sequencing.<br/><br/>");
                         $("#exportDialog").append("<br/><br/><br/>");
                         $("#exportDialog").append("Results<br/><br/>");
-                        $("#exportDialog").append(resultsText.length > 0 ? resultsText : "No variants detected by next-generation sequencing.<br/><br/>");
+                        $("#exportDialog").append(resultsText.length > 0 ? resultsText : "No clinically significant variants detected by next-generation sequencing.<br/><br/>");
                         $("#exportDialog").append("The reference assembly is hg19, GRCh37.<br/><br/>");
                         $("#exportDialog").append("<br/><br/><br/>");
-                        $("#exportDialog").append(failedExonsText.length > 0 ? "Portions of the following captured regions were not sequenced sufficiently for clinical interpretation (at least one base in the sequenced portion of the coding region was read less than 500 times):<br/><br/>" + failedExonsText : "");
+                       // $("#exportDialog").append(failedExonsText.length > 0 ? "Portions of the following captured regions were not sequenced sufficiently for clinical interpretation (at least one base in the sequenced portion of the coding region was read less than 500 times):<br/><br/>" + failedExonsText : "");
+                        //Tom Addition
+                         $("#exportDialog").append(failedExonsText.length > 0 ? "Portions of the following captured regions were not sequenced sufficiently for clinical interpretation (at least one base in the sequenced portion of the coding region was read less than 500 times):<br/><br/>" + failedExonsText : "All portions of the captured regions were sequenced sufficiently for clinical interpretation (all bases in the sequenced portion of the coding region were read more than 500 times).");
                         $("#exportDialog").append("<br/><br/><br/>");
                         $("#exportDialog").append("See Notes and Test Performed sections below for more information.");
 

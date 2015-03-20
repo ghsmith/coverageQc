@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<vcf build="20140716" version="1.1" fileName="C:\Users\Tom\Documents\GitHub\coverageQc\data\sample.genome.vcf" doNotCallFileName="C:\Users\Tom\Documents\GitHub\coverageQc\data\Do not call_26.20140716.list.xlsx" exonBedFileName="C:\Users\Tom\Documents\GitHub\coverageQc\data\cancer_panel_26.20140620.exons.bed" ampliconBedFileName="C:\Users\Tom\Documents\GitHub\coverageQc\data\cancer_panel_26.20140716.amplicons.bed" variantTsvFileName="C:\Users\Tom\Documents\GitHub\coverageQc\data\sample.variant.tsv" variantTsvFileLineCount="9" runDate="2014-07-16T23:50:20.867-04:00" ampliconCount="282" baseCount="14882" bedBamVcfFileUrlsAsString="file:///C:/Users/Tom/Documents/GitHub/coverageQc/data/cancer_panel_26.20140716.amplicons.bed" filteredAnnotatedVariantCount="8" readDepthCount="14883">
+<vcf build="20150318" version="1.15" fileName="/home/tom/git/coverageQc/data/sample.genome.vcf" doNotCallFileName="NO DO NOT CALL FILE USED!" exonBedFileName="/home/tom/git/coverageQc/data/cancer_panel_26.20140620.exons.bed" ampliconBedFileName="/home/tom/git/coverageQc/data/cancer_panel_26.20140717.amplicons.bed" variantTsvFileName="/home/tom/git/coverageQc/data/sample.variant.tsv" variantTsvFileLineCount="9" runDate="2015-03-19T09:31:16.961-04:00" ampliconCount="282" baseCount="14882" bedBamVcfFileUrlsAsString="file:///home/tom/git/coverageQc/data/cancer_panel_26.20140717.amplicons.bed" filteredAnnotatedVariantCount="8" readDepthCount="14883">
     <geneExons>
-        <geneExon chr="chr14" startPos="105246420" endPos="105246558" name="AKT1ex3" qc="fail" ensemblGeneId="ENSG00000142208.11" ensemblTranscriptId="ENST00000555528.1" ensemblExonId="ENSE00003642995.1" ensemblExonNumber="3" vendorGeneExonName="AKT1ex2" pctOfExon="100.0" refSeqAccNo="NM_005163" onlyContainsDoNotCall="false" variantAnnotated="true" variantCalled="true">
+        <geneExon chr="chr14" startPos="105246420" endPos="105246558" name="AKT1ex3" qc="fail" ensemblGeneId="ENSG00000142208.11" ensemblTranscriptId="ENST00000555528.1" ensemblExonId="ENSE00003642995.1" ensemblExonNumber="3" vendorGeneExonName="AKT1ex2" pctOfExon="100.0" refSeqAccNo="NM_005163" onlyContainsDoNotCallAlways="false" variantAnnotated="true" variantCalled="true">
             <bins>
                 <bin startCount="0" endCount="99" name="0-99" count="0" pct="0"/>
                 <bin startCount="100" endCount="499" name="100-499" count="128" pct="100"/>
@@ -10,12 +10,12 @@
             </bins>
             <amplicons>
                 <amplicon chr="chr14" startPos="105246426" endPos="105246553" name="AKT1ex2_coding"/>
-                <amplicon chr="chr14" startPos="105246551" endPos="105246552" name="AKTex2_c49_snapshot_Lung"/>
                 <amplicon chr="chr14" startPos="105246403" endPos="105246591" name="AKT1ex2_tile_1"/>
+                <amplicon chr="chr14" startPos="105246551" endPos="105246552" name="AKTex2_c49_snapshot_Lung"/>
             </amplicons>
             <codingRegion chr="chr14" startPos="105246426" endPos="105246553" name="AKT1ex2_coding"/>
             <variants>
-                <variant gene="AKT1" variant="A&gt;G/G" chr="14" coordinate="105246528" type="XXX" genotype="XXX" altVariantFreq="0.0" readDepth="0" altReadDepth="0" consequence="XXXXXXXXXXXXXXXXXXX" cosmicId="" hgvsc="XXXXXXXXXXXXXXXXXXXX" hgvsp="" dbSnpIdPrefix="XXXXXXXXX" dbSnpIdSuffix="" filters="XXXX" alleleFreqGlobalMinor="0.0" geneMutation="AKT1 XXXXXXXXXXXXXXXXXXXX" hgvscComplete="XXXXXXXXXXXXXXXXXXXX" hgvspComplete="" ensp="XXXXXXXXXXX" onTheDoNotCallList="false" typeOfDoNotCall="Not on do not call list/Potentially Valid"/>
+                <variant gene="AKT1" variant="A&gt;G/G" chr="14" coordinate="105246528" type="XXX" genotype="XXX" altVariantFreq="0.0" readDepth="0" altReadDepth="0" consequence="XXXXXXXXXXXXXXXXXXX" cosmicId="" hgvsc="XXXXXXXXXXXXXXXXXXXX" hgvsp="" dbSnpIdPrefix="XXXXXXXXX" dbSnpIdSuffix="" filters="XXXX" alleleFreqGlobalMinor="0.0" geneMutation="AKT1 XXXXXXXXXXXXXXXXXXXX" hgvscComplete="XXXXXXXXXXXXXXXXXXXX" hgvspComplete="" ensp="XXXXXXXXXXX" onTheDoNotCallList="false" typeOfDoNotCall="Not on lab list /Potentially Valid" transcript="XXXXXXXXXXX"/>
             </variants>
             <donotcallvariants/>
             <nameForCompare>AKT1ex</nameForCompare>
@@ -163,7 +163,7 @@
                 <base chr="chr14" pos="105246558" totalReadDepth="204"/>
             </bases>
         </geneExon>
-        <geneExon chr="chr2" startPos="29443643" endPos="29443706" name="ALKex23" qc="warn" ensemblGeneId="ENSG00000171094.11" ensemblTranscriptId="ENST00000389048.3" ensemblExonId="ENSE00001154395.1" ensemblExonNumber="23" vendorGeneExonName="ALKex23" pctOfExon="49.0" refSeqAccNo="NM_004304" onlyContainsDoNotCall="false" variantAnnotated="false" variantCalled="false">
+        <geneExon chr="chr2" startPos="29443643" endPos="29443706" name="ALKex23" qc="warn" ensemblGeneId="ENSG00000171094.11" ensemblTranscriptId="ENST00000389048.3" ensemblExonId="ENSE00001154395.1" ensemblExonNumber="23" vendorGeneExonName="ALKex23" pctOfExon="49.0" refSeqAccNo="NM_004304" onlyContainsDoNotCallAlways="false" variantAnnotated="false" variantCalled="false">
             <bins>
                 <bin startCount="0" endCount="99" name="0-99" count="0" pct="0"/>
                 <bin startCount="100" endCount="499" name="100-499" count="0" pct="0"/>
@@ -247,7 +247,7 @@
                 <base chr="chr2" pos="29443706" totalReadDepth="1355"/>
             </bases>
         </geneExon>
-        <geneExon chr="chr5" startPos="112173744" endPos="112173988" name="APCex16_hotspot1" qc="pass" ensemblGeneId="ENSG00000134982.12" ensemblTranscriptId="ENST00000257430.4" ensemblExonId="ENSE00000972230.5" ensemblExonNumber="16" vendorGeneExonName="APCex15_hotspot1" pctOfExon="3.0" refSeqAccNo="NM_000038" onlyContainsDoNotCall="false" variantAnnotated="false" variantCalled="false">
+        <geneExon chr="chr5" startPos="112173744" endPos="112173988" name="APCex16_hotspot1" qc="pass" ensemblGeneId="ENSG00000134982.12" ensemblTranscriptId="ENST00000257430.4" ensemblExonId="ENSE00000972230.5" ensemblExonNumber="16" vendorGeneExonName="APCex15_hotspot1" pctOfExon="3.0" refSeqAccNo="NM_000038" onlyContainsDoNotCallAlways="false" variantAnnotated="false" variantCalled="false">
             <bins>
                 <bin startCount="0" endCount="99" name="0-99" count="0" pct="0"/>
                 <bin startCount="100" endCount="499" name="100-499" count="0" pct="0"/>
@@ -513,7 +513,7 @@
                 <base chr="chr5" pos="112173988" totalReadDepth="1771"/>
             </bases>
         </geneExon>
-        <geneExon chr="chr5" startPos="112174527" endPos="112174778" name="APCex16_hotspot2" qc="pass" ensemblGeneId="ENSG00000134982.12" ensemblTranscriptId="ENST00000257430.4" ensemblExonId="ENSE00000972230.5" ensemblExonNumber="16" vendorGeneExonName="APCex15_hotspot2" pctOfExon="3.0" refSeqAccNo="NM_000038" onlyContainsDoNotCall="false" variantAnnotated="false" variantCalled="false">
+        <geneExon chr="chr5" startPos="112174527" endPos="112174778" name="APCex16_hotspot2" qc="pass" ensemblGeneId="ENSG00000134982.12" ensemblTranscriptId="ENST00000257430.4" ensemblExonId="ENSE00000972230.5" ensemblExonNumber="16" vendorGeneExonName="APCex15_hotspot2" pctOfExon="3.0" refSeqAccNo="NM_000038" onlyContainsDoNotCallAlways="false" variantAnnotated="false" variantCalled="false">
             <bins>
                 <bin startCount="0" endCount="99" name="0-99" count="0" pct="0"/>
                 <bin startCount="100" endCount="499" name="100-499" count="0" pct="0"/>
@@ -786,7 +786,7 @@
                 <base chr="chr5" pos="112174778" totalReadDepth="2342"/>
             </bases>
         </geneExon>
-        <geneExon chr="chr5" startPos="112174976" endPos="112175370" name="APCex16_hotspot3" qc="fail" ensemblGeneId="ENSG00000134982.12" ensemblTranscriptId="ENST00000257430.4" ensemblExonId="ENSE00000972230.5" ensemblExonNumber="16" vendorGeneExonName="APCex15_hotspot3" pctOfExon="5.0" refSeqAccNo="NM_000038" onlyContainsDoNotCall="false" variantAnnotated="false" variantCalled="false">
+        <geneExon chr="chr5" startPos="112174976" endPos="112175370" name="APCex16_hotspot3" qc="fail" ensemblGeneId="ENSG00000134982.12" ensemblTranscriptId="ENST00000257430.4" ensemblExonId="ENSE00000972230.5" ensemblExonNumber="16" vendorGeneExonName="APCex15_hotspot3" pctOfExon="5.0" refSeqAccNo="NM_000038" onlyContainsDoNotCallAlways="false" variantAnnotated="false" variantCalled="false">
             <bins>
                 <bin startCount="0" endCount="99" name="0-99" count="0" pct="0"/>
                 <bin startCount="100" endCount="499" name="100-499" count="18" pct="5"/>
@@ -1204,7 +1204,7 @@
                 <base chr="chr5" pos="112175370" totalReadDepth="789"/>
             </bases>
         </geneExon>
-        <geneExon containsDoNotCall="true" chr="chr5" startPos="112175470" endPos="112176130" name="APCex16_hotspot4" qc="warn" ensemblGeneId="ENSG00000134982.12" ensemblTranscriptId="ENST00000257430.4" ensemblExonId="ENSE00000972230.5" ensemblExonNumber="16" vendorGeneExonName="APCex15_hotspot4" pctOfExon="8.0" refSeqAccNo="NM_000038" onlyContainsDoNotCall="true" variantAnnotated="true" variantCalled="true">
+        <geneExon chr="chr5" startPos="112175470" endPos="112176130" name="APCex16_hotspot4" qc="warn" ensemblGeneId="ENSG00000134982.12" ensemblTranscriptId="ENST00000257430.4" ensemblExonId="ENSE00000972230.5" ensemblExonNumber="16" vendorGeneExonName="APCex15_hotspot4" pctOfExon="8.0" refSeqAccNo="NM_000038" onlyContainsDoNotCallAlways="false" variantAnnotated="true" variantCalled="true">
             <bins>
                 <bin startCount="0" endCount="99" name="0-99" count="0" pct="0"/>
                 <bin startCount="100" endCount="499" name="100-499" count="0" pct="0"/>
@@ -1222,11 +1222,9 @@
             </amplicons>
             <codingRegion chr="chr5" startPos="112173251" endPos="112179823" name="APCex15_coding"/>
             <variants>
-                <variant gene="APC" variant="G&gt;A/A" chr="5" coordinate="112175770" type="snv" genotype="hom" altVariantFreq="99.64" readDepth="2224" altReadDepth="2216" consequence="synonymous_variant" cosmicId="" hgvsc="c.4479G&gt;A" hgvsp="c.4479G&gt;A(p.=)" dbSnpIdPrefix="rs" dbSnpIdSuffix="41115" filters="PASS" alleleFreqGlobalMinor="33.84" geneMutation="APC c.4479G&gt;A" hgvscComplete="NM_000038.5:c.4479G&gt;A" hgvspComplete="NM_000038.5:c.4479G&gt;A(p.=)" ensp="NP_000029.2" onTheDoNotCallList="true" typeOfDoNotCall="Don't call, always"/>
+                <variant gene="APC" variant="G&gt;A/A" chr="5" coordinate="112175770" type="snv" genotype="hom" altVariantFreq="99.64" readDepth="2224" altReadDepth="2216" consequence="synonymous_variant" cosmicId="" hgvsc="c.4479G&gt;A" hgvsp="c.4479G&gt;A(p.=)" dbSnpIdPrefix="rs" dbSnpIdSuffix="41115" filters="PASS" alleleFreqGlobalMinor="33.84" geneMutation="APC c.4479G&gt;A" hgvscComplete="NM_000038.5:c.4479G&gt;A" hgvspComplete="NM_000038.5:c.4479G&gt;A(p.=)" ensp="NP_000029.2" onTheDoNotCallList="false" typeOfDoNotCall="Not on lab list /Potentially Valid" transcript="NM_000038.5"/>
             </variants>
-            <donotcallvariants>
-                <donotcallvariant gene="APC" variant="G&gt;A/A" chr="5" coordinate="112175770" type="snv" genotype="hom" altVariantFreq="99.64" readDepth="2224" altReadDepth="2216" consequence="synonymous_variant" cosmicId="" hgvsc="c.4479G&gt;A" hgvsp="c.4479G&gt;A(p.=)" dbSnpIdPrefix="rs" dbSnpIdSuffix="41115" filters="PASS" alleleFreqGlobalMinor="33.84" geneMutation="APC c.4479G&gt;A" hgvscComplete="NM_000038.5:c.4479G&gt;A" hgvspComplete="NM_000038.5:c.4479G&gt;A(p.=)" ensp="NP_000029.2" onTheDoNotCallList="true" typeOfDoNotCall="Don't call, always"/>
-            </donotcallvariants>
+            <donotcallvariants/>
             <nameForCompare>APCex</nameForCompare>
             <exonNumberForCompare>16</exonNumberForCompare>
             <suffixForCompare>_hotspot4</suffixForCompare>
@@ -1894,7 +1892,7 @@
                 <base chr="chr5" pos="112176130" totalReadDepth="2101"/>
             </bases>
         </geneExon>
-        <geneExon chr="chr7" startPos="140481371" endPos="140481498" name="BRAFex11" qc="pass" ensemblGeneId="ENSG00000157764.8" ensemblTranscriptId="ENST00000288602.6" ensemblExonId="ENSE00003559218.1" ensemblExonNumber="11" vendorGeneExonName="BRAFex11" pctOfExon="100.0" refSeqAccNo="NM_004333" onlyContainsDoNotCall="false" variantAnnotated="false" variantCalled="false">
+        <geneExon chr="chr7" startPos="140481371" endPos="140481498" name="BRAFex11" qc="pass" ensemblGeneId="ENSG00000157764.8" ensemblTranscriptId="ENST00000288602.6" ensemblExonId="ENSE00003559218.1" ensemblExonNumber="11" vendorGeneExonName="BRAFex11" pctOfExon="100.0" refSeqAccNo="NM_004333" onlyContainsDoNotCallAlways="false" variantAnnotated="false" variantCalled="false">
             <bins>
                 <bin startCount="0" endCount="99" name="0-99" count="0" pct="0"/>
                 <bin startCount="100" endCount="499" name="100-499" count="0" pct="0"/>
@@ -1903,10 +1901,10 @@
             </bins>
             <amplicons>
                 <amplicon chr="chr7" startPos="140481377" endPos="140481493" name="BRAFex11_coding"/>
-                <amplicon chr="chr7" startPos="140481411" endPos="140481412" name="BRAFex11_c1397_snapshot_Lung"/>
-                <amplicon chr="chr7" startPos="140481402" endPos="140481403" name="BRAFex11_c1406_snapshot_Lung"/>
                 <amplicon chr="chr7" startPos="140481248" endPos="140481412" name="BRAFex11_tile_1"/>
                 <amplicon chr="chr7" startPos="140481358" endPos="140481547" name="BRAFex11_tile_2"/>
+                <amplicon chr="chr7" startPos="140481411" endPos="140481412" name="BRAFex11_c1397_snapshot_Lung"/>
+                <amplicon chr="chr7" startPos="140481402" endPos="140481403" name="BRAFex11_c1406_snapshot_Lung"/>
             </amplicons>
             <codingRegion chr="chr7" startPos="140481377" endPos="140481493" name="BRAFex11_coding"/>
             <variants/>
@@ -2045,7 +2043,7 @@
                 <base chr="chr7" pos="140481498" totalReadDepth="2844"/>
             </bases>
         </geneExon>
-        <geneExon chr="chr7" startPos="140453070" endPos="140453198" name="BRAFex15" qc="pass" ensemblGeneId="ENSG00000157764.8" ensemblTranscriptId="ENST00000288602.6" ensemblExonId="ENSE00003485507.1" ensemblExonNumber="15" vendorGeneExonName="BRAFex15" pctOfExon="100.0" refSeqAccNo="NM_004333" onlyContainsDoNotCall="false" variantAnnotated="false" variantCalled="false">
+        <geneExon chr="chr7" startPos="140453070" endPos="140453198" name="BRAFex15" qc="pass" ensemblGeneId="ENSG00000157764.8" ensemblTranscriptId="ENST00000288602.6" ensemblExonId="ENSE00003485507.1" ensemblExonNumber="15" vendorGeneExonName="BRAFex15" pctOfExon="100.0" refSeqAccNo="NM_004333" onlyContainsDoNotCallAlways="false" variantAnnotated="false" variantCalled="false">
             <bins>
                 <bin startCount="0" endCount="99" name="0-99" count="0" pct="0"/>
                 <bin startCount="100" endCount="499" name="100-499" count="0" pct="0"/>
@@ -2054,9 +2052,9 @@
             </bins>
             <amplicons>
                 <amplicon chr="chr7" startPos="140453076" endPos="140453193" name="BRAFex15_coding"/>
+                <amplicon chr="chr7" startPos="140453045" endPos="140453222" name="BRAFex15_tile_1"/>
                 <amplicon chr="chr7" startPos="140453136" endPos="140453137" name="BRAFex15_c1799_snapshot_Lung"/>
                 <amplicon chr="chr7" startPos="140453146" endPos="140453147" name="BRAFex15_c1789_snapshot_Lung"/>
-                <amplicon chr="chr7" startPos="140453045" endPos="140453222" name="BRAFex15_tile_1"/>
             </amplicons>
             <codingRegion chr="chr7" startPos="140453076" endPos="140453193" name="BRAFex15_coding"/>
             <variants/>
@@ -2196,7 +2194,7 @@
                 <base pos="140453198" totalReadDepth="0"/>
             </bases>
         </geneExon>
-        <geneExon chr="chr16" startPos="68846033" endPos="68846171" name="CDH1ex8" qc="warn" ensemblGeneId="ENSG00000039068.14" ensemblTranscriptId="ENST00000261769.5" ensemblExonId="ENSE00003610169.1" ensemblExonNumber="8" vendorGeneExonName="CDH1ex8" pctOfExon="100.0" refSeqAccNo="NM_004360" onlyContainsDoNotCall="false" variantAnnotated="false" variantCalled="false">
+        <geneExon chr="chr16" startPos="68846033" endPos="68846171" name="CDH1ex8" qc="warn" ensemblGeneId="ENSG00000039068.14" ensemblTranscriptId="ENST00000261769.5" ensemblExonId="ENSE00003610169.1" ensemblExonNumber="8" vendorGeneExonName="CDH1ex8" pctOfExon="100.0" refSeqAccNo="NM_004360" onlyContainsDoNotCallAlways="false" variantAnnotated="false" variantCalled="false">
             <bins>
                 <bin startCount="0" endCount="99" name="0-99" count="0" pct="0"/>
                 <bin startCount="100" endCount="499" name="100-499" count="0" pct="0"/>
@@ -2356,7 +2354,7 @@
                 <base chr="chr16" pos="68846171" totalReadDepth="1381"/>
             </bases>
         </geneExon>
-        <geneExon chr="chr16" startPos="68847211" endPos="68847403" name="CDH1ex9" qc="fail" ensemblGeneId="ENSG00000039068.14" ensemblTranscriptId="ENST00000261769.5" ensemblExonId="ENSE00003470877.1" ensemblExonNumber="9" vendorGeneExonName="CDH1ex9" pctOfExon="100.0" refSeqAccNo="NM_004360" onlyContainsDoNotCall="false" variantAnnotated="false" variantCalled="false">
+        <geneExon chr="chr16" startPos="68847211" endPos="68847403" name="CDH1ex9" qc="fail" ensemblGeneId="ENSG00000039068.14" ensemblTranscriptId="ENST00000261769.5" ensemblExonId="ENSE00003470877.1" ensemblExonNumber="9" vendorGeneExonName="CDH1ex9" pctOfExon="100.0" refSeqAccNo="NM_004360" onlyContainsDoNotCallAlways="false" variantAnnotated="false" variantCalled="false">
             <bins>
                 <bin startCount="0" endCount="99" name="0-99" count="0" pct="0"/>
                 <bin startCount="100" endCount="499" name="100-499" count="43" pct="24"/>
@@ -2570,7 +2568,7 @@
                 <base chr="chr16" pos="68847403" totalReadDepth="1055"/>
             </bases>
         </geneExon>
-        <geneExon chr="chr16" startPos="68855899" endPos="68856133" name="CDH1ex12" qc="pass" ensemblGeneId="ENSG00000039068.14" ensemblTranscriptId="ENST00000261769.5" ensemblExonId="ENSE00003463070.1" ensemblExonNumber="12" vendorGeneExonName="CDH1ex12" pctOfExon="100.0" refSeqAccNo="NM_004360" onlyContainsDoNotCall="false" variantAnnotated="false" variantCalled="false">
+        <geneExon chr="chr16" startPos="68855899" endPos="68856133" name="CDH1ex12" qc="pass" ensemblGeneId="ENSG00000039068.14" ensemblTranscriptId="ENST00000261769.5" ensemblExonId="ENSE00003463070.1" ensemblExonNumber="12" vendorGeneExonName="CDH1ex12" pctOfExon="100.0" refSeqAccNo="NM_004360" onlyContainsDoNotCallAlways="false" variantAnnotated="false" variantCalled="false">
             <bins>
                 <bin startCount="0" endCount="99" name="0-99" count="0" pct="0"/>
                 <bin startCount="100" endCount="499" name="100-499" count="0" pct="0"/>
@@ -2826,7 +2824,7 @@
                 <base pos="68856133" totalReadDepth="0"/>
             </bases>
         </geneExon>
-        <geneExon chr="chr3" startPos="41266013" endPos="41266161" name="CTNNB1ex3" qc="warn" ensemblGeneId="ENSG00000168036.12" ensemblTranscriptId="ENST00000349496.5" ensemblExonId="ENSE00003464041.1" ensemblExonNumber="3" vendorGeneExonName="CTNNB1ex2" pctOfExon="65.0" refSeqAccNo="NM_001904" onlyContainsDoNotCall="false" variantAnnotated="false" variantCalled="false">
+        <geneExon chr="chr3" startPos="41266013" endPos="41266161" name="CTNNB1ex3" qc="warn" ensemblGeneId="ENSG00000168036.12" ensemblTranscriptId="ENST00000349496.5" ensemblExonId="ENSE00003464041.1" ensemblExonNumber="3" vendorGeneExonName="CTNNB1ex2" pctOfExon="65.0" refSeqAccNo="NM_001904" onlyContainsDoNotCallAlways="false" variantAnnotated="false" variantCalled="false">
             <bins>
                 <bin startCount="0" endCount="99" name="0-99" count="0" pct="0"/>
                 <bin startCount="100" endCount="499" name="100-499" count="0" pct="0"/>
@@ -2996,7 +2994,7 @@
                 <base chr="chr3" pos="41266161" totalReadDepth="932"/>
             </bases>
         </geneExon>
-        <geneExon chr="chr7" startPos="55241609" endPos="55241741" name="EGFRex18" qc="warn" ensemblGeneId="ENSG00000146648.11" ensemblTranscriptId="ENST00000275493.2" ensemblExonId="ENSE00001778519.1" ensemblExonNumber="18" vendorGeneExonName="EGFRex18" pctOfExon="100.0" refSeqAccNo="NM_005228" onlyContainsDoNotCall="false" variantAnnotated="false" variantCalled="false">
+        <geneExon chr="chr7" startPos="55241609" endPos="55241741" name="EGFRex18" qc="warn" ensemblGeneId="ENSG00000146648.11" ensemblTranscriptId="ENST00000275493.2" ensemblExonId="ENSE00001778519.1" ensemblExonNumber="18" vendorGeneExonName="EGFRex18" pctOfExon="100.0" refSeqAccNo="NM_005228" onlyContainsDoNotCallAlways="false" variantAnnotated="false" variantCalled="false">
             <bins>
                 <bin startCount="0" endCount="99" name="0-99" count="0" pct="0"/>
                 <bin startCount="100" endCount="499" name="100-499" count="0" pct="0"/>
@@ -3005,10 +3003,10 @@
             </bins>
             <amplicons>
                 <amplicon chr="chr7" startPos="55241615" endPos="55241736" name="EGFRex18_coding"/>
-                <amplicon chr="chr7" startPos="55241708" endPos="55241709" name="EGFRex18_c2156_snapshot_Lung"/>
-                <amplicon chr="chr7" startPos="55241707" endPos="55241708" name="EGFRex18_c2155_snapshot_Lung"/>
                 <amplicon chr="chr7" startPos="55241537" endPos="55241703" name="EGFRex18_tile_1"/>
                 <amplicon chr="chr7" startPos="55241647" endPos="55241828" name="EGFRex18_tile_2"/>
+                <amplicon chr="chr7" startPos="55241708" endPos="55241709" name="EGFRex18_c2156_snapshot_Lung"/>
+                <amplicon chr="chr7" startPos="55241707" endPos="55241708" name="EGFRex18_c2155_snapshot_Lung"/>
             </amplicons>
             <codingRegion chr="chr7" startPos="55241615" endPos="55241736" name="EGFRex18_coding"/>
             <variants/>
@@ -3152,7 +3150,7 @@
                 <base chr="chr7" pos="55241741" totalReadDepth="2392"/>
             </bases>
         </geneExon>
-        <geneExon chr="chr7" startPos="55242410" endPos="55242518" name="EGFRex19" qc="warn" ensemblGeneId="ENSG00000146648.11" ensemblTranscriptId="ENST00000275493.2" ensemblExonId="ENSE00001756460.1" ensemblExonNumber="19" vendorGeneExonName="EGFRex19" pctOfExon="100.0" refSeqAccNo="NM_005228" onlyContainsDoNotCall="false" variantAnnotated="false" variantCalled="false">
+        <geneExon chr="chr7" startPos="55242410" endPos="55242518" name="EGFRex19" qc="warn" ensemblGeneId="ENSG00000146648.11" ensemblTranscriptId="ENST00000275493.2" ensemblExonId="ENSE00001756460.1" ensemblExonNumber="19" vendorGeneExonName="EGFRex19" pctOfExon="100.0" refSeqAccNo="NM_005228" onlyContainsDoNotCallAlways="false" variantAnnotated="false" variantCalled="false">
             <bins>
                 <bin startCount="0" endCount="99" name="0-99" count="0" pct="0"/>
                 <bin startCount="100" endCount="499" name="100-499" count="0" pct="0"/>
@@ -3281,7 +3279,7 @@
                 <base chr="chr7" pos="55242518" totalReadDepth="894"/>
             </bases>
         </geneExon>
-        <geneExon chr="chr7" startPos="55248981" endPos="55249177" name="EGFRex20" qc="warn" ensemblGeneId="ENSG00000146648.11" ensemblTranscriptId="ENST00000275493.2" ensemblExonId="ENSE00001601336.1" ensemblExonNumber="20" vendorGeneExonName="EGFRex20" pctOfExon="100.0" refSeqAccNo="NM_005228" onlyContainsDoNotCall="false" variantAnnotated="false" variantCalled="false">
+        <geneExon chr="chr7" startPos="55248981" endPos="55249177" name="EGFRex20" qc="warn" ensemblGeneId="ENSG00000146648.11" ensemblTranscriptId="ENST00000275493.2" ensemblExonId="ENSE00001601336.1" ensemblExonNumber="20" vendorGeneExonName="EGFRex20" pctOfExon="100.0" refSeqAccNo="NM_005228" onlyContainsDoNotCallAlways="false" variantAnnotated="false" variantCalled="false">
             <bins>
                 <bin startCount="0" endCount="99" name="0-99" count="0" pct="0"/>
                 <bin startCount="100" endCount="499" name="100-499" count="0" pct="0"/>
@@ -3290,9 +3288,9 @@
             </bins>
             <amplicons>
                 <amplicon chr="chr7" startPos="55248987" endPos="55249171" name="EGFRex20_coding"/>
-                <amplicon chr="chr7" startPos="55249071" endPos="55249072" name="EGFRex20_c2369_snapshot_Lung"/>
                 <amplicon chr="chr7" startPos="55248913" endPos="55249105" name="EGFRex20_tile_1"/>
                 <amplicon chr="chr7" startPos="55249053" endPos="55249233" name="EGFRex20_tile_2"/>
+                <amplicon chr="chr7" startPos="55249071" endPos="55249072" name="EGFRex20_c2369_snapshot_Lung"/>
             </amplicons>
             <codingRegion chr="chr7" startPos="55248987" endPos="55249171" name="EGFRex20_coding"/>
             <variants/>
@@ -3500,7 +3498,7 @@
                 <base chr="chr7" pos="55249177" totalReadDepth="1340"/>
             </bases>
         </geneExon>
-        <geneExon chr="chr7" startPos="55259407" endPos="55259573" name="EGFRex21" qc="pass" ensemblGeneId="ENSG00000146648.11" ensemblTranscriptId="ENST00000275493.2" ensemblExonId="ENSE00001681524.1" ensemblExonNumber="21" vendorGeneExonName="EGFRex21" pctOfExon="100.0" refSeqAccNo="NM_005228" onlyContainsDoNotCall="false" variantAnnotated="false" variantCalled="false">
+        <geneExon chr="chr7" startPos="55259407" endPos="55259573" name="EGFRex21" qc="pass" ensemblGeneId="ENSG00000146648.11" ensemblTranscriptId="ENST00000275493.2" ensemblExonId="ENSE00001681524.1" ensemblExonNumber="21" vendorGeneExonName="EGFRex21" pctOfExon="100.0" refSeqAccNo="NM_005228" onlyContainsDoNotCallAlways="false" variantAnnotated="false" variantCalled="false">
             <bins>
                 <bin startCount="0" endCount="99" name="0-99" count="0" pct="0"/>
                 <bin startCount="100" endCount="499" name="100-499" count="0" pct="0"/>
@@ -3509,10 +3507,10 @@
             </bins>
             <amplicons>
                 <amplicon chr="chr7" startPos="55259413" endPos="55259567" name="EGFRex21_coding"/>
-                <amplicon chr="chr7" startPos="55259524" endPos="55259525" name="EGFRex21_c2582_snapshot_Lung"/>
-                <amplicon chr="chr7" startPos="55259515" endPos="55259516" name="EGFRex21_c2573_snapshot_Lung"/>
                 <amplicon chr="chr7" startPos="55259321" endPos="55259514" name="EGFRex21_tile_1"/>
                 <amplicon chr="chr7" startPos="55259465" endPos="55259650" name="EGFRex21_tile_2"/>
+                <amplicon chr="chr7" startPos="55259524" endPos="55259525" name="EGFRex21_c2582_snapshot_Lung"/>
+                <amplicon chr="chr7" startPos="55259515" endPos="55259516" name="EGFRex21_c2573_snapshot_Lung"/>
             </amplicons>
             <codingRegion chr="chr7" startPos="55259413" endPos="55259567" name="EGFRex21_coding"/>
             <variants/>
@@ -3690,7 +3688,7 @@
                 <base chr="chr7" pos="55259573" totalReadDepth="2579"/>
             </bases>
         </geneExon>
-        <geneExon chr="chr17" startPos="37880974" endPos="37881169" name="ERBB2ex20" qc="fail" ensemblGeneId="ENSG00000141736.9" ensemblTranscriptId="ENST00000540147.1" ensemblExonId="ENSE00003625600.1" ensemblExonNumber="20" vendorGeneExonName="ERBB2ex20" pctOfExon="100.0" refSeqAccNo="NM_004448" onlyContainsDoNotCall="false" variantAnnotated="false" variantCalled="true">
+        <geneExon chr="chr17" startPos="37880974" endPos="37881169" name="ERBB2ex20" qc="fail" ensemblGeneId="ENSG00000141736.9" ensemblTranscriptId="ENST00000540147.1" ensemblExonId="ENSE00003625600.1" ensemblExonNumber="20" vendorGeneExonName="ERBB2ex20" pctOfExon="100.0" refSeqAccNo="NM_004448" onlyContainsDoNotCallAlways="false" variantAnnotated="false" variantCalled="true">
             <bins>
                 <bin startCount="0" endCount="99" name="0-99" count="0" pct="0"/>
                 <bin startCount="100" endCount="499" name="100-499" count="107" pct="58"/>
@@ -3907,7 +3905,7 @@
                 <base chr="chr17" pos="37881169" totalReadDepth="434"/>
             </bases>
         </geneExon>
-        <geneExon chr="chr4" startPos="153250819" endPos="153250942" name="FBXW7ex8" qc="pass" ensemblGeneId="ENSG00000109670.9" ensemblTranscriptId="ENST00000281708.4" ensemblExonId="ENSE00003629197.1" ensemblExonNumber="8" vendorGeneExonName="FBXW7ex7" pctOfExon="100.0" refSeqAccNo="NM_033632" onlyContainsDoNotCall="false" variantAnnotated="false" variantCalled="false">
+        <geneExon chr="chr4" startPos="153250819" endPos="153250942" name="FBXW7ex8" qc="pass" ensemblGeneId="ENSG00000109670.9" ensemblTranscriptId="ENST00000281708.4" ensemblExonId="ENSE00003629197.1" ensemblExonNumber="8" vendorGeneExonName="FBXW7ex7" pctOfExon="100.0" refSeqAccNo="NM_033632" onlyContainsDoNotCallAlways="false" variantAnnotated="false" variantCalled="false">
             <bins>
                 <bin startCount="0" endCount="99" name="0-99" count="0" pct="0"/>
                 <bin startCount="100" endCount="499" name="100-499" count="0" pct="0"/>
@@ -4052,7 +4050,7 @@
                 <base chr="chr4" pos="153250942" totalReadDepth="3857"/>
             </bases>
         </geneExon>
-        <geneExon chr="chr4" startPos="153249355" endPos="153249546" name="FBXW7ex9" qc="pass" ensemblGeneId="ENSG00000109670.9" ensemblTranscriptId="ENST00000281708.4" ensemblExonId="ENSE00003478818.1" ensemblExonNumber="9" vendorGeneExonName="FBXW7ex8" pctOfExon="100.0" refSeqAccNo="NM_033632" onlyContainsDoNotCall="false" variantAnnotated="false" variantCalled="false">
+        <geneExon chr="chr4" startPos="153249355" endPos="153249546" name="FBXW7ex9" qc="pass" ensemblGeneId="ENSG00000109670.9" ensemblTranscriptId="ENST00000281708.4" ensemblExonId="ENSE00003478818.1" ensemblExonNumber="9" vendorGeneExonName="FBXW7ex8" pctOfExon="100.0" refSeqAccNo="NM_033632" onlyContainsDoNotCallAlways="false" variantAnnotated="false" variantCalled="false">
             <bins>
                 <bin startCount="0" endCount="99" name="0-99" count="0" pct="0"/>
                 <bin startCount="100" endCount="499" name="100-499" count="0" pct="0"/>
@@ -4266,7 +4264,7 @@
                 <base chr="chr4" pos="153249546" totalReadDepth="10940"/>
             </bases>
         </geneExon>
-        <geneExon chr="chr4" startPos="153247153" endPos="153247388" name="FBXW7ex10" qc="pass" ensemblGeneId="ENSG00000109670.9" ensemblTranscriptId="ENST00000281708.4" ensemblExonId="ENSE00000821073.1" ensemblExonNumber="10" vendorGeneExonName="FBXW7ex9" pctOfExon="100.0" refSeqAccNo="NM_033632" onlyContainsDoNotCall="false" variantAnnotated="false" variantCalled="false">
+        <geneExon chr="chr4" startPos="153247153" endPos="153247388" name="FBXW7ex10" qc="pass" ensemblGeneId="ENSG00000109670.9" ensemblTranscriptId="ENST00000281708.4" ensemblExonId="ENSE00000821073.1" ensemblExonNumber="10" vendorGeneExonName="FBXW7ex9" pctOfExon="100.0" refSeqAccNo="NM_033632" onlyContainsDoNotCallAlways="false" variantAnnotated="false" variantCalled="false">
             <bins>
                 <bin startCount="0" endCount="99" name="0-99" count="0" pct="0"/>
                 <bin startCount="100" endCount="499" name="100-499" count="0" pct="0"/>
@@ -4524,7 +4522,7 @@
                 <base chr="chr4" pos="153247388" totalReadDepth="7899"/>
             </bases>
         </geneExon>
-        <geneExon chr="chr4" startPos="153245331" endPos="153245551" name="FBXW7ex11" qc="pass" ensemblGeneId="ENSG00000109670.9" ensemblTranscriptId="ENST00000281708.4" ensemblExonId="ENSE00000821072.1" ensemblExonNumber="11" vendorGeneExonName="FBXW7ex10" pctOfExon="100.0" refSeqAccNo="NM_033632" onlyContainsDoNotCall="false" variantAnnotated="false" variantCalled="false">
+        <geneExon chr="chr4" startPos="153245331" endPos="153245551" name="FBXW7ex11" qc="pass" ensemblGeneId="ENSG00000109670.9" ensemblTranscriptId="ENST00000281708.4" ensemblExonId="ENSE00000821072.1" ensemblExonNumber="11" vendorGeneExonName="FBXW7ex10" pctOfExon="100.0" refSeqAccNo="NM_033632" onlyContainsDoNotCallAlways="false" variantAnnotated="false" variantCalled="false">
             <bins>
                 <bin startCount="0" endCount="99" name="0-99" count="0" pct="0"/>
                 <bin startCount="100" endCount="499" name="100-499" count="0" pct="0"/>
@@ -4766,7 +4764,7 @@
                 <base chr="chr4" pos="153245551" totalReadDepth="5053"/>
             </bases>
         </geneExon>
-        <geneExon chr="chr4" startPos="153244029" endPos="153244303" name="FBXW7ex12" qc="pass" ensemblGeneId="ENSG00000109670.9" ensemblTranscriptId="ENST00000281708.4" ensemblExonId="ENSE00001431204.2" ensemblExonNumber="12" vendorGeneExonName="FBXW7ex11" pctOfExon="15.0" refSeqAccNo="NM_033632" onlyContainsDoNotCall="false" variantAnnotated="false" variantCalled="false">
+        <geneExon chr="chr4" startPos="153244029" endPos="153244303" name="FBXW7ex12" qc="pass" ensemblGeneId="ENSG00000109670.9" ensemblTranscriptId="ENST00000281708.4" ensemblExonId="ENSE00001431204.2" ensemblExonNumber="12" vendorGeneExonName="FBXW7ex11" pctOfExon="15.0" refSeqAccNo="NM_033632" onlyContainsDoNotCallAlways="false" variantAnnotated="false" variantCalled="false">
             <bins>
                 <bin startCount="0" endCount="99" name="0-99" count="0" pct="0"/>
                 <bin startCount="100" endCount="499" name="100-499" count="0" pct="0"/>
@@ -5063,7 +5061,7 @@
                 <base chr="chr4" pos="153244303" totalReadDepth="3843"/>
             </bases>
         </geneExon>
-        <geneExon chr="chr10" startPos="123279488" endPos="123279688" name="FGFR2ex7" qc="fail" ensemblGeneId="ENSG00000066468.16" ensemblTranscriptId="ENST00000358487.5" ensemblExonId="ENSE00003530900.1" ensemblExonNumber="7" vendorGeneExonName="FGFR2ex6" pctOfExon="100.0" refSeqAccNo="NM_000141" onlyContainsDoNotCall="false" variantAnnotated="false" variantCalled="false">
+        <geneExon chr="chr10" startPos="123279488" endPos="123279688" name="FGFR2ex7" qc="fail" ensemblGeneId="ENSG00000066468.16" ensemblTranscriptId="ENST00000358487.5" ensemblExonId="ENSE00003530900.1" ensemblExonNumber="7" vendorGeneExonName="FGFR2ex6" pctOfExon="100.0" refSeqAccNo="NM_000141" onlyContainsDoNotCallAlways="false" variantAnnotated="false" variantCalled="false">
             <bins>
                 <bin startCount="0" endCount="99" name="0-99" count="0" pct="0"/>
                 <bin startCount="100" endCount="499" name="100-499" count="56" pct="29"/>
@@ -5285,7 +5283,7 @@
                 <base chr="chr10" pos="123279688" totalReadDepth="467"/>
             </bases>
         </geneExon>
-        <geneExon chr="chr3" startPos="138665110" endPos="138665221" name="FOXL2ex1" qc="fail" ensemblGeneId="ENSG00000183770.5" ensemblTranscriptId="ENST00000330315.3" ensemblExonId="ENSE00001290668.4" ensemblExonNumber="1" vendorGeneExonName="FOXL2ex1" pctOfExon="4.0" refSeqAccNo="NM_023067" onlyContainsDoNotCall="false" variantAnnotated="false" variantCalled="false">
+        <geneExon chr="chr3" startPos="138665110" endPos="138665221" name="FOXL2ex1" qc="fail" ensemblGeneId="ENSG00000183770.5" ensemblTranscriptId="ENST00000330315.3" ensemblExonId="ENSE00001290668.4" ensemblExonNumber="1" vendorGeneExonName="FOXL2ex1" pctOfExon="4.0" refSeqAccNo="NM_023067" onlyContainsDoNotCallAlways="false" variantAnnotated="false" variantCalled="false">
             <bins>
                 <bin startCount="0" endCount="99" name="0-99" count="0" pct="0"/>
                 <bin startCount="100" endCount="499" name="100-499" count="112" pct="100"/>
@@ -5417,7 +5415,7 @@
                 <base chr="chr3" pos="138665221" totalReadDepth="138"/>
             </bases>
         </geneExon>
-        <geneExon chr="chr9" startPos="80412431" endPos="80412569" name="GNAQex4" qc="warn" ensemblGeneId="ENSG00000156052.6" ensemblTranscriptId="ENST00000286548.4" ensemblExonId="ENSE00003498186.1" ensemblExonNumber="4" vendorGeneExonName="GNAQex4" pctOfExon="100.0" refSeqAccNo="NM_002072" onlyContainsDoNotCall="false" variantAnnotated="false" variantCalled="false">
+        <geneExon chr="chr9" startPos="80412431" endPos="80412569" name="GNAQex4" qc="warn" ensemblGeneId="ENSG00000156052.6" ensemblTranscriptId="ENST00000286548.4" ensemblExonId="ENSE00003498186.1" ensemblExonNumber="4" vendorGeneExonName="GNAQex4" pctOfExon="100.0" refSeqAccNo="NM_002072" onlyContainsDoNotCallAlways="false" variantAnnotated="false" variantCalled="false">
             <bins>
                 <bin startCount="0" endCount="99" name="0-99" count="0" pct="0"/>
                 <bin startCount="100" endCount="499" name="100-499" count="0" pct="0"/>
@@ -5577,7 +5575,7 @@
                 <base chr="chr9" pos="80412569" totalReadDepth="565"/>
             </bases>
         </geneExon>
-        <geneExon chr="chr9" startPos="80409374" endPos="80409513" name="GNAQex5" qc="pass" ensemblGeneId="ENSG00000156052.6" ensemblTranscriptId="ENST00000286548.4" ensemblExonId="ENSE00003668412.1" ensemblExonNumber="5" vendorGeneExonName="GNAQex5" pctOfExon="100.0" refSeqAccNo="NM_002072" onlyContainsDoNotCall="false" variantAnnotated="false" variantCalled="false">
+        <geneExon chr="chr9" startPos="80409374" endPos="80409513" name="GNAQex5" qc="pass" ensemblGeneId="ENSG00000156052.6" ensemblTranscriptId="ENST00000286548.4" ensemblExonId="ENSE00003668412.1" ensemblExonNumber="5" vendorGeneExonName="GNAQex5" pctOfExon="100.0" refSeqAccNo="NM_002072" onlyContainsDoNotCallAlways="false" variantAnnotated="false" variantCalled="false">
             <bins>
                 <bin startCount="0" endCount="99" name="0-99" count="0" pct="0"/>
                 <bin startCount="100" endCount="499" name="100-499" count="0" pct="0"/>
@@ -5738,7 +5736,7 @@
                 <base chr="chr9" pos="80409513" totalReadDepth="8244"/>
             </bases>
         </geneExon>
-        <geneExon chr="chr9" startPos="80343425" endPos="80343588" name="GNAQex6" qc="pass" ensemblGeneId="ENSG00000156052.6" ensemblTranscriptId="ENST00000286548.4" ensemblExonId="ENSE00001746610.1" ensemblExonNumber="6" vendorGeneExonName="GNAQex6" pctOfExon="100.0" refSeqAccNo="NM_002072" onlyContainsDoNotCall="false" variantAnnotated="false" variantCalled="true">
+        <geneExon chr="chr9" startPos="80343425" endPos="80343588" name="GNAQex6" qc="pass" ensemblGeneId="ENSG00000156052.6" ensemblTranscriptId="ENST00000286548.4" ensemblExonId="ENSE00001746610.1" ensemblExonNumber="6" vendorGeneExonName="GNAQex6" pctOfExon="100.0" refSeqAccNo="NM_002072" onlyContainsDoNotCallAlways="false" variantAnnotated="false" variantCalled="true">
             <bins>
                 <bin startCount="0" endCount="99" name="0-99" count="0" pct="0"/>
                 <bin startCount="100" endCount="499" name="100-499" count="0" pct="0"/>
@@ -5923,7 +5921,7 @@
                 <base chr="chr9" pos="80343588" totalReadDepth="1011"/>
             </bases>
         </geneExon>
-        <geneExon chr="chr20" startPos="57480433" endPos="57480540" name="GNASex6" qc="pass" ensemblGeneId="ENSG00000087460.19" ensemblTranscriptId="ENST00000371085.3" ensemblExonId="ENSE00003540834.1" ensemblExonNumber="6" vendorGeneExonName="GNASex6" pctOfExon="100.0" refSeqAccNo="NM_000516" onlyContainsDoNotCall="false" variantAnnotated="false" variantCalled="false">
+        <geneExon chr="chr20" startPos="57480433" endPos="57480540" name="GNASex6" qc="pass" ensemblGeneId="ENSG00000087460.19" ensemblTranscriptId="ENST00000371085.3" ensemblExonId="ENSE00003540834.1" ensemblExonNumber="6" vendorGeneExonName="GNASex6" pctOfExon="100.0" refSeqAccNo="NM_000516" onlyContainsDoNotCallAlways="false" variantAnnotated="false" variantCalled="false">
             <bins>
                 <bin startCount="0" endCount="99" name="0-99" count="0" pct="0"/>
                 <bin startCount="100" endCount="499" name="100-499" count="0" pct="0"/>
@@ -6051,7 +6049,7 @@
                 <base chr="chr20" pos="57480540" totalReadDepth="1366"/>
             </bases>
         </geneExon>
-        <geneExon chr="chr20" startPos="57484400" endPos="57484483" name="GNASex8" qc="pass" ensemblGeneId="ENSG00000087460.19" ensemblTranscriptId="ENST00000371085.3" ensemblExonId="ENSE00003497989.1" ensemblExonNumber="8" vendorGeneExonName="GNASex8" pctOfExon="100.0" refSeqAccNo="NM_000516" onlyContainsDoNotCall="false" variantAnnotated="false" variantCalled="false">
+        <geneExon chr="chr20" startPos="57484400" endPos="57484483" name="GNASex8" qc="pass" ensemblGeneId="ENSG00000087460.19" ensemblTranscriptId="ENST00000371085.3" ensemblExonId="ENSE00003497989.1" ensemblExonNumber="8" vendorGeneExonName="GNASex8" pctOfExon="100.0" refSeqAccNo="NM_000516" onlyContainsDoNotCallAlways="false" variantAnnotated="false" variantCalled="false">
             <bins>
                 <bin startCount="0" endCount="99" name="0-99" count="0" pct="0"/>
                 <bin startCount="100" endCount="499" name="100-499" count="0" pct="0"/>
@@ -6155,7 +6153,7 @@
                 <base chr="chr20" pos="57484483" totalReadDepth="2903"/>
             </bases>
         </geneExon>
-        <geneExon chr="chr4" startPos="55592018" endPos="55592221" name="KITex9" qc="pass" ensemblGeneId="ENSG00000157404.11" ensemblTranscriptId="ENST00000288135.5" ensemblExonId="ENSE00001074423.1" ensemblExonNumber="9" vendorGeneExonName="KITex9" pctOfExon="100.0" refSeqAccNo="NM_000222" onlyContainsDoNotCall="false" variantAnnotated="false" variantCalled="false">
+        <geneExon chr="chr4" startPos="55592018" endPos="55592221" name="KITex9" qc="pass" ensemblGeneId="ENSG00000157404.11" ensemblTranscriptId="ENST00000288135.5" ensemblExonId="ENSE00001074423.1" ensemblExonNumber="9" vendorGeneExonName="KITex9" pctOfExon="100.0" refSeqAccNo="NM_000222" onlyContainsDoNotCallAlways="false" variantAnnotated="false" variantCalled="false">
             <bins>
                 <bin startCount="0" endCount="99" name="0-99" count="0" pct="0"/>
                 <bin startCount="100" endCount="499" name="100-499" count="0" pct="0"/>
@@ -6381,7 +6379,7 @@
                 <base chr="chr4" pos="55592221" totalReadDepth="5618"/>
             </bases>
         </geneExon>
-        <geneExon chr="chr4" startPos="55593577" endPos="55593713" name="KITex11" qc="pass" ensemblGeneId="ENSG00000157404.11" ensemblTranscriptId="ENST00000288135.5" ensemblExonId="ENSE00001074417.1" ensemblExonNumber="11" vendorGeneExonName="KITex11" pctOfExon="100.0" refSeqAccNo="NM_000222" onlyContainsDoNotCall="false" variantAnnotated="false" variantCalled="false">
+        <geneExon chr="chr4" startPos="55593577" endPos="55593713" name="KITex11" qc="pass" ensemblGeneId="ENSG00000157404.11" ensemblTranscriptId="ENST00000288135.5" ensemblExonId="ENSE00001074417.1" ensemblExonNumber="11" vendorGeneExonName="KITex11" pctOfExon="100.0" refSeqAccNo="NM_000222" onlyContainsDoNotCallAlways="false" variantAnnotated="false" variantCalled="false">
             <bins>
                 <bin startCount="0" endCount="99" name="0-99" count="0" pct="0"/>
                 <bin startCount="100" endCount="499" name="100-499" count="0" pct="0"/>
@@ -6539,7 +6537,7 @@
                 <base chr="chr4" pos="55593713" totalReadDepth="2104"/>
             </bases>
         </geneExon>
-        <geneExon chr="chr4" startPos="55594172" endPos="55594292" name="KITex13" qc="pass" ensemblGeneId="ENSG00000157404.11" ensemblTranscriptId="ENST00000288135.5" ensemblExonId="ENSE00001074408.1" ensemblExonNumber="13" vendorGeneExonName="KITex13" pctOfExon="100.0" refSeqAccNo="NM_000222" onlyContainsDoNotCall="false" variantAnnotated="false" variantCalled="false">
+        <geneExon chr="chr4" startPos="55594172" endPos="55594292" name="KITex13" qc="pass" ensemblGeneId="ENSG00000157404.11" ensemblTranscriptId="ENST00000288135.5" ensemblExonId="ENSE00001074408.1" ensemblExonNumber="13" vendorGeneExonName="KITex13" pctOfExon="100.0" refSeqAccNo="NM_000222" onlyContainsDoNotCallAlways="false" variantAnnotated="false" variantCalled="false">
             <bins>
                 <bin startCount="0" endCount="99" name="0-99" count="0" pct="0"/>
                 <bin startCount="100" endCount="499" name="100-499" count="0" pct="0"/>
@@ -6680,7 +6678,7 @@
                 <base chr="chr4" pos="55594292" totalReadDepth="2542"/>
             </bases>
         </geneExon>
-        <geneExon chr="chr4" startPos="55599231" endPos="55599363" name="KITex17" qc="pass" ensemblGeneId="ENSG00000157404.11" ensemblTranscriptId="ENST00000288135.5" ensemblExonId="ENSE00001074435.1" ensemblExonNumber="17" vendorGeneExonName="KITex17" pctOfExon="100.0" refSeqAccNo="NM_000222" onlyContainsDoNotCall="false" variantAnnotated="false" variantCalled="false">
+        <geneExon chr="chr4" startPos="55599231" endPos="55599363" name="KITex17" qc="pass" ensemblGeneId="ENSG00000157404.11" ensemblTranscriptId="ENST00000288135.5" ensemblExonId="ENSE00001074435.1" ensemblExonNumber="17" vendorGeneExonName="KITex17" pctOfExon="100.0" refSeqAccNo="NM_000222" onlyContainsDoNotCallAlways="false" variantAnnotated="false" variantCalled="false">
             <bins>
                 <bin startCount="0" endCount="99" name="0-99" count="0" pct="0"/>
                 <bin startCount="100" endCount="499" name="100-499" count="0" pct="0"/>
@@ -6834,7 +6832,7 @@
                 <base chr="chr4" pos="55599363" totalReadDepth="5909"/>
             </bases>
         </geneExon>
-        <geneExon chr="chr4" startPos="55602659" endPos="55602780" name="KITex18" qc="pass" ensemblGeneId="ENSG00000157404.11" ensemblTranscriptId="ENST00000288135.5" ensemblExonId="ENSE00001074442.1" ensemblExonNumber="18" vendorGeneExonName="KITex18" pctOfExon="100.0" refSeqAccNo="NM_000222" onlyContainsDoNotCall="false" variantAnnotated="true" variantCalled="true">
+        <geneExon chr="chr4" startPos="55602659" endPos="55602780" name="KITex18" qc="pass" ensemblGeneId="ENSG00000157404.11" ensemblTranscriptId="ENST00000288135.5" ensemblExonId="ENSE00001074442.1" ensemblExonNumber="18" vendorGeneExonName="KITex18" pctOfExon="100.0" refSeqAccNo="NM_000222" onlyContainsDoNotCallAlways="false" variantAnnotated="true" variantCalled="true">
             <bins>
                 <bin startCount="0" endCount="99" name="0-99" count="0" pct="0"/>
                 <bin startCount="100" endCount="499" name="100-499" count="0" pct="0"/>
@@ -6847,7 +6845,7 @@
             </amplicons>
             <codingRegion chr="chr4" startPos="55602665" endPos="55602775" name="KITex18_coding"/>
             <variants>
-                <variant gene="KIT" variant="G&gt;G/C" chr="4" coordinate="55602765" type="snv" genotype="het" altVariantFreq="47.98" readDepth="2522" altReadDepth="1210" consequence="synonymous_variant" cosmicId="COSM1325" hgvsc="c.2586G&gt;C" hgvsp="c.2586G&gt;C(p.=)" dbSnpIdPrefix="rs" dbSnpIdSuffix="3733542" filters="PASS" alleleFreqGlobalMinor="14.33" geneMutation="KIT c.2586G&gt;C" hgvscComplete="NM_000222.2:c.2586G&gt;C" hgvspComplete="NM_000222.2:c.2586G&gt;C(p.=)" ensp="NP_000213.1" onTheDoNotCallList="false" typeOfDoNotCall="Not on do not call list/Potentially Valid"/>
+                <variant gene="KIT" variant="G&gt;G/C" chr="4" coordinate="55602765" type="snv" genotype="het" altVariantFreq="47.98" readDepth="2522" altReadDepth="1210" consequence="synonymous_variant" cosmicId="COSM1325" hgvsc="c.2586G&gt;C" hgvsp="c.2586G&gt;C(p.=)" dbSnpIdPrefix="rs" dbSnpIdSuffix="3733542" filters="PASS" alleleFreqGlobalMinor="14.33" geneMutation="KIT c.2586G&gt;C" hgvscComplete="NM_000222.2:c.2586G&gt;C" hgvspComplete="NM_000222.2:c.2586G&gt;C(p.=)" ensp="NP_000213.1" onTheDoNotCallList="false" typeOfDoNotCall="Not on lab list /Potentially Valid" transcript="NM_000222.2"/>
             </variants>
             <donotcallvariants/>
             <nameForCompare>KITex</nameForCompare>
@@ -6978,7 +6976,7 @@
                 <base chr="chr4" pos="55602780" totalReadDepth="2589"/>
             </bases>
         </geneExon>
-        <geneExon chr="chr12" startPos="25398203" endPos="25398334" name="KRASex2" qc="pass" ensemblGeneId="ENSG00000133703.7" ensemblTranscriptId="ENST00000311936.3" ensemblExonId="ENSE00000936617.1" ensemblExonNumber="2" vendorGeneExonName="KRASex1" pctOfExon="100.0" refSeqAccNo="NM_004985" onlyContainsDoNotCall="false" variantAnnotated="false" variantCalled="false">
+        <geneExon chr="chr12" startPos="25398203" endPos="25398334" name="KRASex2" qc="pass" ensemblGeneId="ENSG00000133703.7" ensemblTranscriptId="ENST00000311936.3" ensemblExonId="ENSE00000936617.1" ensemblExonNumber="2" vendorGeneExonName="KRASex1" pctOfExon="100.0" refSeqAccNo="NM_004985" onlyContainsDoNotCallAlways="false" variantAnnotated="false" variantCalled="false">
             <bins>
                 <bin startCount="0" endCount="99" name="0-99" count="0" pct="0"/>
                 <bin startCount="100" endCount="499" name="100-499" count="0" pct="0"/>
@@ -6987,12 +6985,12 @@
             </bins>
             <amplicons>
                 <amplicon chr="chr12" startPos="25398209" endPos="25398318" name="KRASex1_coding"/>
+                <amplicon chr="chr12" startPos="25398112" endPos="25398278" name="KRASex1_tile_1"/>
+                <amplicon chr="chr12" startPos="25398226" endPos="25398414" name="KRASex1_tile_2"/>
                 <amplicon chr="chr12" startPos="25398285" endPos="25398286" name="KRASex1_c34_snapshot_Lung"/>
                 <amplicon chr="chr12" startPos="25398281" endPos="25398282" name="KRASex1_c38_snapshot_Lung"/>
                 <amplicon chr="chr12" startPos="25398284" endPos="25398285" name="KRASex1_c35_snapshot_Lung"/>
                 <amplicon chr="chr12" startPos="25398282" endPos="25398283" name="KRASex1_c37_snapshot_Lung"/>
-                <amplicon chr="chr12" startPos="25398112" endPos="25398278" name="KRASex1_tile_1"/>
-                <amplicon chr="chr12" startPos="25398226" endPos="25398414" name="KRASex1_tile_2"/>
             </amplicons>
             <codingRegion chr="chr12" startPos="25398209" endPos="25398318" name="KRASex1_coding"/>
             <variants/>
@@ -7135,7 +7133,7 @@
                 <base pos="25398334" totalReadDepth="0"/>
             </bases>
         </geneExon>
-        <geneExon chr="chr12" startPos="25380163" endPos="25380351" name="KRASex3" qc="pass" ensemblGeneId="ENSG00000133703.7" ensemblTranscriptId="ENST00000311936.3" ensemblExonId="ENSE00001719809.1" ensemblExonNumber="3" vendorGeneExonName="KRASex2" pctOfExon="100.0" refSeqAccNo="NM_004985" onlyContainsDoNotCall="false" variantAnnotated="true" variantCalled="true">
+        <geneExon chr="chr12" startPos="25380163" endPos="25380351" name="KRASex3" qc="pass" ensemblGeneId="ENSG00000133703.7" ensemblTranscriptId="ENST00000311936.3" ensemblExonId="ENSE00001719809.1" ensemblExonNumber="3" vendorGeneExonName="KRASex2" pctOfExon="100.0" refSeqAccNo="NM_004985" onlyContainsDoNotCallAlways="false" variantAnnotated="true" variantCalled="true">
             <bins>
                 <bin startCount="0" endCount="99" name="0-99" count="0" pct="0"/>
                 <bin startCount="100" endCount="499" name="100-499" count="0" pct="0"/>
@@ -7144,15 +7142,15 @@
             </bins>
             <amplicons>
                 <amplicon chr="chr12" startPos="25380169" endPos="25380346" name="KRASex2_coding"/>
+                <amplicon chr="chr12" startPos="25380076" endPos="25380263" name="KRASex2_tile_1"/>
+                <amplicon chr="chr12" startPos="25380200" endPos="25380384" name="KRASex2_tile_2"/>
                 <amplicon chr="chr12" startPos="25380276" endPos="25380277" name="KRASex2_c182_snapshot_Lung"/>
                 <amplicon chr="chr12" startPos="25380275" endPos="25380276" name="KRASex2_c183_snapshot_Lung"/>
                 <amplicon chr="chr12" startPos="25380277" endPos="25380278" name="KRASex2_c181_snapshot_Lung"/>
-                <amplicon chr="chr12" startPos="25380076" endPos="25380263" name="KRASex2_tile_1"/>
-                <amplicon chr="chr12" startPos="25380200" endPos="25380384" name="KRASex2_tile_2"/>
             </amplicons>
             <codingRegion chr="chr12" startPos="25380169" endPos="25380346" name="KRASex2_coding"/>
             <variants>
-                <variant gene="KRAS" variant="T&gt;T/G" chr="12" coordinate="25380275" type="snv" genotype="het" altVariantFreq="7.0" readDepth="13896" altReadDepth="973" consequence="missense_variant" cosmicId="COSM1135364" hgvsc="c.183A&gt;C" hgvsp="p.Gln61His" dbSnpIdPrefix="rs" dbSnpIdSuffix="17851045" filters="PASS" alleleFreqGlobalMinor="0.0" geneMutation="KRAS c.183A&gt;C" hgvscComplete="NM_033360.2:c.183A&gt;C" hgvspComplete="NP_203524.1:p.Gln61His" ensp="NP_203524.1" onTheDoNotCallList="false" typeOfDoNotCall="Not on do not call list/Potentially Valid"/>
+                <variant gene="KRAS" variant="T&gt;T/G" chr="12" coordinate="25380275" type="snv" genotype="het" altVariantFreq="7.0" readDepth="13896" altReadDepth="973" consequence="missense_variant" cosmicId="COSM1135364" hgvsc="c.183A&gt;C" hgvsp="p.Gln61His" dbSnpIdPrefix="rs" dbSnpIdSuffix="17851045" filters="PASS" alleleFreqGlobalMinor="0.0" geneMutation="KRAS c.183A&gt;C" hgvscComplete="NM_033360.2:c.183A&gt;C" hgvspComplete="NP_203524.1:p.Gln61His" ensp="NP_203524.1" onTheDoNotCallList="false" typeOfDoNotCall="Not on lab list /Potentially Valid" transcript="NM_033360.2"/>
             </variants>
             <donotcallvariants/>
             <nameForCompare>KRASex</nameForCompare>
@@ -7350,7 +7348,7 @@
                 <base chr="chr12" pos="25380351" totalReadDepth="6794"/>
             </bases>
         </geneExon>
-        <geneExon chr="chr12" startPos="25378543" endPos="25378712" name="KRASex4" qc="pass" ensemblGeneId="ENSG00000133703.7" ensemblTranscriptId="ENST00000311936.3" ensemblExonId="ENSE00001644818.1" ensemblExonNumber="4" vendorGeneExonName="KRASex3" pctOfExon="100.0" refSeqAccNo="NM_004985" onlyContainsDoNotCall="false" variantAnnotated="false" variantCalled="false">
+        <geneExon chr="chr12" startPos="25378543" endPos="25378712" name="KRASex4" qc="pass" ensemblGeneId="ENSG00000133703.7" ensemblTranscriptId="ENST00000311936.3" ensemblExonId="ENSE00001644818.1" ensemblExonNumber="4" vendorGeneExonName="KRASex3" pctOfExon="100.0" refSeqAccNo="NM_004985" onlyContainsDoNotCallAlways="false" variantAnnotated="false" variantCalled="false">
             <bins>
                 <bin startCount="0" endCount="99" name="0-99" count="0" pct="0"/>
                 <bin startCount="100" endCount="499" name="100-499" count="0" pct="0"/>
@@ -7541,7 +7539,7 @@
                 <base chr="chr12" pos="25378712" totalReadDepth="3133"/>
             </bases>
         </geneExon>
-        <geneExon containsDoNotCall="true" chr="chr12" startPos="25362725" endPos="25362850" name="KRASex5" qc="pass" ensemblGeneId="ENSG00000133703.7" ensemblTranscriptId="ENST00000311936.3" ensemblExonId="ENSE00002456976.1" ensemblExonNumber="5" vendorGeneExonName="KRASex4" pctOfExon="2.0" refSeqAccNo="NM_004985" onlyContainsDoNotCall="true" variantAnnotated="true" variantCalled="true">
+        <geneExon chr="chr12" startPos="25362725" endPos="25362850" name="KRASex5" qc="pass" ensemblGeneId="ENSG00000133703.7" ensemblTranscriptId="ENST00000311936.3" ensemblExonId="ENSE00002456976.1" ensemblExonNumber="5" vendorGeneExonName="KRASex4" pctOfExon="2.0" refSeqAccNo="NM_004985" onlyContainsDoNotCallAlways="false" variantAnnotated="true" variantCalled="true">
             <bins>
                 <bin startCount="0" endCount="99" name="0-99" count="0" pct="0"/>
                 <bin startCount="100" endCount="499" name="100-499" count="0" pct="0"/>
@@ -7555,13 +7553,10 @@
             </amplicons>
             <codingRegion chr="chr12" startPos="25362730" endPos="25362845" name="KRASex4_coding"/>
             <variants>
-                <variant gene="KRAS" variant="A&gt;G/G" chr="12" coordinate="25362777" type="snv" genotype="hom" altVariantFreq="99.79" readDepth="5705" altReadDepth="5693" consequence="3_prime_UTR_variant" cosmicId="" hgvsc="c.*73T&gt;C" hgvsp="" dbSnpIdPrefix="rs" dbSnpIdSuffix="1137282" filters="PASS" alleleFreqGlobalMinor="16.58" geneMutation="KRAS c.*73T&gt;C" hgvscComplete="NM_033360.2:c.*73T&gt;C" hgvspComplete="" ensp="NP_203524.1" onTheDoNotCallList="true" typeOfDoNotCall="Don't call, always"/>
-                <variant gene="KRAS" variant="A&gt;G/G" chr="12" coordinate="25362777" type="snv" genotype="XXX" altVariantFreq="99.79" readDepth="5705" altReadDepth="5693" consequence="XXXXXXXXXXXXXXXXXXX" cosmicId="" hgvsc="c.*73T&gt;C" hgvsp="" dbSnpIdPrefix="rs" dbSnpIdSuffix="1137282" filters="PASS" alleleFreqGlobalMinor="16.58" geneMutation="KRAS c.*73T&gt;C" hgvscComplete="NM_033360.2:c.*73T&gt;C" hgvspComplete="" ensp="NP_203524.1" onTheDoNotCallList="true" typeOfDoNotCall="Don't call, always"/>
+                <variant gene="KRAS" variant="A&gt;G/G" chr="12" coordinate="25362777" type="snv" genotype="hom" altVariantFreq="99.79" readDepth="5705" altReadDepth="5693" consequence="3_prime_UTR_variant" cosmicId="" hgvsc="c.*73T&gt;C" hgvsp="" dbSnpIdPrefix="rs" dbSnpIdSuffix="1137282" filters="PASS" alleleFreqGlobalMinor="16.58" geneMutation="KRAS c.*73T&gt;C" hgvscComplete="NM_033360.2:c.*73T&gt;C" hgvspComplete="" ensp="NP_203524.1" onTheDoNotCallList="false" typeOfDoNotCall="Not on lab list /Potentially Valid" transcript="NM_033360.2"/>
+                <variant gene="KRAS" variant="A&gt;G/G" chr="12" coordinate="25362777" type="snv" genotype="XXX" altVariantFreq="99.79" readDepth="5705" altReadDepth="5693" consequence="XXXXXXXXXXXXXXXXXXX" cosmicId="" hgvsc="c.*73T&gt;C" hgvsp="" dbSnpIdPrefix="rs" dbSnpIdSuffix="1137282" filters="PASS" alleleFreqGlobalMinor="16.58" geneMutation="KRAS c.*73T&gt;C" hgvscComplete="NM_033360.2:c.*73T&gt;C" hgvspComplete="" ensp="NP_203524.1" onTheDoNotCallList="false" typeOfDoNotCall="Not on lab list /Potentially Valid" transcript="NM_033360.2"/>
             </variants>
-            <donotcallvariants>
-                <donotcallvariant gene="KRAS" variant="A&gt;G/G" chr="12" coordinate="25362777" type="snv" genotype="hom" altVariantFreq="99.79" readDepth="5705" altReadDepth="5693" consequence="3_prime_UTR_variant" cosmicId="" hgvsc="c.*73T&gt;C" hgvsp="" dbSnpIdPrefix="rs" dbSnpIdSuffix="1137282" filters="PASS" alleleFreqGlobalMinor="16.58" geneMutation="KRAS c.*73T&gt;C" hgvscComplete="NM_033360.2:c.*73T&gt;C" hgvspComplete="" ensp="NP_203524.1" onTheDoNotCallList="true" typeOfDoNotCall="Don't call, always"/>
-                <donotcallvariant gene="KRAS" variant="A&gt;G/G" chr="12" coordinate="25362777" type="snv" genotype="XXX" altVariantFreq="99.79" readDepth="5705" altReadDepth="5693" consequence="XXXXXXXXXXXXXXXXXXX" cosmicId="" hgvsc="c.*73T&gt;C" hgvsp="" dbSnpIdPrefix="rs" dbSnpIdSuffix="1137282" filters="PASS" alleleFreqGlobalMinor="16.58" geneMutation="KRAS c.*73T&gt;C" hgvscComplete="NM_033360.2:c.*73T&gt;C" hgvspComplete="" ensp="NP_203524.1" onTheDoNotCallList="true" typeOfDoNotCall="Don't call, always"/>
-            </donotcallvariants>
+            <donotcallvariants/>
             <nameForCompare>KRASex</nameForCompare>
             <exonNumberForCompare>5</exonNumberForCompare>
             <suffixForCompare></suffixForCompare>
@@ -7694,7 +7689,7 @@
                 <base chr="chr12" pos="25362850" totalReadDepth="11428"/>
             </bases>
         </geneExon>
-        <geneExon chr="chr15" startPos="66727438" endPos="66727561" name="MAP2K1ex2" qc="fail" ensemblGeneId="ENSG00000169032.5" ensemblTranscriptId="ENST00000307102.5" ensemblExonId="ENSE00003630653.1" ensemblExonNumber="2" vendorGeneExonName="MAP2K1ex2" pctOfExon="59.0" refSeqAccNo="NM_002755" onlyContainsDoNotCall="false" variantAnnotated="false" variantCalled="false">
+        <geneExon chr="chr15" startPos="66727438" endPos="66727561" name="MAP2K1ex2" qc="fail" ensemblGeneId="ENSG00000169032.5" ensemblTranscriptId="ENST00000307102.5" ensemblExonId="ENSE00003630653.1" ensemblExonNumber="2" vendorGeneExonName="MAP2K1ex2" pctOfExon="59.0" refSeqAccNo="NM_002755" onlyContainsDoNotCallAlways="false" variantAnnotated="false" variantCalled="false">
             <bins>
                 <bin startCount="0" endCount="99" name="0-99" count="0" pct="0"/>
                 <bin startCount="100" endCount="499" name="100-499" count="1" pct="1"/>
@@ -7703,10 +7698,10 @@
             </bins>
             <amplicons>
                 <amplicon chr="chr15" startPos="66727366" endPos="66727575" name="MAP2K1ex2_coding"/>
+                <amplicon chr="chr15" startPos="66727411" endPos="66727588" name="MAP2K1ex2_tile_1"/>
                 <amplicon chr="chr15" startPos="66727446" endPos="66727447" name="MAP2K1ex2_c167_snapshot_Lung"/>
                 <amplicon chr="chr15" startPos="66727454" endPos="66727455" name="MAP2K1ex2_c171_snapshot_Lung"/>
                 <amplicon chr="chr15" startPos="66727482" endPos="66727483" name="MAP2K1ex2_c199_snapshot_Lung"/>
-                <amplicon chr="chr15" startPos="66727411" endPos="66727588" name="MAP2K1ex2_tile_1"/>
             </amplicons>
             <codingRegion chr="chr15" startPos="66727366" endPos="66727575" name="MAP2K1ex2_coding"/>
             <variants/>
@@ -7841,7 +7836,7 @@
                 <base chr="chr15" pos="66727561" totalReadDepth="546"/>
             </bases>
         </geneExon>
-        <geneExon chr="chr7" startPos="116339544" endPos="116340298" name="METex2" qc="warn" ensemblGeneId="ENSG00000105976.10" ensemblTranscriptId="ENST00000397752.3" ensemblExonId="ENSE00001238915.3" ensemblExonNumber="2" vendorGeneExonName="METex1" pctOfExon="62.0" refSeqAccNo="NM_000245" onlyContainsDoNotCall="false" variantAnnotated="false" variantCalled="false">
+        <geneExon chr="chr7" startPos="116339544" endPos="116340298" name="METex2" qc="warn" ensemblGeneId="ENSG00000105976.10" ensemblTranscriptId="ENST00000397752.3" ensemblExonId="ENSE00001238915.3" ensemblExonNumber="2" vendorGeneExonName="METex1" pctOfExon="62.0" refSeqAccNo="NM_000245" onlyContainsDoNotCallAlways="false" variantAnnotated="false" variantCalled="false">
             <bins>
                 <bin startCount="0" endCount="99" name="0-99" count="0" pct="0"/>
                 <bin startCount="100" endCount="499" name="100-499" count="0" pct="0"/>
@@ -8622,7 +8617,7 @@
                 <base chr="chr7" pos="116340298" totalReadDepth="3823"/>
             </bases>
         </geneExon>
-        <geneExon chr="chr7" startPos="116380901" endPos="116381084" name="METex5" qc="pass" ensemblGeneId="ENSG00000105976.10" ensemblTranscriptId="ENST00000397752.3" ensemblExonId="ENSE00003549605.1" ensemblExonNumber="5" vendorGeneExonName="METex4" pctOfExon="100.0" refSeqAccNo="NM_000245" onlyContainsDoNotCall="false" variantAnnotated="false" variantCalled="false">
+        <geneExon chr="chr7" startPos="116380901" endPos="116381084" name="METex5" qc="pass" ensemblGeneId="ENSG00000105976.10" ensemblTranscriptId="ENST00000397752.3" ensemblExonId="ENSE00003549605.1" ensemblExonNumber="5" vendorGeneExonName="METex4" pctOfExon="100.0" refSeqAccNo="NM_000245" onlyContainsDoNotCallAlways="false" variantAnnotated="false" variantCalled="false">
             <bins>
                 <bin startCount="0" endCount="99" name="0-99" count="0" pct="0"/>
                 <bin startCount="100" endCount="499" name="100-499" count="0" pct="0"/>
@@ -8828,7 +8823,7 @@
                 <base chr="chr7" pos="116381084" totalReadDepth="1258"/>
             </bases>
         </geneExon>
-        <geneExon chr="chr7" startPos="116411898" endPos="116412048" name="METex14" qc="pass" ensemblGeneId="ENSG00000105976.10" ensemblTranscriptId="ENST00000397752.3" ensemblExonId="ENSE00000717833.1" ensemblExonNumber="14" vendorGeneExonName="METex13" pctOfExon="100.0" refSeqAccNo="NM_000245" onlyContainsDoNotCall="false" variantAnnotated="false" variantCalled="false">
+        <geneExon chr="chr7" startPos="116411898" endPos="116412048" name="METex14" qc="pass" ensemblGeneId="ENSG00000105976.10" ensemblTranscriptId="ENST00000397752.3" ensemblExonId="ENSE00000717833.1" ensemblExonNumber="14" vendorGeneExonName="METex13" pctOfExon="100.0" refSeqAccNo="NM_000245" onlyContainsDoNotCallAlways="false" variantAnnotated="false" variantCalled="false">
             <bins>
                 <bin startCount="0" endCount="99" name="0-99" count="0" pct="0"/>
                 <bin startCount="100" endCount="499" name="100-499" count="0" pct="0"/>
@@ -9000,7 +8995,7 @@
                 <base chr="chr7" pos="116412048" totalReadDepth="1803"/>
             </bases>
         </geneExon>
-        <geneExon chr="chr7" startPos="116417438" endPos="116417528" name="METex16" qc="pass" ensemblGeneId="ENSG00000105976.10" ensemblTranscriptId="ENST00000397752.3" ensemblExonId="ENSE00003596200.1" ensemblExonNumber="16" vendorGeneExonName="METex15" pctOfExon="100.0" refSeqAccNo="NM_000245" onlyContainsDoNotCall="false" variantAnnotated="false" variantCalled="false">
+        <geneExon chr="chr7" startPos="116417438" endPos="116417528" name="METex16" qc="pass" ensemblGeneId="ENSG00000105976.10" ensemblTranscriptId="ENST00000397752.3" ensemblExonId="ENSE00003596200.1" ensemblExonNumber="16" vendorGeneExonName="METex15" pctOfExon="100.0" refSeqAccNo="NM_000245" onlyContainsDoNotCallAlways="false" variantAnnotated="false" variantCalled="false">
             <bins>
                 <bin startCount="0" endCount="99" name="0-99" count="0" pct="0"/>
                 <bin startCount="100" endCount="499" name="100-499" count="0" pct="0"/>
@@ -9111,7 +9106,7 @@
                 <base chr="chr7" pos="116417528" totalReadDepth="11824"/>
             </bases>
         </geneExon>
-        <geneExon chr="chr7" startPos="116418825" endPos="116419016" name="METex17" qc="pass" ensemblGeneId="ENSG00000105976.10" ensemblTranscriptId="ENST00000397752.3" ensemblExonId="ENSE00003663921.1" ensemblExonNumber="17" vendorGeneExonName="METex16" pctOfExon="100.0" refSeqAccNo="NM_000245" onlyContainsDoNotCall="false" variantAnnotated="false" variantCalled="false">
+        <geneExon chr="chr7" startPos="116418825" endPos="116419016" name="METex17" qc="pass" ensemblGeneId="ENSG00000105976.10" ensemblTranscriptId="ENST00000397752.3" ensemblExonId="ENSE00003663921.1" ensemblExonNumber="17" vendorGeneExonName="METex16" pctOfExon="100.0" refSeqAccNo="NM_000245" onlyContainsDoNotCallAlways="false" variantAnnotated="false" variantCalled="false">
             <bins>
                 <bin startCount="0" endCount="99" name="0-99" count="0" pct="0"/>
                 <bin startCount="100" endCount="499" name="100-499" count="0" pct="0"/>
@@ -9324,7 +9319,7 @@
                 <base chr="chr7" pos="116419016" totalReadDepth="2652"/>
             </bases>
         </geneExon>
-        <geneExon chr="chr7" startPos="116422037" endPos="116422156" name="METex18" qc="warn" ensemblGeneId="ENSG00000105976.10" ensemblTranscriptId="ENST00000397752.3" ensemblExonId="ENSE00000717902.1" ensemblExonNumber="18" vendorGeneExonName="METex17" pctOfExon="100.0" refSeqAccNo="NM_000245" onlyContainsDoNotCall="false" variantAnnotated="false" variantCalled="false">
+        <geneExon chr="chr7" startPos="116422037" endPos="116422156" name="METex18" qc="warn" ensemblGeneId="ENSG00000105976.10" ensemblTranscriptId="ENST00000397752.3" ensemblExonId="ENSE00000717902.1" ensemblExonNumber="18" vendorGeneExonName="METex17" pctOfExon="100.0" refSeqAccNo="NM_000245" onlyContainsDoNotCallAlways="false" variantAnnotated="false" variantCalled="false">
             <bins>
                 <bin startCount="0" endCount="99" name="0-99" count="0" pct="0"/>
                 <bin startCount="100" endCount="499" name="100-499" count="0" pct="0"/>
@@ -9465,7 +9460,7 @@
                 <base chr="chr7" pos="116422156" totalReadDepth="2760"/>
             </bases>
         </geneExon>
-        <geneExon chr="chr7" startPos="116423353" endPos="116423528" name="METex19" qc="pass" ensemblGeneId="ENSG00000105976.10" ensemblTranscriptId="ENST00000397752.3" ensemblExonId="ENSE00000717928.1" ensemblExonNumber="19" vendorGeneExonName="METex18" pctOfExon="100.0" refSeqAccNo="NM_000245" onlyContainsDoNotCall="false" variantAnnotated="false" variantCalled="false">
+        <geneExon chr="chr7" startPos="116423353" endPos="116423528" name="METex19" qc="pass" ensemblGeneId="ENSG00000105976.10" ensemblTranscriptId="ENST00000397752.3" ensemblExonId="ENSE00000717928.1" ensemblExonNumber="19" vendorGeneExonName="METex18" pctOfExon="100.0" refSeqAccNo="NM_000245" onlyContainsDoNotCallAlways="false" variantAnnotated="false" variantCalled="false">
             <bins>
                 <bin startCount="0" endCount="99" name="0-99" count="0" pct="0"/>
                 <bin startCount="100" endCount="499" name="100-499" count="0" pct="0"/>
@@ -9662,7 +9657,7 @@
                 <base pos="116423528" totalReadDepth="0"/>
             </bases>
         </geneExon>
-        <geneExon chr="chr7" startPos="116435937" endPos="116436183" name="METex21" qc="pass" ensemblGeneId="ENSG00000105976.10" ensemblTranscriptId="ENST00000397752.3" ensemblExonId="ENSE00000881894.6" ensemblExonNumber="21" vendorGeneExonName="METex20" pctOfExon="10.0" refSeqAccNo="NM_000245" onlyContainsDoNotCall="false" variantAnnotated="false" variantCalled="false">
+        <geneExon chr="chr7" startPos="116435937" endPos="116436183" name="METex21" qc="pass" ensemblGeneId="ENSG00000105976.10" ensemblTranscriptId="ENST00000397752.3" ensemblExonId="ENSE00000881894.6" ensemblExonNumber="21" vendorGeneExonName="METex20" pctOfExon="10.0" refSeqAccNo="NM_000245" onlyContainsDoNotCallAlways="false" variantAnnotated="false" variantCalled="false">
             <bins>
                 <bin startCount="0" endCount="99" name="0-99" count="0" pct="0"/>
                 <bin startCount="100" endCount="499" name="100-499" count="0" pct="0"/>
@@ -9931,7 +9926,7 @@
                 <base chr="chr7" pos="116436183" totalReadDepth="1803"/>
             </bases>
         </geneExon>
-        <geneExon chr="chr2" startPos="48030554" endPos="48030829" name="MSH6ex5" qc="warn" ensemblGeneId="ENSG00000116062.10" ensemblTranscriptId="ENST00000234420.5" ensemblExonId="ENSE00003606429.1" ensemblExonNumber="5" vendorGeneExonName="MSH6ex5" pctOfExon="100.0" refSeqAccNo="NM_000179" onlyContainsDoNotCall="false" variantAnnotated="false" variantCalled="true">
+        <geneExon chr="chr2" startPos="48030554" endPos="48030829" name="MSH6ex5" qc="warn" ensemblGeneId="ENSG00000116062.10" ensemblTranscriptId="ENST00000234420.5" ensemblExonId="ENSE00003606429.1" ensemblExonNumber="5" vendorGeneExonName="MSH6ex5" pctOfExon="100.0" refSeqAccNo="NM_000179" onlyContainsDoNotCallAlways="false" variantAnnotated="false" variantCalled="true">
             <bins>
                 <bin startCount="0" endCount="99" name="0-99" count="0" pct="0"/>
                 <bin startCount="100" endCount="499" name="100-499" count="0" pct="0"/>
@@ -10229,7 +10224,7 @@
                 <base chr="chr2" pos="48030829" totalReadDepth="6567"/>
             </bases>
         </geneExon>
-        <geneExon chr="chr1" startPos="115258678" endPos="115258786" name="NRASex2" qc="pass" ensemblGeneId="ENSG00000213281.4" ensemblTranscriptId="ENST00000369535.4" ensemblExonId="ENSE00001450282.1" ensemblExonNumber="2" vendorGeneExonName="NRASex1" pctOfExon="85.0" refSeqAccNo="NM_002524" onlyContainsDoNotCall="false" variantAnnotated="false" variantCalled="false">
+        <geneExon chr="chr1" startPos="115258678" endPos="115258786" name="NRASex2" qc="pass" ensemblGeneId="ENSG00000213281.4" ensemblTranscriptId="ENST00000369535.4" ensemblExonId="ENSE00001450282.1" ensemblExonNumber="2" vendorGeneExonName="NRASex1" pctOfExon="85.0" refSeqAccNo="NM_002524" onlyContainsDoNotCallAlways="false" variantAnnotated="false" variantCalled="false">
             <bins>
                 <bin startCount="0" endCount="99" name="0-99" count="0" pct="0"/>
                 <bin startCount="100" endCount="499" name="100-499" count="0" pct="0"/>
@@ -10358,7 +10353,7 @@
                 <base chr="chr1" pos="115258786" totalReadDepth="1535"/>
             </bases>
         </geneExon>
-        <geneExon chr="chr1" startPos="115256416" endPos="115256604" name="NRASex3" qc="warn" ensemblGeneId="ENSG00000213281.4" ensemblTranscriptId="ENST00000369535.4" ensemblExonId="ENSE00001751295.1" ensemblExonNumber="3" vendorGeneExonName="NRASex2" pctOfExon="100.0" refSeqAccNo="NM_002524" onlyContainsDoNotCall="false" variantAnnotated="false" variantCalled="false">
+        <geneExon chr="chr1" startPos="115256416" endPos="115256604" name="NRASex3" qc="warn" ensemblGeneId="ENSG00000213281.4" ensemblTranscriptId="ENST00000369535.4" ensemblExonId="ENSE00001751295.1" ensemblExonNumber="3" vendorGeneExonName="NRASex2" pctOfExon="100.0" refSeqAccNo="NM_002524" onlyContainsDoNotCallAlways="false" variantAnnotated="false" variantCalled="false">
             <bins>
                 <bin startCount="0" endCount="99" name="0-99" count="0" pct="0"/>
                 <bin startCount="100" endCount="499" name="100-499" count="0" pct="0"/>
@@ -10367,11 +10362,11 @@
             </bins>
             <amplicons>
                 <amplicon chr="chr1" startPos="115256422" endPos="115256599" name="NRASex2_coding"/>
-                <amplicon chr="chr1" startPos="115256530" endPos="115256531" name="NRASex2_c181_snapshot_Lung"/>
-                <amplicon chr="chr1" startPos="115256529" endPos="115256530" name="NRASex2_c182_snapshot_Lung"/>
                 <amplicon chr="chr1" startPos="115256336" endPos="115256507" name="NRASex2_tile_2"/>
                 <amplicon chr="chr1" startPos="115256436" endPos="115256604" name="NRASex2_tile_3"/>
                 <amplicon chr="chr1" startPos="115256540" endPos="115256722" name="NRASex2_tile_4"/>
+                <amplicon chr="chr1" startPos="115256530" endPos="115256531" name="NRASex2_c181_snapshot_Lung"/>
+                <amplicon chr="chr1" startPos="115256529" endPos="115256530" name="NRASex2_c182_snapshot_Lung"/>
             </amplicons>
             <codingRegion chr="chr1" startPos="115256422" endPos="115256599" name="NRASex2_coding"/>
             <variants/>
@@ -10571,7 +10566,7 @@
                 <base chr="chr1" pos="115256604" totalReadDepth="1970"/>
             </bases>
         </geneExon>
-        <geneExon chr="chr1" startPos="115252185" endPos="115252354" name="NRASex4" qc="warn" ensemblGeneId="ENSG00000213281.4" ensemblTranscriptId="ENST00000369535.4" ensemblExonId="ENSE00000784343.1" ensemblExonNumber="4" vendorGeneExonName="NRASex3" pctOfExon="100.0" refSeqAccNo="NM_002524" onlyContainsDoNotCall="false" variantAnnotated="false" variantCalled="false">
+        <geneExon chr="chr1" startPos="115252185" endPos="115252354" name="NRASex4" qc="warn" ensemblGeneId="ENSG00000213281.4" ensemblTranscriptId="ENST00000369535.4" ensemblExonId="ENSE00000784343.1" ensemblExonNumber="4" vendorGeneExonName="NRASex3" pctOfExon="100.0" refSeqAccNo="NM_002524" onlyContainsDoNotCallAlways="false" variantAnnotated="false" variantCalled="false">
             <bins>
                 <bin startCount="0" endCount="99" name="0-99" count="0" pct="0"/>
                 <bin startCount="100" endCount="499" name="100-499" count="0" pct="0"/>
@@ -10762,7 +10757,7 @@
                 <base chr="chr1" pos="115252354" totalReadDepth="1236"/>
             </bases>
         </geneExon>
-        <geneExon chr="chr1" startPos="115251147" endPos="115251280" name="NRASex5" qc="warn" ensemblGeneId="ENSG00000213281.4" ensemblTranscriptId="ENST00000369535.4" ensemblExonId="ENSE00000800104.3" ensemblExonNumber="5" vendorGeneExonName="NRASex4" pctOfExon="100.0" refSeqAccNo="NM_002524" onlyContainsDoNotCall="false" variantAnnotated="false" variantCalled="false">
+        <geneExon chr="chr1" startPos="115251147" endPos="115251280" name="NRASex5" qc="warn" ensemblGeneId="ENSG00000213281.4" ensemblTranscriptId="ENST00000369535.4" ensemblExonId="ENSE00000800104.3" ensemblExonNumber="5" vendorGeneExonName="NRASex4" pctOfExon="100.0" refSeqAccNo="NM_002524" onlyContainsDoNotCallAlways="false" variantAnnotated="false" variantCalled="false">
             <bins>
                 <bin startCount="0" endCount="99" name="0-99" count="0" pct="0"/>
                 <bin startCount="100" endCount="499" name="100-499" count="0" pct="0"/>
@@ -10917,7 +10912,7 @@
                 <base chr="chr1" pos="115251280" totalReadDepth="675"/>
             </bases>
         </geneExon>
-        <geneExon containsDoNotCall="true" chr="chr4" startPos="55141003" endPos="55141145" name="PDGFRAex12" qc="pass" ensemblGeneId="ENSG00000134853.7" ensemblTranscriptId="ENST00000257290.5" ensemblExonId="ENSE00003571737.1" ensemblExonNumber="12" vendorGeneExonName="PDGFRAex11" pctOfExon="100.0" refSeqAccNo="NM_006206" onlyContainsDoNotCall="true" variantAnnotated="true" variantCalled="true">
+        <geneExon chr="chr4" startPos="55141003" endPos="55141145" name="PDGFRAex12" qc="pass" ensemblGeneId="ENSG00000134853.7" ensemblTranscriptId="ENST00000257290.5" ensemblExonId="ENSE00003571737.1" ensemblExonNumber="12" vendorGeneExonName="PDGFRAex11" pctOfExon="100.0" refSeqAccNo="NM_006206" onlyContainsDoNotCallAlways="false" variantAnnotated="true" variantCalled="true">
             <bins>
                 <bin startCount="0" endCount="99" name="0-99" count="0" pct="0"/>
                 <bin startCount="100" endCount="499" name="100-499" count="0" pct="0"/>
@@ -10931,11 +10926,9 @@
             </amplicons>
             <codingRegion chr="chr4" startPos="55141009" endPos="55141140" name="PDGFRAex11_coding"/>
             <variants>
-                <variant gene="PDGFRA" variant="A&gt;G/G" chr="4" coordinate="55141055" type="snv" genotype="hom" altVariantFreq="99.68" readDepth="1897" altReadDepth="1891" consequence="synonymous_variant" cosmicId="COSM1430082" hgvsc="c.1701A&gt;G" hgvsp="c.1701A&gt;G(p.=)" dbSnpIdPrefix="rs" dbSnpIdSuffix="1873778" filters="PASS" alleleFreqGlobalMinor="3.66" geneMutation="PDGFRA c.1701A&gt;G" hgvscComplete="NM_006206.4:c.1701A&gt;G" hgvspComplete="NM_006206.4:c.1701A&gt;G(p.=)" ensp="NP_006197.1" onTheDoNotCallList="true" typeOfDoNotCall="Don't call, always"/>
+                <variant gene="PDGFRA" variant="A&gt;G/G" chr="4" coordinate="55141055" type="snv" genotype="hom" altVariantFreq="99.68" readDepth="1897" altReadDepth="1891" consequence="synonymous_variant" cosmicId="COSM1430082" hgvsc="c.1701A&gt;G" hgvsp="c.1701A&gt;G(p.=)" dbSnpIdPrefix="rs" dbSnpIdSuffix="1873778" filters="PASS" alleleFreqGlobalMinor="3.66" geneMutation="PDGFRA c.1701A&gt;G" hgvscComplete="NM_006206.4:c.1701A&gt;G" hgvspComplete="NM_006206.4:c.1701A&gt;G(p.=)" ensp="NP_006197.1" onTheDoNotCallList="false" typeOfDoNotCall="Not on lab list /Potentially Valid" transcript="NM_006206.4"/>
             </variants>
-            <donotcallvariants>
-                <donotcallvariant gene="PDGFRA" variant="A&gt;G/G" chr="4" coordinate="55141055" type="snv" genotype="hom" altVariantFreq="99.68" readDepth="1897" altReadDepth="1891" consequence="synonymous_variant" cosmicId="COSM1430082" hgvsc="c.1701A&gt;G" hgvsp="c.1701A&gt;G(p.=)" dbSnpIdPrefix="rs" dbSnpIdSuffix="1873778" filters="PASS" alleleFreqGlobalMinor="3.66" geneMutation="PDGFRA c.1701A&gt;G" hgvscComplete="NM_006206.4:c.1701A&gt;G" hgvspComplete="NM_006206.4:c.1701A&gt;G(p.=)" ensp="NP_006197.1" onTheDoNotCallList="true" typeOfDoNotCall="Don't call, always"/>
-            </donotcallvariants>
+            <donotcallvariants/>
             <nameForCompare>PDGFRAex</nameForCompare>
             <exonNumberForCompare>12</exonNumberForCompare>
             <suffixForCompare></suffixForCompare>
@@ -11085,7 +11078,7 @@
                 <base chr="chr4" pos="55141145" totalReadDepth="1939"/>
             </bases>
         </geneExon>
-        <geneExon chr="chr4" startPos="55144058" endPos="55144178" name="PDGFRAex14" qc="pass" ensemblGeneId="ENSG00000134853.7" ensemblTranscriptId="ENST00000257290.5" ensemblExonId="ENSE00003529069.1" ensemblExonNumber="14" vendorGeneExonName="PDGFRAex13" pctOfExon="100.0" refSeqAccNo="NM_006206" onlyContainsDoNotCall="false" variantAnnotated="false" variantCalled="false">
+        <geneExon chr="chr4" startPos="55144058" endPos="55144178" name="PDGFRAex14" qc="pass" ensemblGeneId="ENSG00000134853.7" ensemblTranscriptId="ENST00000257290.5" ensemblExonId="ENSE00003529069.1" ensemblExonNumber="14" vendorGeneExonName="PDGFRAex13" pctOfExon="100.0" refSeqAccNo="NM_006206" onlyContainsDoNotCallAlways="false" variantAnnotated="false" variantCalled="false">
             <bins>
                 <bin startCount="0" endCount="99" name="0-99" count="0" pct="0"/>
                 <bin startCount="100" endCount="499" name="100-499" count="0" pct="0"/>
@@ -11226,7 +11219,7 @@
                 <base chr="chr4" pos="55144178" totalReadDepth="1979"/>
             </bases>
         </geneExon>
-        <geneExon chr="chr4" startPos="55152003" endPos="55152135" name="PDGFRAex18" qc="warn" ensemblGeneId="ENSG00000134853.7" ensemblTranscriptId="ENST00000257290.5" ensemblExonId="ENSE00003570052.1" ensemblExonNumber="18" vendorGeneExonName="PDGFRAex17" pctOfExon="100.0" refSeqAccNo="NM_006206" onlyContainsDoNotCall="false" variantAnnotated="false" variantCalled="true">
+        <geneExon chr="chr4" startPos="55152003" endPos="55152135" name="PDGFRAex18" qc="warn" ensemblGeneId="ENSG00000134853.7" ensemblTranscriptId="ENST00000257290.5" ensemblExonId="ENSE00003570052.1" ensemblExonNumber="18" vendorGeneExonName="PDGFRAex17" pctOfExon="100.0" refSeqAccNo="NM_006206" onlyContainsDoNotCallAlways="false" variantAnnotated="false" variantCalled="true">
             <bins>
                 <bin startCount="0" endCount="99" name="0-99" count="0" pct="0"/>
                 <bin startCount="100" endCount="499" name="100-499" count="0" pct="0"/>
@@ -11380,7 +11373,7 @@
                 <base chr="chr4" pos="55152135" totalReadDepth="653"/>
             </bases>
         </geneExon>
-        <geneExon chr="chr3" startPos="178916610" endPos="178916970" name="PIK3CAex2" qc="pass" ensemblGeneId="ENSG00000121879.3" ensemblTranscriptId="ENST00000263967.3" ensemblExonId="ENSE00001139995.2" ensemblExonNumber="2" vendorGeneExonName="PIK3CAex1" pctOfExon="84.0" refSeqAccNo="NM_006218" onlyContainsDoNotCall="false" variantAnnotated="false" variantCalled="false">
+        <geneExon chr="chr3" startPos="178916610" endPos="178916970" name="PIK3CAex2" qc="pass" ensemblGeneId="ENSG00000121879.3" ensemblTranscriptId="ENST00000263967.3" ensemblExonId="ENSE00001139995.2" ensemblExonNumber="2" vendorGeneExonName="PIK3CAex1" pctOfExon="84.0" refSeqAccNo="NM_006218" onlyContainsDoNotCallAlways="false" variantAnnotated="false" variantCalled="false">
             <bins>
                 <bin startCount="0" endCount="99" name="0-99" count="0" pct="0"/>
                 <bin startCount="100" endCount="499" name="100-499" count="0" pct="0"/>
@@ -11764,7 +11757,7 @@
                 <base chr="chr3" pos="178916970" totalReadDepth="2440"/>
             </bases>
         </geneExon>
-        <geneExon chr="chr3" startPos="178917473" endPos="178917692" name="PIK3CAex3" qc="pass" ensemblGeneId="ENSG00000121879.3" ensemblTranscriptId="ENST00000263967.3" ensemblExonId="ENSE00000997375.1" ensemblExonNumber="3" vendorGeneExonName="PIK3CAex2" pctOfExon="100.0" refSeqAccNo="NM_006218" onlyContainsDoNotCall="false" variantAnnotated="false" variantCalled="false">
+        <geneExon chr="chr3" startPos="178917473" endPos="178917692" name="PIK3CAex3" qc="pass" ensemblGeneId="ENSG00000121879.3" ensemblTranscriptId="ENST00000263967.3" ensemblExonId="ENSE00000997375.1" ensemblExonNumber="3" vendorGeneExonName="PIK3CAex2" pctOfExon="100.0" refSeqAccNo="NM_006218" onlyContainsDoNotCallAlways="false" variantAnnotated="false" variantCalled="false">
             <bins>
                 <bin startCount="0" endCount="99" name="0-99" count="0" pct="0"/>
                 <bin startCount="100" endCount="499" name="100-499" count="0" pct="0"/>
@@ -12006,7 +11999,7 @@
                 <base chr="chr3" pos="178917692" totalReadDepth="5421"/>
             </bases>
         </geneExon>
-        <geneExon chr="chr3" startPos="178927969" endPos="178928131" name="PIK3CAex8" qc="pass" ensemblGeneId="ENSG00000121879.3" ensemblTranscriptId="ENST00000263967.3" ensemblExonId="ENSE00001128470.1" ensemblExonNumber="8" vendorGeneExonName="PIK3CAex7" pctOfExon="100.0" refSeqAccNo="NM_006218" onlyContainsDoNotCall="false" variantAnnotated="false" variantCalled="false">
+        <geneExon chr="chr3" startPos="178927969" endPos="178928131" name="PIK3CAex8" qc="pass" ensemblGeneId="ENSG00000121879.3" ensemblTranscriptId="ENST00000263967.3" ensemblExonId="ENSE00001128470.1" ensemblExonNumber="8" vendorGeneExonName="PIK3CAex7" pctOfExon="100.0" refSeqAccNo="NM_006218" onlyContainsDoNotCallAlways="false" variantAnnotated="false" variantCalled="false">
             <bins>
                 <bin startCount="0" endCount="99" name="0-99" count="0" pct="0"/>
                 <bin startCount="100" endCount="499" name="100-499" count="0" pct="0"/>
@@ -12190,7 +12183,7 @@
                 <base chr="chr3" pos="178928131" totalReadDepth="2075"/>
             </bases>
         </geneExon>
-        <geneExon chr="chr3" startPos="178936040" endPos="178936127" name="PIK3CAex10" qc="pass" ensemblGeneId="ENSG00000121879.3" ensemblTranscriptId="ENST00000263967.3" ensemblExonId="ENSE00001077674.1" ensemblExonNumber="10" vendorGeneExonName="PIK3CAex9" pctOfExon="70.0" refSeqAccNo="NM_006218" onlyContainsDoNotCall="false" variantAnnotated="false" variantCalled="false">
+        <geneExon chr="chr3" startPos="178936040" endPos="178936127" name="PIK3CAex10" qc="pass" ensemblGeneId="ENSG00000121879.3" ensemblTranscriptId="ENST00000263967.3" ensemblExonId="ENSE00001077674.1" ensemblExonNumber="10" vendorGeneExonName="PIK3CAex9" pctOfExon="70.0" refSeqAccNo="NM_006218" onlyContainsDoNotCallAlways="false" variantAnnotated="false" variantCalled="false">
             <bins>
                 <bin startCount="0" endCount="99" name="0-99" count="0" pct="0"/>
                 <bin startCount="100" endCount="499" name="100-499" count="0" pct="0"/>
@@ -12199,9 +12192,9 @@
             </bins>
             <amplicons>
                 <amplicon chr="chr3" startPos="178935999" endPos="178936122" name="PIK3CAex9_coding"/>
+                <amplicon chr="chr3" startPos="178936012" endPos="178936201" name="PIK3CAex9_tile_2"/>
                 <amplicon chr="chr3" startPos="178936091" endPos="178936092" name="PIK3CAex9_c1633_snapshot_Lung"/>
                 <amplicon chr="chr3" startPos="178936082" endPos="178936083" name="PIK3CAex9_c1624_snapshot_Lung"/>
-                <amplicon chr="chr3" startPos="178936012" endPos="178936201" name="PIK3CAex9_tile_2"/>
             </amplicons>
             <codingRegion chr="chr3" startPos="178935999" endPos="178936122" name="PIK3CAex9_coding"/>
             <variants/>
@@ -12300,7 +12293,7 @@
                 <base chr="chr3" pos="178936127" totalReadDepth="4469"/>
             </bases>
         </geneExon>
-        <geneExon chr="chr3" startPos="178951878" endPos="178952157" name="PIK3CAex21" qc="pass" ensemblGeneId="ENSG00000121879.3" ensemblTranscriptId="ENST00000263967.3" ensemblExonId="ENSE00001139987.3" ensemblExonNumber="21" vendorGeneExonName="PIK3CAex20" pctOfExon="5.0" refSeqAccNo="NM_006218" onlyContainsDoNotCall="false" variantAnnotated="false" variantCalled="false">
+        <geneExon chr="chr3" startPos="178951878" endPos="178952157" name="PIK3CAex21" qc="pass" ensemblGeneId="ENSG00000121879.3" ensemblTranscriptId="ENST00000263967.3" ensemblExonId="ENSE00001139987.3" ensemblExonNumber="21" vendorGeneExonName="PIK3CAex20" pctOfExon="5.0" refSeqAccNo="NM_006218" onlyContainsDoNotCallAlways="false" variantAnnotated="false" variantCalled="false">
             <bins>
                 <bin startCount="0" endCount="99" name="0-99" count="0" pct="0"/>
                 <bin startCount="100" endCount="499" name="100-499" count="0" pct="0"/>
@@ -12309,11 +12302,11 @@
             </bins>
             <amplicons>
                 <amplicon chr="chr3" startPos="178951883" endPos="178952152" name="PIK3CAex20_coding"/>
-                <amplicon chr="chr3" startPos="178952085" endPos="178952086" name="PIK3CAex20_c3140_snapshot_Lung"/>
                 <amplicon chr="chr3" startPos="178951770" endPos="178951934" name="PIK3CAex20_tile_1"/>
                 <amplicon chr="chr3" startPos="178951854" endPos="178952017" name="PIK3CAex20_tile_2"/>
                 <amplicon chr="chr3" startPos="178951940" endPos="178952112" name="PIK3CAex20_tile_3"/>
                 <amplicon chr="chr3" startPos="178952058" endPos="178952243" name="PIK3CAex20_tile_4"/>
+                <amplicon chr="chr3" startPos="178952085" endPos="178952086" name="PIK3CAex20_c3140_snapshot_Lung"/>
             </amplicons>
             <codingRegion chr="chr3" startPos="178951883" endPos="178952152" name="PIK3CAex20_coding"/>
             <variants/>
@@ -12604,7 +12597,7 @@
                 <base chr="chr3" pos="178952157" totalReadDepth="4479"/>
             </bases>
         </geneExon>
-        <geneExon chr="chr10" startPos="89624223" endPos="89624310" name="PTENex1" qc="pass" ensemblGeneId="ENSG00000171862.5" ensemblTranscriptId="ENST00000371953.3" ensemblExonId="ENSE00001456562.3" ensemblExonNumber="1" vendorGeneExonName="PTENex1" pctOfExon="6.0" refSeqAccNo="NM_000314" onlyContainsDoNotCall="false" variantAnnotated="false" variantCalled="false">
+        <geneExon chr="chr10" startPos="89624223" endPos="89624310" name="PTENex1" qc="pass" ensemblGeneId="ENSG00000171862.5" ensemblTranscriptId="ENST00000371953.3" ensemblExonId="ENSE00001456562.3" ensemblExonNumber="1" vendorGeneExonName="PTENex1" pctOfExon="6.0" refSeqAccNo="NM_000314" onlyContainsDoNotCallAlways="false" variantAnnotated="false" variantCalled="false">
             <bins>
                 <bin startCount="0" endCount="99" name="0-99" count="0" pct="0"/>
                 <bin startCount="100" endCount="499" name="100-499" count="0" pct="0"/>
@@ -12712,7 +12705,7 @@
                 <base chr="chr10" pos="89624310" totalReadDepth="3267"/>
             </bases>
         </geneExon>
-        <geneExon chr="chr10" startPos="89653777" endPos="89653871" name="PTENex2" qc="warn" ensemblGeneId="ENSG00000171862.5" ensemblTranscriptId="ENST00000371953.3" ensemblExonId="ENSE00001156351.1" ensemblExonNumber="2" vendorGeneExonName="PTENex2" pctOfExon="100.0" refSeqAccNo="NM_000314" onlyContainsDoNotCall="false" variantAnnotated="false" variantCalled="false">
+        <geneExon chr="chr10" startPos="89653777" endPos="89653871" name="PTENex2" qc="warn" ensemblGeneId="ENSG00000171862.5" ensemblTranscriptId="ENST00000371953.3" ensemblExonId="ENSE00001156351.1" ensemblExonNumber="2" vendorGeneExonName="PTENex2" pctOfExon="100.0" refSeqAccNo="NM_000314" onlyContainsDoNotCallAlways="false" variantAnnotated="false" variantCalled="false">
             <bins>
                 <bin startCount="0" endCount="99" name="0-99" count="0" pct="0"/>
                 <bin startCount="100" endCount="499" name="100-499" count="0" pct="0"/>
@@ -12828,7 +12821,7 @@
                 <base chr="chr10" pos="89653871" totalReadDepth="5911"/>
             </bases>
         </geneExon>
-        <geneExon chr="chr10" startPos="89685265" endPos="89685319" name="PTENex3" qc="pass" ensemblGeneId="ENSG00000171862.5" ensemblTranscriptId="ENST00000371953.3" ensemblExonId="ENSE00001156344.1" ensemblExonNumber="3" vendorGeneExonName="PTENex3" pctOfExon="100.0" refSeqAccNo="NM_000314" onlyContainsDoNotCall="false" variantAnnotated="false" variantCalled="false">
+        <geneExon chr="chr10" startPos="89685265" endPos="89685319" name="PTENex3" qc="pass" ensemblGeneId="ENSG00000171862.5" ensemblTranscriptId="ENST00000371953.3" ensemblExonId="ENSE00001156344.1" ensemblExonNumber="3" vendorGeneExonName="PTENex3" pctOfExon="100.0" refSeqAccNo="NM_000314" onlyContainsDoNotCallAlways="false" variantAnnotated="false" variantCalled="false">
             <bins>
                 <bin startCount="0" endCount="99" name="0-99" count="0" pct="0"/>
                 <bin startCount="100" endCount="499" name="100-499" count="0" pct="0"/>
@@ -12903,7 +12896,7 @@
                 <base chr="chr10" pos="89685319" totalReadDepth="7572"/>
             </bases>
         </geneExon>
-        <geneExon chr="chr10" startPos="89690798" endPos="89690851" name="PTENex4" qc="pass" ensemblGeneId="ENSG00000171862.5" ensemblTranscriptId="ENST00000371953.3" ensemblExonId="ENSE00003595610.1" ensemblExonNumber="4" vendorGeneExonName="PTENex4" pctOfExon="100.0" refSeqAccNo="NM_000314" onlyContainsDoNotCall="false" variantAnnotated="false" variantCalled="false">
+        <geneExon chr="chr10" startPos="89690798" endPos="89690851" name="PTENex4" qc="pass" ensemblGeneId="ENSG00000171862.5" ensemblTranscriptId="ENST00000371953.3" ensemblExonId="ENSE00003595610.1" ensemblExonNumber="4" vendorGeneExonName="PTENex4" pctOfExon="100.0" refSeqAccNo="NM_000314" onlyContainsDoNotCallAlways="false" variantAnnotated="false" variantCalled="false">
             <bins>
                 <bin startCount="0" endCount="99" name="0-99" count="0" pct="0"/>
                 <bin startCount="100" endCount="499" name="100-499" count="0" pct="0"/>
@@ -12977,7 +12970,7 @@
                 <base chr="chr10" pos="89690851" totalReadDepth="8868"/>
             </bases>
         </geneExon>
-        <geneExon chr="chr10" startPos="89692765" endPos="89693013" name="PTENex5" qc="pass" ensemblGeneId="ENSG00000171862.5" ensemblTranscriptId="ENST00000371953.3" ensemblExonId="ENSE00001156330.1" ensemblExonNumber="5" vendorGeneExonName="PTENex5" pctOfExon="100.0" refSeqAccNo="NM_000314" onlyContainsDoNotCall="false" variantAnnotated="false" variantCalled="false">
+        <geneExon chr="chr10" startPos="89692765" endPos="89693013" name="PTENex5" qc="pass" ensemblGeneId="ENSG00000171862.5" ensemblTranscriptId="ENST00000371953.3" ensemblExonId="ENSE00001156330.1" ensemblExonNumber="5" vendorGeneExonName="PTENex5" pctOfExon="100.0" refSeqAccNo="NM_000314" onlyContainsDoNotCallAlways="false" variantAnnotated="false" variantCalled="false">
             <bins>
                 <bin startCount="0" endCount="99" name="0-99" count="0" pct="0"/>
                 <bin startCount="100" endCount="499" name="100-499" count="0" pct="0"/>
@@ -13248,7 +13241,7 @@
                 <base chr="chr10" pos="89693013" totalReadDepth="2556"/>
             </bases>
         </geneExon>
-        <geneExon chr="chr10" startPos="89711870" endPos="89712021" name="PTENex6" qc="pass" ensemblGeneId="ENSG00000171862.5" ensemblTranscriptId="ENST00000371953.3" ensemblExonId="ENSE00001156327.1" ensemblExonNumber="6" vendorGeneExonName="PTENex6" pctOfExon="100.0" refSeqAccNo="NM_000314" onlyContainsDoNotCall="false" variantAnnotated="false" variantCalled="false">
+        <geneExon chr="chr10" startPos="89711870" endPos="89712021" name="PTENex6" qc="pass" ensemblGeneId="ENSG00000171862.5" ensemblTranscriptId="ENST00000371953.3" ensemblExonId="ENSE00001156327.1" ensemblExonNumber="6" vendorGeneExonName="PTENex6" pctOfExon="100.0" refSeqAccNo="NM_000314" onlyContainsDoNotCallAlways="false" variantAnnotated="false" variantCalled="false">
             <bins>
                 <bin startCount="0" endCount="99" name="0-99" count="0" pct="0"/>
                 <bin startCount="100" endCount="499" name="100-499" count="0" pct="0"/>
@@ -13421,7 +13414,7 @@
                 <base chr="chr10" pos="89712021" totalReadDepth="5127"/>
             </bases>
         </geneExon>
-        <geneExon chr="chr10" startPos="89717605" endPos="89717781" name="PTENex7" qc="pass" ensemblGeneId="ENSG00000171862.5" ensemblTranscriptId="ENST00000371953.3" ensemblExonId="ENSE00003601394.1" ensemblExonNumber="7" vendorGeneExonName="PTENex7" pctOfExon="100.0" refSeqAccNo="NM_000314" onlyContainsDoNotCall="false" variantAnnotated="false" variantCalled="false">
+        <geneExon chr="chr10" startPos="89717605" endPos="89717781" name="PTENex7" qc="pass" ensemblGeneId="ENSG00000171862.5" ensemblTranscriptId="ENST00000371953.3" ensemblExonId="ENSE00003601394.1" ensemblExonNumber="7" vendorGeneExonName="PTENex7" pctOfExon="100.0" refSeqAccNo="NM_000314" onlyContainsDoNotCallAlways="false" variantAnnotated="false" variantCalled="false">
             <bins>
                 <bin startCount="0" endCount="99" name="0-99" count="0" pct="0"/>
                 <bin startCount="100" endCount="499" name="100-499" count="0" pct="0"/>
@@ -13430,10 +13423,10 @@
             </bins>
             <amplicons>
                 <amplicon chr="chr10" startPos="89717611" endPos="89717776" name="PTENex7_coding"/>
-                <amplicon chr="chr10" startPos="89717672" endPos="89717673" name="PTENex7_c697_snapshot_Lung"/>
                 <amplicon chr="chr10" startPos="89717484" endPos="89717647" name="PTENex7_tile_1"/>
                 <amplicon chr="chr10" startPos="89717584" endPos="89717750" name="PTENex7_tile_2"/>
                 <amplicon chr="chr10" startPos="89717698" endPos="89717891" name="PTENex7_tile_3"/>
+                <amplicon chr="chr10" startPos="89717672" endPos="89717673" name="PTENex7_c697_snapshot_Lung"/>
             </amplicons>
             <codingRegion chr="chr10" startPos="89717611" endPos="89717776" name="PTENex7_coding"/>
             <variants/>
@@ -13621,7 +13614,7 @@
                 <base chr="chr10" pos="89717781" totalReadDepth="7485"/>
             </bases>
         </geneExon>
-        <geneExon chr="chr10" startPos="89725042" endPos="89725152" name="PTENex9" qc="pass" ensemblGeneId="ENSG00000171862.5" ensemblTranscriptId="ENST00000371953.3" ensemblExonId="ENSE00001456541.3" ensemblExonNumber="9" vendorGeneExonName="PTENex9" pctOfExon="2.0" refSeqAccNo="NM_000314" onlyContainsDoNotCall="false" variantAnnotated="false" variantCalled="false">
+        <geneExon chr="chr10" startPos="89725042" endPos="89725152" name="PTENex9" qc="pass" ensemblGeneId="ENSG00000171862.5" ensemblTranscriptId="ENST00000371953.3" ensemblExonId="ENSE00001456541.3" ensemblExonNumber="9" vendorGeneExonName="PTENex9" pctOfExon="2.0" refSeqAccNo="NM_000314" onlyContainsDoNotCallAlways="false" variantAnnotated="false" variantCalled="false">
             <bins>
                 <bin startCount="0" endCount="99" name="0-99" count="0" pct="0"/>
                 <bin startCount="100" endCount="499" name="100-499" count="0" pct="0"/>
@@ -13752,7 +13745,7 @@
                 <base chr="chr10" pos="89725152" totalReadDepth="1271"/>
             </bases>
         </geneExon>
-        <geneExon chr="chr18" startPos="48591788" endPos="48591981" name="SMAD4ex9" qc="pass" ensemblGeneId="ENSG00000141646.9" ensemblTranscriptId="ENST00000342988.3" ensemblExonId="ENSE00003519889.1" ensemblExonNumber="9" vendorGeneExonName="SMAD4ex8" pctOfExon="100.0" refSeqAccNo="NM_005359" onlyContainsDoNotCall="false" variantAnnotated="false" variantCalled="false">
+        <geneExon chr="chr18" startPos="48591788" endPos="48591981" name="SMAD4ex9" qc="pass" ensemblGeneId="ENSG00000141646.9" ensemblTranscriptId="ENST00000342988.3" ensemblExonId="ENSE00003519889.1" ensemblExonNumber="9" vendorGeneExonName="SMAD4ex8" pctOfExon="100.0" refSeqAccNo="NM_005359" onlyContainsDoNotCallAlways="false" variantAnnotated="false" variantCalled="false">
             <bins>
                 <bin startCount="0" endCount="99" name="0-99" count="0" pct="0"/>
                 <bin startCount="100" endCount="499" name="100-499" count="0" pct="0"/>
@@ -13968,7 +13961,7 @@
                 <base chr="chr18" pos="48591981" totalReadDepth="3318"/>
             </bases>
         </geneExon>
-        <geneExon chr="chr18" startPos="48604622" endPos="48604842" name="SMAD4ex12" qc="pass" ensemblGeneId="ENSG00000141646.9" ensemblTranscriptId="ENST00000342988.3" ensemblExonId="ENSE00001375919.3" ensemblExonNumber="12" vendorGeneExonName="SMAD4ex11" pctOfExon="3.0" refSeqAccNo="NM_005359" onlyContainsDoNotCall="false" variantAnnotated="false" variantCalled="false">
+        <geneExon chr="chr18" startPos="48604622" endPos="48604842" name="SMAD4ex12" qc="pass" ensemblGeneId="ENSG00000141646.9" ensemblTranscriptId="ENST00000342988.3" ensemblExonId="ENSE00001375919.3" ensemblExonNumber="12" vendorGeneExonName="SMAD4ex11" pctOfExon="3.0" refSeqAccNo="NM_005359" onlyContainsDoNotCallAlways="false" variantAnnotated="false" variantCalled="false">
             <bins>
                 <bin startCount="0" endCount="99" name="0-99" count="0" pct="0"/>
                 <bin startCount="100" endCount="499" name="100-499" count="0" pct="0"/>
@@ -14210,7 +14203,7 @@
                 <base chr="chr18" pos="48604842" totalReadDepth="1287"/>
             </bases>
         </geneExon>
-        <geneExon chr="chr20" startPos="36031585" endPos="36031787" name="SRCex13" qc="fail" ensemblGeneId="ENSG00000197122.7" ensemblTranscriptId="ENST00000445403.1" ensemblExonId="ENSE00001385068.2" ensemblExonNumber="13" vendorGeneExonName="SRCex14" pctOfExon="9.0" refSeqAccNo="NM_005417" onlyContainsDoNotCall="false" variantAnnotated="false" variantCalled="false">
+        <geneExon chr="chr20" startPos="36031585" endPos="36031787" name="SRCex13" qc="fail" ensemblGeneId="ENSG00000197122.7" ensemblTranscriptId="ENST00000445403.1" ensemblExonId="ENSE00001385068.2" ensemblExonNumber="13" vendorGeneExonName="SRCex14" pctOfExon="9.0" refSeqAccNo="NM_005417" onlyContainsDoNotCallAlways="false" variantAnnotated="false" variantCalled="false">
             <bins>
                 <bin startCount="0" endCount="99" name="0-99" count="0" pct="0"/>
                 <bin startCount="100" endCount="499" name="100-499" count="151" pct="76"/>
@@ -14434,7 +14427,7 @@
                 <base chr="chr20" pos="36031787" totalReadDepth="403"/>
             </bases>
         </geneExon>
-        <geneExon chr="chr19" startPos="1206909" endPos="1207149" name="STK11ex1" qc="fail" ensemblGeneId="ENSG00000118046.10" ensemblTranscriptId="ENST00000326873.7" ensemblExonId="ENSE00001289198.5" ensemblExonNumber="1" vendorGeneExonName="STK11ex1" pctOfExon="16.0" refSeqAccNo="NM_000455" onlyContainsDoNotCall="false" variantAnnotated="false" variantCalled="true">
+        <geneExon chr="chr19" startPos="1206909" endPos="1207149" name="STK11ex1" qc="fail" ensemblGeneId="ENSG00000118046.10" ensemblTranscriptId="ENST00000326873.7" ensemblExonId="ENSE00001289198.5" ensemblExonNumber="1" vendorGeneExonName="STK11ex1" pctOfExon="16.0" refSeqAccNo="NM_000455" onlyContainsDoNotCallAlways="false" variantAnnotated="false" variantCalled="true">
             <bins>
                 <bin startCount="0" endCount="99" name="0-99" count="0" pct="0"/>
                 <bin startCount="100" endCount="499" name="100-499" count="56" pct="24"/>
@@ -14697,7 +14690,7 @@
                 <base chr="chr19" pos="1207149" totalReadDepth="436"/>
             </bases>
         </geneExon>
-        <geneExon chr="chr19" startPos="1220368" endPos="1220400" name="STK11ex4" qc="fail" ensemblGeneId="ENSG00000118046.10" ensemblTranscriptId="ENST00000326873.7" ensemblExonId="ENSE00003570792.1" ensemblExonNumber="4" vendorGeneExonName="STK11ex4" pctOfExon="25.0" refSeqAccNo="NM_000455" onlyContainsDoNotCall="false" variantAnnotated="false" variantCalled="false">
+        <geneExon chr="chr19" startPos="1220368" endPos="1220400" name="STK11ex4" qc="fail" ensemblGeneId="ENSG00000118046.10" ensemblTranscriptId="ENST00000326873.7" ensemblExonId="ENSE00003570792.1" ensemblExonNumber="4" vendorGeneExonName="STK11ex4" pctOfExon="25.0" refSeqAccNo="NM_000455" onlyContainsDoNotCallAlways="false" variantAnnotated="false" variantCalled="false">
             <bins>
                 <bin startCount="0" endCount="99" name="0-99" count="0" pct="0"/>
                 <bin startCount="100" endCount="499" name="100-499" count="28" pct="100"/>
@@ -14750,7 +14743,7 @@
                 <base chr="chr19" pos="1220400" totalReadDepth="188"/>
             </bases>
         </geneExon>
-        <geneExon chr="chr19" startPos="1221207" endPos="1221344" name="STK11ex6" qc="fail" ensemblGeneId="ENSG00000118046.10" ensemblTranscriptId="ENST00000326873.7" ensemblExonId="ENSE00003483429.1" ensemblExonNumber="6" vendorGeneExonName="STK11ex6" pctOfExon="100.0" refSeqAccNo="NM_000455" onlyContainsDoNotCall="false" variantAnnotated="false" variantCalled="false">
+        <geneExon chr="chr19" startPos="1221207" endPos="1221344" name="STK11ex6" qc="fail" ensemblGeneId="ENSG00000118046.10" ensemblTranscriptId="ENST00000326873.7" ensemblExonId="ENSE00003483429.1" ensemblExonNumber="6" vendorGeneExonName="STK11ex6" pctOfExon="100.0" refSeqAccNo="NM_000455" onlyContainsDoNotCallAlways="false" variantAnnotated="false" variantCalled="false">
             <bins>
                 <bin startCount="0" endCount="99" name="0-99" count="9" pct="7"/>
                 <bin startCount="100" endCount="499" name="100-499" count="118" pct="93"/>
@@ -14908,7 +14901,7 @@
                 <base chr="chr19" pos="1221344" totalReadDepth="152"/>
             </bases>
         </geneExon>
-        <geneExon chr="chr19" startPos="1222979" endPos="1223176" name="STK11ex8" qc="fail" ensemblGeneId="ENSG00000118046.10" ensemblTranscriptId="ENST00000326873.7" ensemblExonId="ENSE00003571918.1" ensemblExonNumber="8" vendorGeneExonName="STK11ex8" pctOfExon="100.0" refSeqAccNo="NM_000455" onlyContainsDoNotCall="false" variantAnnotated="false" variantCalled="false">
+        <geneExon chr="chr19" startPos="1222979" endPos="1223176" name="STK11ex8" qc="fail" ensemblGeneId="ENSG00000118046.10" ensemblTranscriptId="ENST00000326873.7" ensemblExonId="ENSE00003571918.1" ensemblExonNumber="8" vendorGeneExonName="STK11ex8" pctOfExon="100.0" refSeqAccNo="NM_000455" onlyContainsDoNotCallAlways="false" variantAnnotated="false" variantCalled="false">
             <bins>
                 <bin startCount="0" endCount="99" name="0-99" count="0" pct="0"/>
                 <bin startCount="100" endCount="499" name="100-499" count="76" pct="41"/>
@@ -15127,7 +15120,7 @@
                 <base chr="chr19" pos="1223176" totalReadDepth="297"/>
             </bases>
         </geneExon>
-        <geneExon chr="chr17" startPos="7579835" endPos="7579917" name="TP53ex2" qc="fail" ensemblGeneId="ENSG00000141510.11" ensemblTranscriptId="ENST00000269305.4" ensemblExonId="ENSE00002667911.1" ensemblExonNumber="2" vendorGeneExonName="TP53ex2" pctOfExon="81.0" refSeqAccNo="NM_000546" onlyContainsDoNotCall="false" variantAnnotated="false" variantCalled="false">
+        <geneExon chr="chr17" startPos="7579835" endPos="7579917" name="TP53ex2" qc="fail" ensemblGeneId="ENSG00000141510.11" ensemblTranscriptId="ENST00000269305.4" ensemblExonId="ENSE00002667911.1" ensemblExonNumber="2" vendorGeneExonName="TP53ex2" pctOfExon="81.0" refSeqAccNo="NM_000546" onlyContainsDoNotCallAlways="false" variantAnnotated="false" variantCalled="false">
             <bins>
                 <bin startCount="0" endCount="99" name="0-99" count="0" pct="0"/>
                 <bin startCount="100" endCount="499" name="100-499" count="73" pct="100"/>
@@ -15232,7 +15225,7 @@
                 <base chr="chr17" pos="7579917" totalReadDepth="314"/>
             </bases>
         </geneExon>
-        <geneExon chr="chr17" startPos="7579695" endPos="7579726" name="TP53ex3" qc="fail" ensemblGeneId="ENSG00000141510.11" ensemblTranscriptId="ENST00000269305.4" ensemblExonId="ENSE00002419584.1" ensemblExonNumber="3" vendorGeneExonName="TP53ex3" pctOfExon="100.0" refSeqAccNo="NM_000546" onlyContainsDoNotCall="false" variantAnnotated="false" variantCalled="false">
+        <geneExon chr="chr17" startPos="7579695" endPos="7579726" name="TP53ex3" qc="fail" ensemblGeneId="ENSG00000141510.11" ensemblTranscriptId="ENST00000269305.4" ensemblExonId="ENSE00002419584.1" ensemblExonNumber="3" vendorGeneExonName="TP53ex3" pctOfExon="100.0" refSeqAccNo="NM_000546" onlyContainsDoNotCallAlways="false" variantAnnotated="false" variantCalled="false">
             <bins>
                 <bin startCount="0" endCount="99" name="0-99" count="0" pct="0"/>
                 <bin startCount="100" endCount="499" name="100-499" count="21" pct="100"/>
@@ -15284,7 +15277,7 @@
                 <base chr="chr17" pos="7579726" totalReadDepth="403"/>
             </bases>
         </geneExon>
-        <geneExon containsDoNotCall="true" chr="chr17" startPos="7579307" endPos="7579595" name="TP53ex4" qc="fail" ensemblGeneId="ENSG00000141510.11" ensemblTranscriptId="ENST00000269305.4" ensemblExonId="ENSE00003625790.1" ensemblExonNumber="4" vendorGeneExonName="TP53ex4" pctOfExon="100.0" refSeqAccNo="NM_000546" onlyContainsDoNotCall="true" variantAnnotated="true" variantCalled="true">
+        <geneExon chr="chr17" startPos="7579307" endPos="7579595" name="TP53ex4" qc="fail" ensemblGeneId="ENSG00000141510.11" ensemblTranscriptId="ENST00000269305.4" ensemblExonId="ENSE00003625790.1" ensemblExonNumber="4" vendorGeneExonName="TP53ex4" pctOfExon="100.0" refSeqAccNo="NM_000546" onlyContainsDoNotCallAlways="false" variantAnnotated="true" variantCalled="true">
             <bins>
                 <bin startCount="0" endCount="99" name="0-99" count="3" pct="1"/>
                 <bin startCount="100" endCount="499" name="100-499" count="21" pct="8"/>
@@ -15299,11 +15292,9 @@
             </amplicons>
             <codingRegion chr="chr17" startPos="7579313" endPos="7579590" name="TP53ex4_coding"/>
             <variants>
-                <variant gene="TP53" variant="G&gt;C/C" chr="17" coordinate="7579472" type="snv" genotype="hom" altVariantFreq="99.41" readDepth="1020" altReadDepth="1014" consequence="missense_variant" cosmicId="COSM45985" hgvsc="c.215C&gt;G" hgvsp="p.Pro72Arg" dbSnpIdPrefix="rs" dbSnpIdSuffix="1042522" filters="PASS" alleleFreqGlobalMinor="39.79" geneMutation="TP53 c.215C&gt;G" hgvscComplete="NM_000546.5:c.215C&gt;G" hgvspComplete="NP_000537.3:p.Pro72Arg" ensp="NP_000537.3" onTheDoNotCallList="true" typeOfDoNotCall="Don't call, always"/>
+                <variant gene="TP53" variant="G&gt;C/C" chr="17" coordinate="7579472" type="snv" genotype="hom" altVariantFreq="99.41" readDepth="1020" altReadDepth="1014" consequence="missense_variant" cosmicId="COSM45985" hgvsc="c.215C&gt;G" hgvsp="p.Pro72Arg" dbSnpIdPrefix="rs" dbSnpIdSuffix="1042522" filters="PASS" alleleFreqGlobalMinor="39.79" geneMutation="TP53 c.215C&gt;G" hgvscComplete="NM_000546.5:c.215C&gt;G" hgvspComplete="NP_000537.3:p.Pro72Arg" ensp="NP_000537.3" onTheDoNotCallList="false" typeOfDoNotCall="Not on lab list /Potentially Valid" transcript="NM_000546.5"/>
             </variants>
-            <donotcallvariants>
-                <donotcallvariant gene="TP53" variant="G&gt;C/C" chr="17" coordinate="7579472" type="snv" genotype="hom" altVariantFreq="99.41" readDepth="1020" altReadDepth="1014" consequence="missense_variant" cosmicId="COSM45985" hgvsc="c.215C&gt;G" hgvsp="p.Pro72Arg" dbSnpIdPrefix="rs" dbSnpIdSuffix="1042522" filters="PASS" alleleFreqGlobalMinor="39.79" geneMutation="TP53 c.215C&gt;G" hgvscComplete="NM_000546.5:c.215C&gt;G" hgvspComplete="NP_000537.3:p.Pro72Arg" ensp="NP_000537.3" onTheDoNotCallList="true" typeOfDoNotCall="Don't call, always"/>
-            </donotcallvariants>
+            <donotcallvariants/>
             <nameForCompare>TP53ex</nameForCompare>
             <exonNumberForCompare>4</exonNumberForCompare>
             <suffixForCompare></suffixForCompare>
@@ -15599,7 +15590,7 @@
                 <base pos="7579595" totalReadDepth="0"/>
             </bases>
         </geneExon>
-        <geneExon chr="chr17" startPos="7578366" endPos="7578559" name="TP53ex5" qc="fail" ensemblGeneId="ENSG00000141510.11" ensemblTranscriptId="ENST00000269305.4" ensemblExonId="ENSE00003518480.1" ensemblExonNumber="5" vendorGeneExonName="TP53ex5" pctOfExon="100.0" refSeqAccNo="NM_000546" onlyContainsDoNotCall="false" variantAnnotated="false" variantCalled="false">
+        <geneExon chr="chr17" startPos="7578366" endPos="7578559" name="TP53ex5" qc="fail" ensemblGeneId="ENSG00000141510.11" ensemblTranscriptId="ENST00000269305.4" ensemblExonId="ENSE00003518480.1" ensemblExonNumber="5" vendorGeneExonName="TP53ex5" pctOfExon="100.0" refSeqAccNo="NM_000546" onlyContainsDoNotCallAlways="false" variantAnnotated="false" variantCalled="false">
             <bins>
                 <bin startCount="0" endCount="99" name="0-99" count="0" pct="0"/>
                 <bin startCount="100" endCount="499" name="100-499" count="124" pct="68"/>
@@ -15815,7 +15806,7 @@
                 <base chr="chr17" pos="7578559" totalReadDepth="1439"/>
             </bases>
         </geneExon>
-        <geneExon chr="chr17" startPos="7578172" endPos="7578294" name="TP53ex6" qc="fail" ensemblGeneId="ENSG00000141510.11" ensemblTranscriptId="ENST00000269305.4" ensemblExonId="ENSE00003462942.1" ensemblExonNumber="6" vendorGeneExonName="TP53ex6" pctOfExon="100.0" refSeqAccNo="NM_000546" onlyContainsDoNotCall="false" variantAnnotated="false" variantCalled="false">
+        <geneExon chr="chr17" startPos="7578172" endPos="7578294" name="TP53ex6" qc="fail" ensemblGeneId="ENSG00000141510.11" ensemblTranscriptId="ENST00000269305.4" ensemblExonId="ENSE00003462942.1" ensemblExonNumber="6" vendorGeneExonName="TP53ex6" pctOfExon="100.0" refSeqAccNo="NM_000546" onlyContainsDoNotCallAlways="false" variantAnnotated="false" variantCalled="false">
             <bins>
                 <bin startCount="0" endCount="99" name="0-99" count="0" pct="0"/>
                 <bin startCount="100" endCount="499" name="100-499" count="19" pct="17"/>
@@ -15959,7 +15950,7 @@
                 <base chr="chr17" pos="7578294" totalReadDepth="198"/>
             </bases>
         </geneExon>
-        <geneExon chr="chr17" startPos="7577494" endPos="7577613" name="TP53ex7" qc="warn" ensemblGeneId="ENSG00000141510.11" ensemblTranscriptId="ENST00000269305.4" ensemblExonId="ENSE00003504863.1" ensemblExonNumber="7" vendorGeneExonName="TP53ex7" pctOfExon="100.0" refSeqAccNo="NM_000546" onlyContainsDoNotCall="false" variantAnnotated="false" variantCalled="false">
+        <geneExon chr="chr17" startPos="7577494" endPos="7577613" name="TP53ex7" qc="warn" ensemblGeneId="ENSG00000141510.11" ensemblTranscriptId="ENST00000269305.4" ensemblExonId="ENSE00003504863.1" ensemblExonNumber="7" vendorGeneExonName="TP53ex7" pctOfExon="100.0" refSeqAccNo="NM_000546" onlyContainsDoNotCallAlways="false" variantAnnotated="false" variantCalled="false">
             <bins>
                 <bin startCount="0" endCount="99" name="0-99" count="0" pct="0"/>
                 <bin startCount="100" endCount="499" name="100-499" count="0" pct="0"/>
@@ -16099,7 +16090,7 @@
                 <base chr="chr17" pos="7577613" totalReadDepth="1025"/>
             </bases>
         </geneExon>
-        <geneExon chr="chr17" startPos="7577014" endPos="7577160" name="TP53ex8" qc="fail" ensemblGeneId="ENSG00000141510.11" ensemblTranscriptId="ENST00000269305.4" ensemblExonId="ENSE00003586720.1" ensemblExonNumber="8" vendorGeneExonName="TP53ex8" pctOfExon="100.0" refSeqAccNo="NM_000546" onlyContainsDoNotCall="false" variantAnnotated="false" variantCalled="false">
+        <geneExon chr="chr17" startPos="7577014" endPos="7577160" name="TP53ex8" qc="fail" ensemblGeneId="ENSG00000141510.11" ensemblTranscriptId="ENST00000269305.4" ensemblExonId="ENSE00003586720.1" ensemblExonNumber="8" vendorGeneExonName="TP53ex8" pctOfExon="100.0" refSeqAccNo="NM_000546" onlyContainsDoNotCallAlways="false" variantAnnotated="false" variantCalled="false">
             <bins>
                 <bin startCount="0" endCount="99" name="0-99" count="0" pct="0"/>
                 <bin startCount="100" endCount="499" name="100-499" count="59" pct="43"/>
@@ -16267,7 +16258,7 @@
                 <base chr="chr17" pos="7577160" totalReadDepth="777"/>
             </bases>
         </geneExon>
-        <geneExon chr="chr17" startPos="7576848" endPos="7576931" name="TP53ex9" qc="warn" ensemblGeneId="ENSG00000141510.11" ensemblTranscriptId="ENST00000269305.4" ensemblExonId="ENSE00003636029.1" ensemblExonNumber="9" vendorGeneExonName="TP53ex9" pctOfExon="100.0" refSeqAccNo="NM_000546" onlyContainsDoNotCall="false" variantAnnotated="false" variantCalled="false">
+        <geneExon chr="chr17" startPos="7576848" endPos="7576931" name="TP53ex9" qc="warn" ensemblGeneId="ENSG00000141510.11" ensemblTranscriptId="ENST00000269305.4" ensemblExonId="ENSE00003636029.1" ensemblExonNumber="9" vendorGeneExonName="TP53ex9" pctOfExon="100.0" refSeqAccNo="NM_000546" onlyContainsDoNotCallAlways="false" variantAnnotated="false" variantCalled="false">
             <bins>
                 <bin startCount="0" endCount="99" name="0-99" count="0" pct="0"/>
                 <bin startCount="100" endCount="499" name="100-499" count="0" pct="0"/>
@@ -16372,7 +16363,7 @@
                 <base chr="chr17" pos="7576931" totalReadDepth="796"/>
             </bases>
         </geneExon>
-        <geneExon chr="chr17" startPos="7573922" endPos="7574038" name="TP53ex10" qc="fail" ensemblGeneId="ENSG00000141510.11" ensemblTranscriptId="ENST00000269305.4" ensemblExonId="ENSE00003545950.1" ensemblExonNumber="10" vendorGeneExonName="TP53ex10" pctOfExon="100.0" refSeqAccNo="NM_000546" onlyContainsDoNotCall="false" variantAnnotated="false" variantCalled="false">
+        <geneExon chr="chr17" startPos="7573922" endPos="7574038" name="TP53ex10" qc="fail" ensemblGeneId="ENSG00000141510.11" ensemblTranscriptId="ENST00000269305.4" ensemblExonId="ENSE00003545950.1" ensemblExonNumber="10" vendorGeneExonName="TP53ex10" pctOfExon="100.0" refSeqAccNo="NM_000546" onlyContainsDoNotCallAlways="false" variantAnnotated="false" variantCalled="false">
             <bins>
                 <bin startCount="0" endCount="99" name="0-99" count="9" pct="8"/>
                 <bin startCount="100" endCount="499" name="100-499" count="97" pct="92"/>
@@ -16509,7 +16500,7 @@
                 <base pos="7574038" totalReadDepth="0"/>
             </bases>
         </geneExon>
-        <geneExon chr="chr17" startPos="7572923" endPos="7573013" name="TP53ex11" qc="warn" ensemblGeneId="ENSG00000141510.11" ensemblTranscriptId="ENST00000269305.4" ensemblExonId="ENSE00003605891.1" ensemblExonNumber="11" vendorGeneExonName="TP53ex11" pctOfExon="7.0" refSeqAccNo="NM_000546" onlyContainsDoNotCall="false" variantAnnotated="false" variantCalled="false">
+        <geneExon chr="chr17" startPos="7572923" endPos="7573013" name="TP53ex11" qc="warn" ensemblGeneId="ENSG00000141510.11" ensemblTranscriptId="ENST00000269305.4" ensemblExonId="ENSE00003605891.1" ensemblExonNumber="11" vendorGeneExonName="TP53ex11" pctOfExon="7.0" refSeqAccNo="NM_000546" onlyContainsDoNotCallAlways="false" variantAnnotated="false" variantCalled="false">
             <bins>
                 <bin startCount="0" endCount="99" name="0-99" count="0" pct="0"/>
                 <bin startCount="100" endCount="499" name="100-499" count="0" pct="0"/>
@@ -16621,5 +16612,5 @@
             </bases>
         </geneExon>
     </geneExons>
-    <bedBamVcfFileUrls>file:/C:/Users/Tom/Documents/GitHub/coverageQc/data/cancer_panel_26.20140716.amplicons.bed</bedBamVcfFileUrls>
+    <bedBamVcfFileUrls>file:/home/tom/git/coverageQc/data/cancer_panel_26.20140717.amplicons.bed</bedBamVcfFileUrls>
 </vcf>
