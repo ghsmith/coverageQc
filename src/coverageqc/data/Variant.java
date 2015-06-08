@@ -66,6 +66,11 @@ public class Variant {
     public String typeOfDoNotCall;
     @XmlAttribute
     public String transcript;
+    
+    @XmlAttribute
+    public String refSeqAccNoHgvsc;
+    @XmlAttribute
+    public String refSeqAccNoTranscript;
  
     //end of Tom Addition
             //Tom Addition I am adding in the input of a String[][]
@@ -116,18 +121,30 @@ public class Variant {
         //end of TOM addition
         // note: parsing out RefSeq IDs
         if(dataArray[headings.get("HGVSc")] != null) {
-           Pattern pattern = Pattern.compile(".*:(.*)");
+           Pattern pattern = Pattern.compile("^(.*):(.*)$");
             Matcher matcher = pattern.matcher(dataArray[headings.get("HGVSc")]);
             if(matcher.find()) {
-                variant.hgvsc = matcher.group(1);
+                variant.refSeqAccNoHgvsc = matcher.group(1);
+                variant.hgvsc = matcher.group(2);
             }
             else {
-                variant.hgvsc = dataArray[headings.get("HGVSc")];
+                //variant.hgvsc = dataArray[headings.get("HGVSc")];
+                System.out.println("invalid HGVSc format");
+                System.exit(1);
             }
+        }
+        variant.refSeqAccNoTranscript = dataArray[headings.get("Transcript")];
+        if(variant.refSeqAccNoTranscript == null
+            || variant.refSeqAccNoTranscript.length() == 0
+            || variant.refSeqAccNoHgvsc == null
+            || variant.refSeqAccNoHgvsc.length() == 0
+            || !variant.refSeqAccNoTranscript.equals(variant.refSeqAccNoHgvsc)) {
+            System.out.println("RefSeq accession number mismatch between Transcript and HGVSc");
+            System.exit(1);
         }
         // note: parsing out RefSeq IDs
         if(dataArray[headings.get("HGVSp")] != null) {
-            Pattern pattern = Pattern.compile(".*:(.*)");
+            Pattern pattern = Pattern.compile("^.*:(.*)$");
             Matcher matcher = pattern.matcher(dataArray[headings.get("HGVSp")]);
             if(matcher.find()) {
                 variant.hgvsp = matcher.group(1);
@@ -137,7 +154,7 @@ public class Variant {
             }
         }
         if(dataArray[headings.get("dbSNP ID")] != null) {
-            Pattern pattern = Pattern.compile("([A-Za-z]*)([0-9]*)");
+            Pattern pattern = Pattern.compile("^([A-Za-z]*)([0-9]*)$");
             Matcher matcher = pattern.matcher(dataArray[headings.get("dbSNP ID")]);
             if(matcher.find()) {
                 variant.dbSnpIdPrefix = matcher.group(1);

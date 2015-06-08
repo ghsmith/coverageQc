@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<vcf build="20150318" version="1.15" fileName="/home/tom/git/coverageQc/data/sample.genome.vcf" doNotCallFileName="NO DO NOT CALL FILE USED!" exonBedFileName="/home/tom/git/coverageQc/data/cancer_panel_26.20140620.exons.bed" ampliconBedFileName="/home/tom/git/coverageQc/data/cancer_panel_26.20140717.amplicons.bed" variantTsvFileName="/home/tom/git/coverageQc/data/sample.variant.tsv" variantTsvFileLineCount="9" runDate="2015-03-19T09:31:16.961-04:00" ampliconCount="282" baseCount="14882" bedBamVcfFileUrlsAsString="file:///home/tom/git/coverageQc/data/cancer_panel_26.20140717.amplicons.bed" filteredAnnotatedVariantCount="8" readDepthCount="14883">
+<vcf build="20150608" version="1.16" fileName="D:\Documents\NetBeansProjects\coverageQc\data\sample.genome.vcf" doNotCallFileName="NO DO NOT CALL FILE USED!" exonBedFileName="D:\Documents\NetBeansProjects\coverageQc\data\cancer_panel_26.20150220.exons.bed" ampliconBedFileName="D:\Documents\NetBeansProjects\coverageQc\data\cancer_panel_26.20140717.amplicons.bed" variantTsvFileName="D:\Documents\NetBeansProjects\coverageQc\data\sample.variant.tsv" variantTsvFileLineCount="9" runDate="2015-06-08T00:52:56.828-04:00" ampliconCount="282" baseCount="14882" bedBamVcfFileUrlsAsString="file:///D:/Documents/NetBeansProjects/coverageQc/data/cancer_panel_26.20140717.amplicons.bed" filteredAnnotatedVariantCount="8" readDepthCount="14883">
     <geneExons>
         <geneExon chr="chr14" startPos="105246420" endPos="105246558" name="AKT1ex3" qc="fail" ensemblGeneId="ENSG00000142208.11" ensemblTranscriptId="ENST00000555528.1" ensemblExonId="ENSE00003642995.1" ensemblExonNumber="3" vendorGeneExonName="AKT1ex2" pctOfExon="100.0" refSeqAccNo="NM_005163" onlyContainsDoNotCallAlways="false" variantAnnotated="true" variantCalled="true">
             <bins>
@@ -15,7 +15,7 @@
             </amplicons>
             <codingRegion chr="chr14" startPos="105246426" endPos="105246553" name="AKT1ex2_coding"/>
             <variants>
-                <variant gene="AKT1" variant="A&gt;G/G" chr="14" coordinate="105246528" type="XXX" genotype="XXX" altVariantFreq="0.0" readDepth="0" altReadDepth="0" consequence="XXXXXXXXXXXXXXXXXXX" cosmicId="" hgvsc="XXXXXXXXXXXXXXXXXXXX" hgvsp="" dbSnpIdPrefix="XXXXXXXXX" dbSnpIdSuffix="" filters="XXXX" alleleFreqGlobalMinor="0.0" geneMutation="AKT1 XXXXXXXXXXXXXXXXXXXX" hgvscComplete="XXXXXXXXXXXXXXXXXXXX" hgvspComplete="" ensp="XXXXXXXXXXX" onTheDoNotCallList="false" typeOfDoNotCall="Not on lab list /Potentially Valid" transcript="XXXXXXXXXXX"/>
+                <variant gene="AKT1" variant="A&gt;G/G" chr="14" coordinate="105246528" type="XXX" genotype="XXX" altVariantFreq="0.0" readDepth="0" altReadDepth="0" consequence="XXXXXXXXXXXXXXXXXXX" cosmicId="" hgvsc="XXXXXXXXXXXXXXXXXXXX" hgvsp="" dbSnpIdPrefix="XXXXXXXXX" dbSnpIdSuffix="" filters="XXXX" alleleFreqGlobalMinor="0.0" geneMutation="AKT1 XXXXXXXXXXXXXXXXXXXX" hgvscComplete="ASDFASDFASD:XXXXXXXXXXXXXXXXXXXX" hgvspComplete="" ensp="XXXXXXXXXXX" onTheDoNotCallList="false" typeOfDoNotCall="Not on lab list /Potentially Valid" transcript="ASDFASDFASD" refSeqAccNoHgvsc="ASDFASDFASD" refSeqAccNoTranscript="ASDFASDFASD"/>
             </variants>
             <donotcallvariants/>
             <nameForCompare>AKT1ex</nameForCompare>
@@ -1222,7 +1222,7 @@
             </amplicons>
             <codingRegion chr="chr5" startPos="112173251" endPos="112179823" name="APCex15_coding"/>
             <variants>
-                <variant gene="APC" variant="G&gt;A/A" chr="5" coordinate="112175770" type="snv" genotype="hom" altVariantFreq="99.64" readDepth="2224" altReadDepth="2216" consequence="synonymous_variant" cosmicId="" hgvsc="c.4479G&gt;A" hgvsp="c.4479G&gt;A(p.=)" dbSnpIdPrefix="rs" dbSnpIdSuffix="41115" filters="PASS" alleleFreqGlobalMinor="33.84" geneMutation="APC c.4479G&gt;A" hgvscComplete="NM_000038.5:c.4479G&gt;A" hgvspComplete="NM_000038.5:c.4479G&gt;A(p.=)" ensp="NP_000029.2" onTheDoNotCallList="false" typeOfDoNotCall="Not on lab list /Potentially Valid" transcript="NM_000038.5"/>
+                <variant gene="APC" variant="G&gt;A/A" chr="5" coordinate="112175770" type="snv" genotype="hom" altVariantFreq="99.64" readDepth="2224" altReadDepth="2216" consequence="synonymous_variant" cosmicId="" hgvsc="c.4479G&gt;A" hgvsp="c.4479G&gt;A(p.=)" dbSnpIdPrefix="rs" dbSnpIdSuffix="41115" filters="PASS" alleleFreqGlobalMinor="33.84" geneMutation="APC c.4479G&gt;A" hgvscComplete="NM_000038.5:c.4479G&gt;A" hgvspComplete="NM_000038.5:c.4479G&gt;A(p.=)" ensp="NP_000029.2" onTheDoNotCallList="false" typeOfDoNotCall="Not on lab list /Potentially Valid" transcript="NM_000038.5" refSeqAccNoHgvsc="NM_000038.5" refSeqAccNoTranscript="NM_000038.5"/>
             </variants>
             <donotcallvariants/>
             <nameForCompare>APCex</nameForCompare>
@@ -2824,12 +2824,12 @@
                 <base pos="68856133" totalReadDepth="0"/>
             </bases>
         </geneExon>
-        <geneExon chr="chr3" startPos="41266013" endPos="41266161" name="CTNNB1ex3" qc="warn" ensemblGeneId="ENSG00000168036.12" ensemblTranscriptId="ENST00000349496.5" ensemblExonId="ENSE00003464041.1" ensemblExonNumber="3" vendorGeneExonName="CTNNB1ex2" pctOfExon="65.0" refSeqAccNo="NM_001904" onlyContainsDoNotCallAlways="false" variantAnnotated="false" variantCalled="false">
+        <geneExon chr="chr3" startPos="41266013" endPos="41266162" name="CTNNB1ex3" qc="warn" ensemblGeneId="ENSG00000168036.12" ensemblTranscriptId="ENST00000349496.5" ensemblExonId="ENSE00003464041.1" ensemblExonNumber="3" vendorGeneExonName="CTNNB1ex2" pctOfExon="65.0" refSeqAccNo="NM_001904" onlyContainsDoNotCallAlways="false" variantAnnotated="false" variantCalled="false">
             <bins>
                 <bin startCount="0" endCount="99" name="0-99" count="0" pct="0"/>
                 <bin startCount="100" endCount="499" name="100-499" count="0" pct="0"/>
-                <bin startCount="500" endCount="999" name="500-999" count="74" pct="51"/>
-                <bin startCount="1000" endCount="9999999" name="&amp;ge;1000" count="70" pct="49"/>
+                <bin startCount="500" endCount="999" name="500-999" count="75" pct="52"/>
+                <bin startCount="1000" endCount="9999999" name="&amp;ge;1000" count="70" pct="48"/>
             </bins>
             <amplicons>
                 <amplicon chr="chr3" startPos="41266018" endPos="41266244" name="CTNNB1ex2_coding"/>
@@ -2992,6 +2992,7 @@
                 <base chr="chr3" pos="41266159" totalReadDepth="932"/>
                 <base chr="chr3" pos="41266160" totalReadDepth="930"/>
                 <base chr="chr3" pos="41266161" totalReadDepth="932"/>
+                <base chr="chr3" pos="41266162" totalReadDepth="934"/>
             </bases>
         </geneExon>
         <geneExon chr="chr7" startPos="55241609" endPos="55241741" name="EGFRex18" qc="warn" ensemblGeneId="ENSG00000146648.11" ensemblTranscriptId="ENST00000275493.2" ensemblExonId="ENSE00001778519.1" ensemblExonNumber="18" vendorGeneExonName="EGFRex18" pctOfExon="100.0" refSeqAccNo="NM_005228" onlyContainsDoNotCallAlways="false" variantAnnotated="false" variantCalled="false">
@@ -5061,7 +5062,7 @@
                 <base chr="chr4" pos="153244303" totalReadDepth="3843"/>
             </bases>
         </geneExon>
-        <geneExon chr="chr10" startPos="123279488" endPos="123279688" name="FGFR2ex7" qc="fail" ensemblGeneId="ENSG00000066468.16" ensemblTranscriptId="ENST00000358487.5" ensemblExonId="ENSE00003530900.1" ensemblExonNumber="7" vendorGeneExonName="FGFR2ex6" pctOfExon="100.0" refSeqAccNo="NM_000141" onlyContainsDoNotCallAlways="false" variantAnnotated="false" variantCalled="false">
+        <geneExon chr="chr10" startPos="123279488" endPos="123279689" name="FGFR2ex7" qc="fail" ensemblGeneId="ENSG00000066468.16" ensemblTranscriptId="ENST00000358487.5" ensemblExonId="ENSE00003530900.1" ensemblExonNumber="7" vendorGeneExonName="FGFR2ex6" pctOfExon="100.0" refSeqAccNo="NM_000141" onlyContainsDoNotCallAlways="false" variantAnnotated="false" variantCalled="false">
             <bins>
                 <bin startCount="0" endCount="99" name="0-99" count="0" pct="0"/>
                 <bin startCount="100" endCount="499" name="100-499" count="56" pct="29"/>
@@ -5281,6 +5282,7 @@
                 <base chr="chr10" pos="123279686" totalReadDepth="467"/>
                 <base chr="chr10" pos="123279687" totalReadDepth="467"/>
                 <base chr="chr10" pos="123279688" totalReadDepth="467"/>
+                <base chr="chr10" pos="123279689" totalReadDepth="466"/>
             </bases>
         </geneExon>
         <geneExon chr="chr3" startPos="138665110" endPos="138665221" name="FOXL2ex1" qc="fail" ensemblGeneId="ENSG00000183770.5" ensemblTranscriptId="ENST00000330315.3" ensemblExonId="ENSE00001290668.4" ensemblExonNumber="1" vendorGeneExonName="FOXL2ex1" pctOfExon="4.0" refSeqAccNo="NM_023067" onlyContainsDoNotCallAlways="false" variantAnnotated="false" variantCalled="false">
@@ -6845,7 +6847,7 @@
             </amplicons>
             <codingRegion chr="chr4" startPos="55602665" endPos="55602775" name="KITex18_coding"/>
             <variants>
-                <variant gene="KIT" variant="G&gt;G/C" chr="4" coordinate="55602765" type="snv" genotype="het" altVariantFreq="47.98" readDepth="2522" altReadDepth="1210" consequence="synonymous_variant" cosmicId="COSM1325" hgvsc="c.2586G&gt;C" hgvsp="c.2586G&gt;C(p.=)" dbSnpIdPrefix="rs" dbSnpIdSuffix="3733542" filters="PASS" alleleFreqGlobalMinor="14.33" geneMutation="KIT c.2586G&gt;C" hgvscComplete="NM_000222.2:c.2586G&gt;C" hgvspComplete="NM_000222.2:c.2586G&gt;C(p.=)" ensp="NP_000213.1" onTheDoNotCallList="false" typeOfDoNotCall="Not on lab list /Potentially Valid" transcript="NM_000222.2"/>
+                <variant gene="KIT" variant="G&gt;G/C" chr="4" coordinate="55602765" type="snv" genotype="het" altVariantFreq="47.98" readDepth="2522" altReadDepth="1210" consequence="synonymous_variant" cosmicId="COSM1325" hgvsc="c.2586G&gt;C" hgvsp="c.2586G&gt;C(p.=)" dbSnpIdPrefix="rs" dbSnpIdSuffix="3733542" filters="PASS" alleleFreqGlobalMinor="14.33" geneMutation="KIT c.2586G&gt;C" hgvscComplete="NM_000222.2:c.2586G&gt;C" hgvspComplete="NM_000222.2:c.2586G&gt;C(p.=)" ensp="NP_000213.1" onTheDoNotCallList="false" typeOfDoNotCall="Not on lab list /Potentially Valid" transcript="NM_000222.2" refSeqAccNoHgvsc="NM_000222.2" refSeqAccNoTranscript="NM_000222.2"/>
             </variants>
             <donotcallvariants/>
             <nameForCompare>KITex</nameForCompare>
@@ -7150,7 +7152,7 @@
             </amplicons>
             <codingRegion chr="chr12" startPos="25380169" endPos="25380346" name="KRASex2_coding"/>
             <variants>
-                <variant gene="KRAS" variant="T&gt;T/G" chr="12" coordinate="25380275" type="snv" genotype="het" altVariantFreq="7.0" readDepth="13896" altReadDepth="973" consequence="missense_variant" cosmicId="COSM1135364" hgvsc="c.183A&gt;C" hgvsp="p.Gln61His" dbSnpIdPrefix="rs" dbSnpIdSuffix="17851045" filters="PASS" alleleFreqGlobalMinor="0.0" geneMutation="KRAS c.183A&gt;C" hgvscComplete="NM_033360.2:c.183A&gt;C" hgvspComplete="NP_203524.1:p.Gln61His" ensp="NP_203524.1" onTheDoNotCallList="false" typeOfDoNotCall="Not on lab list /Potentially Valid" transcript="NM_033360.2"/>
+                <variant gene="KRAS" variant="T&gt;T/G" chr="12" coordinate="25380275" type="snv" genotype="het" altVariantFreq="7.0" readDepth="13896" altReadDepth="973" consequence="missense_variant" cosmicId="COSM1135364" hgvsc="c.183A&gt;C" hgvsp="p.Gln61His" dbSnpIdPrefix="rs" dbSnpIdSuffix="17851045" filters="PASS" alleleFreqGlobalMinor="0.0" geneMutation="KRAS c.183A&gt;C" hgvscComplete="NM_033360.2:c.183A&gt;C" hgvspComplete="NP_203524.1:p.Gln61His" ensp="NP_203524.1" onTheDoNotCallList="false" typeOfDoNotCall="Not on lab list /Potentially Valid" transcript="NM_033360.2" refSeqAccNoHgvsc="NM_033360.2" refSeqAccNoTranscript="NM_033360.2"/>
             </variants>
             <donotcallvariants/>
             <nameForCompare>KRASex</nameForCompare>
@@ -7553,8 +7555,8 @@
             </amplicons>
             <codingRegion chr="chr12" startPos="25362730" endPos="25362845" name="KRASex4_coding"/>
             <variants>
-                <variant gene="KRAS" variant="A&gt;G/G" chr="12" coordinate="25362777" type="snv" genotype="hom" altVariantFreq="99.79" readDepth="5705" altReadDepth="5693" consequence="3_prime_UTR_variant" cosmicId="" hgvsc="c.*73T&gt;C" hgvsp="" dbSnpIdPrefix="rs" dbSnpIdSuffix="1137282" filters="PASS" alleleFreqGlobalMinor="16.58" geneMutation="KRAS c.*73T&gt;C" hgvscComplete="NM_033360.2:c.*73T&gt;C" hgvspComplete="" ensp="NP_203524.1" onTheDoNotCallList="false" typeOfDoNotCall="Not on lab list /Potentially Valid" transcript="NM_033360.2"/>
-                <variant gene="KRAS" variant="A&gt;G/G" chr="12" coordinate="25362777" type="snv" genotype="XXX" altVariantFreq="99.79" readDepth="5705" altReadDepth="5693" consequence="XXXXXXXXXXXXXXXXXXX" cosmicId="" hgvsc="c.*73T&gt;C" hgvsp="" dbSnpIdPrefix="rs" dbSnpIdSuffix="1137282" filters="PASS" alleleFreqGlobalMinor="16.58" geneMutation="KRAS c.*73T&gt;C" hgvscComplete="NM_033360.2:c.*73T&gt;C" hgvspComplete="" ensp="NP_203524.1" onTheDoNotCallList="false" typeOfDoNotCall="Not on lab list /Potentially Valid" transcript="NM_033360.2"/>
+                <variant gene="KRAS" variant="A&gt;G/G" chr="12" coordinate="25362777" type="snv" genotype="hom" altVariantFreq="99.79" readDepth="5705" altReadDepth="5693" consequence="3_prime_UTR_variant" cosmicId="" hgvsc="c.*73T&gt;C" hgvsp="" dbSnpIdPrefix="rs" dbSnpIdSuffix="1137282" filters="PASS" alleleFreqGlobalMinor="16.58" geneMutation="KRAS c.*73T&gt;C" hgvscComplete="NM_033360.2:c.*73T&gt;C" hgvspComplete="" ensp="NP_203524.1" onTheDoNotCallList="false" typeOfDoNotCall="Not on lab list /Potentially Valid" transcript="NM_033360.2" refSeqAccNoHgvsc="NM_033360.2" refSeqAccNoTranscript="NM_033360.2"/>
+                <variant gene="KRAS" variant="A&gt;G/G" chr="12" coordinate="25362777" type="snv" genotype="XXX" altVariantFreq="99.79" readDepth="5705" altReadDepth="5693" consequence="XXXXXXXXXXXXXXXXXXX" cosmicId="" hgvsc="c.*73T&gt;C" hgvsp="" dbSnpIdPrefix="rs" dbSnpIdSuffix="1137282" filters="PASS" alleleFreqGlobalMinor="16.58" geneMutation="KRAS c.*73T&gt;C" hgvscComplete="NM_033360.2:c.*73T&gt;C" hgvspComplete="" ensp="NP_203524.1" onTheDoNotCallList="false" typeOfDoNotCall="Not on lab list /Potentially Valid" transcript="NM_033360.2" refSeqAccNoHgvsc="NM_033360.2" refSeqAccNoTranscript="NM_033360.2"/>
             </variants>
             <donotcallvariants/>
             <nameForCompare>KRASex</nameForCompare>
@@ -10926,7 +10928,7 @@
             </amplicons>
             <codingRegion chr="chr4" startPos="55141009" endPos="55141140" name="PDGFRAex11_coding"/>
             <variants>
-                <variant gene="PDGFRA" variant="A&gt;G/G" chr="4" coordinate="55141055" type="snv" genotype="hom" altVariantFreq="99.68" readDepth="1897" altReadDepth="1891" consequence="synonymous_variant" cosmicId="COSM1430082" hgvsc="c.1701A&gt;G" hgvsp="c.1701A&gt;G(p.=)" dbSnpIdPrefix="rs" dbSnpIdSuffix="1873778" filters="PASS" alleleFreqGlobalMinor="3.66" geneMutation="PDGFRA c.1701A&gt;G" hgvscComplete="NM_006206.4:c.1701A&gt;G" hgvspComplete="NM_006206.4:c.1701A&gt;G(p.=)" ensp="NP_006197.1" onTheDoNotCallList="false" typeOfDoNotCall="Not on lab list /Potentially Valid" transcript="NM_006206.4"/>
+                <variant gene="PDGFRA" variant="A&gt;G/G" chr="4" coordinate="55141055" type="snv" genotype="hom" altVariantFreq="99.68" readDepth="1897" altReadDepth="1891" consequence="synonymous_variant" cosmicId="COSM1430082" hgvsc="c.1701A&gt;G" hgvsp="c.1701A&gt;G(p.=)" dbSnpIdPrefix="rs" dbSnpIdSuffix="1873778" filters="PASS" alleleFreqGlobalMinor="3.66" geneMutation="PDGFRA c.1701A&gt;G" hgvscComplete="NM_006206.4:c.1701A&gt;G" hgvspComplete="NM_006206.4:c.1701A&gt;G(p.=)" ensp="NP_006197.1" onTheDoNotCallList="false" typeOfDoNotCall="Not on lab list /Potentially Valid" transcript="NM_006206.4" refSeqAccNoHgvsc="NM_006206.4" refSeqAccNoTranscript="NM_006206.4"/>
             </variants>
             <donotcallvariants/>
             <nameForCompare>PDGFRAex</nameForCompare>
@@ -14203,7 +14205,7 @@
                 <base chr="chr18" pos="48604842" totalReadDepth="1287"/>
             </bases>
         </geneExon>
-        <geneExon chr="chr20" startPos="36031585" endPos="36031787" name="SRCex13" qc="fail" ensemblGeneId="ENSG00000197122.7" ensemblTranscriptId="ENST00000445403.1" ensemblExonId="ENSE00001385068.2" ensemblExonNumber="13" vendorGeneExonName="SRCex14" pctOfExon="9.0" refSeqAccNo="NM_005417" onlyContainsDoNotCallAlways="false" variantAnnotated="false" variantCalled="false">
+        <geneExon chr="chr20" startPos="36031585" endPos="36031788" name="SRCex13" qc="fail" ensemblGeneId="ENSG00000197122.7" ensemblTranscriptId="ENST00000445403.1" ensemblExonId="ENSE00001385068.2" ensemblExonNumber="13" vendorGeneExonName="SRCex14" pctOfExon="9.0" refSeqAccNo="NM_005417" onlyContainsDoNotCallAlways="false" variantAnnotated="false" variantCalled="false">
             <bins>
                 <bin startCount="0" endCount="99" name="0-99" count="0" pct="0"/>
                 <bin startCount="100" endCount="499" name="100-499" count="151" pct="76"/>
@@ -14425,6 +14427,7 @@
                 <base chr="chr20" pos="36031785" totalReadDepth="405"/>
                 <base chr="chr20" pos="36031786" totalReadDepth="405"/>
                 <base chr="chr20" pos="36031787" totalReadDepth="403"/>
+                <base chr="chr20" pos="36031788" totalReadDepth="407"/>
             </bases>
         </geneExon>
         <geneExon chr="chr19" startPos="1206909" endPos="1207149" name="STK11ex1" qc="fail" ensemblGeneId="ENSG00000118046.10" ensemblTranscriptId="ENST00000326873.7" ensemblExonId="ENSE00001289198.5" ensemblExonNumber="1" vendorGeneExonName="STK11ex1" pctOfExon="16.0" refSeqAccNo="NM_000455" onlyContainsDoNotCallAlways="false" variantAnnotated="false" variantCalled="true">
@@ -15292,7 +15295,7 @@
             </amplicons>
             <codingRegion chr="chr17" startPos="7579313" endPos="7579590" name="TP53ex4_coding"/>
             <variants>
-                <variant gene="TP53" variant="G&gt;C/C" chr="17" coordinate="7579472" type="snv" genotype="hom" altVariantFreq="99.41" readDepth="1020" altReadDepth="1014" consequence="missense_variant" cosmicId="COSM45985" hgvsc="c.215C&gt;G" hgvsp="p.Pro72Arg" dbSnpIdPrefix="rs" dbSnpIdSuffix="1042522" filters="PASS" alleleFreqGlobalMinor="39.79" geneMutation="TP53 c.215C&gt;G" hgvscComplete="NM_000546.5:c.215C&gt;G" hgvspComplete="NP_000537.3:p.Pro72Arg" ensp="NP_000537.3" onTheDoNotCallList="false" typeOfDoNotCall="Not on lab list /Potentially Valid" transcript="NM_000546.5"/>
+                <variant gene="TP53" variant="G&gt;C/C" chr="17" coordinate="7579472" type="snv" genotype="hom" altVariantFreq="99.41" readDepth="1020" altReadDepth="1014" consequence="missense_variant" cosmicId="COSM45985" hgvsc="c.215C&gt;G" hgvsp="p.Pro72Arg" dbSnpIdPrefix="rs" dbSnpIdSuffix="1042522" filters="PASS" alleleFreqGlobalMinor="39.79" geneMutation="TP53 c.215C&gt;G" hgvscComplete="NM_000546.5:c.215C&gt;G" hgvspComplete="NP_000537.3:p.Pro72Arg" ensp="NP_000537.3" onTheDoNotCallList="false" typeOfDoNotCall="Not on lab list /Potentially Valid" transcript="NM_000546.5" refSeqAccNoHgvsc="NM_000546.5" refSeqAccNoTranscript="NM_000546.5"/>
             </variants>
             <donotcallvariants/>
             <nameForCompare>TP53ex</nameForCompare>
@@ -16612,5 +16615,5 @@
             </bases>
         </geneExon>
     </geneExons>
-    <bedBamVcfFileUrls>file:/home/tom/git/coverageQc/data/cancer_panel_26.20140717.amplicons.bed</bedBamVcfFileUrls>
+    <bedBamVcfFileUrls>file:/D:/Documents/NetBeansProjects/coverageQc/data/cancer_panel_26.20140717.amplicons.bed</bedBamVcfFileUrls>
 </vcf>

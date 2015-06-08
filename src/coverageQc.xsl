@@ -445,6 +445,7 @@
                                                     <th>consequence</th>
                                                     <th>genotype</th>
                                                     <th>AVF</th>
+                                                    <th>RefSeq</th>
                                                     <th>cDNA</th>
                                                     <th>amino acid</th>
                                                     <th>dbSNP</th>
@@ -478,6 +479,9 @@
                                                         </td>
                                                         <td data-export-label="avf" style="text-align: right;">
                                                             <xsl:value-of select="@altVariantFreq"/>
+                                                        </td>
+                                                        <td data-export-label="variantRefSeqAccNo">
+                                                            <xsl:value-of select="@refSeqAccNoHgvsc"/>
                                                         </td>
                                                         <td data-export-label="cDna">
                                                             <xsl:value-of select="@hgvsc"/>
@@ -587,7 +591,8 @@
                         resultsText += "&lt;b>" + exportMap.gene + " " + exportMap.cDna + " (" + exportMap.aminoAcid + ")" + " details:" + "&lt;/b>&lt;br/>";
                         resultsText += "Allele frequency: " + exportMap.avf + "%" + "&lt;br/>";
                         resultsText += "Chromosome " + exportMap.chr_num + " coordinate " + exportMap.coordinate_num + "&lt;br/>";
-                        resultsText += "In gene region: " + exportMap.gene + " exon " + exportMap.exonName_numOnly + "( Ensembl ID: " + exportMap.exonEnsemblId + "; RefSeq accession no: " + exportMap.refSeqAccNo + "; chromosome " + exportMap.chr_num + ":" + exportMap.locus_numOnly + ")&lt;br/>&lt;br/>";
+                        //resultsText += "In gene region: " + exportMap.gene + " exon " + exportMap.exonName_numOnly + "( Ensembl ID: " + exportMap.exonEnsemblId + "; RefSeq accession no: " + exportMap.refSeqAccNo + "; chromosome " + exportMap.chr_num + ":" + exportMap.locus_numOnly + ")&lt;br/>&lt;br/>";
+                        resultsText += "RefSeq accession no: " + exportMap.variantRefSeqAccNo + "&lt;br/>&lt;br/>";
  
                         });
                         }
