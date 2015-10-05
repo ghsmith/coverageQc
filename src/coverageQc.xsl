@@ -215,10 +215,21 @@
                                     </span>
                                 </xsl:when>
                                 <xsl:otherwise>
-                                    <span style="color: red">*** NO VARIANT TSV FILE IDENTIFIED ***</span>
-                                    <span style="font-weight: normal;">
-                                        <br/>This report was likely created in error.
-                                    </span>
+                                    <span style="color: black">No ILLUMINA Variant TSV File Used </span>
+                                </xsl:otherwise>
+                            </xsl:choose>
+                        </td>
+                    </tr>
+                    <tr style="vertical-align: top;">
+                        <td>Annovar TSV file</td>
+                        <td>:</td>
+                        <td style="font-weight: bold;">
+                            <xsl:choose>
+                                <xsl:when test="@annovarFiles != ''">
+                                    <xsl:value-of select="/vcf/@annovarFiles"/>
+                                </xsl:when>
+                                <xsl:otherwise>
+                                    <span style="color: black">No ANNOVAR Variant File Used </span>
                                 </xsl:otherwise>
                             </xsl:choose>
                         </td>
@@ -244,9 +255,38 @@
                             <xsl:value-of select="/vcf/@doNotCallFileName"/>
                         </td>
                     </tr>
+                    <tr style="vertical-align: top;">
+                        <td>Bed,vcf files to use file</td>
+                        <td>:</td>
+                        <td style="font-weight: bold;">
+                            <xsl:value-of select="/vcf/@filesToUseFileName"/>
+                        </td>
+                    </tr>
+                    <tr style="vertical-align: top;">
+                        <td>Aligners names file</td>
+                        <td>:</td>
+                        <td style="font-weight: bold;">
+                            <xsl:value-of select="/vcf/@alignersFileName"/>
+                        </td>
+                    </tr>
+                    <tr style="vertical-align: top;">
+                        <td>Genes to exclude file</td>
+                        <td>:</td>
+                        <td style="font-weight: bold;">
+                            <xsl:value-of select="/vcf/@genesToExcludeFileName"/>
+                        </td>
+                    </tr>
+                    <tr style="vertical-align: top;">
+                        <td>Excluded Variants</td>
+                        <td>:</td>
+                        <td style="font-weight: bold;">
+                            <xsl:value-of select="/vcf/@variantsExcludedFromCoverageQC"/>
+                        </td>
+                    </tr>
                 </table>
 
                 <ul>
+                    <li>Note: MAF is expressed as a percentage </li>
                     <li>QC rules are applied to bases <i>in the coding region</i> of each locus:
                         <ul>
                             <li>pass: <i>all</i> bases read <xsl:value-of select="/vcf/geneExons/geneExon[1]/bins/bin[4]/@name" disable-output-escaping="yes"/> times</li>
@@ -254,7 +294,7 @@
                             <li>fail: <i>any</i> base read <xsl:value-of select="/vcf/geneExons/geneExon[1]/bins/bin[1]/@name" disable-output-escaping="yes"/> or <xsl:value-of select="/vcf/geneExons/geneExon[1]/bins/bin[2]/@name" disable-output-escaping="yes"/> times</li>
                         </ul>
                     </li>
-                    <li>Coding regions and amplicons are specified by vendor.</li>
+                    <li>Amplicons are specified by vendor. Coding Regions are modified to include splicing regions</li>
                     <li>If the gVCF file contains multiple entries for the same position (e.g., indels), the maximum read depth value is reported here.</li>
                     <li>After selecting variants for export, <a id="exportLink" href="#">click here</a> to see them as a text document suitable for cut-and-paste operations.</li>
                 </ul>
@@ -439,6 +479,7 @@
                                             <thead>
                                                 <tr>
                                                     <th>export?</th>
+                                                    <th>pipeline</th>
                                                     <th>gene</th>
                                                     <th>coordinate</th>
                                                     <th>filters<sup>*</sup></th>
@@ -464,6 +505,9 @@
                                                         <td style="text-align: center;">
                                                             <input type="checkbox" class="exportCheckbox"/>
                                                         </td>
+                                                        <td data-export-label="pipeline">
+                                                            <xsl:value-of select="@pipeline"/>
+                                                        </td>
                                                         <td data-export-label="gene">
                                                             <xsl:value-of select="@gene"/>
                                                         </td>
@@ -481,7 +525,7 @@
                                                             <xsl:value-of select="@altVariantFreq"/>
                                                         </td>
                                                         <td data-export-label="variantRefSeqAccNo">
-                                                            <xsl:value-of select="@refSeqAccNoHgvsc"/>
+                                                            <xsl:value-of select="@refSeqAccNoTranscript"/>
                                                         </td>
                                                         <td data-export-label="cDna">
                                                             <xsl:value-of select="@hgvsc"/>

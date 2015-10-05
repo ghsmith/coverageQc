@@ -36,6 +36,17 @@ public class DoNotCall {
     public String transcript;
       @XmlAttribute
     public Long coordinate;
+      @XmlAttribute
+    public Long coordinate_end;
+      @XmlAttribute
+    public String AAChange;
+    @XmlAttribute
+    public Integer chr;
+    @XmlAttribute
+    public String annotator;
+    @XmlAttribute
+    public String pipeline;
+    
        
    // @XmlAttribute
     public static DoNotCall populate(Row xslxHeadingRow, Row xslxDataRow, Integer calltype)
@@ -73,11 +84,22 @@ public class DoNotCall {
         }//end while celliterator
   
         for (int x = 0; x < headerArray.length; x++) {
+                
+                if(calltype <4)
+                {
 		headings.put(headerArray[x].substring(0,headerArray[x].indexOf("_")), x);
+                }else
+                {
+                headings.put(headerArray[x], x);
+                }
 				}
 
-      
-        //String[] dataArray = xslxDataLine.split("\t");
+        if(calltype<=3)
+        //if it is less than or equal to three then it is is an illumina do not call, else it is a annovar variant    
+        {
+            donotcall.annotator="Illumina";
+            donotcall.pipeline="Illumina";
+            //String[] dataArray = xslxDataLine.split("\t");
         if(xslxDataRow.getCell(headings.get("HGVSc"))!=null)
         {
         donotcall.hgvsc = xslxDataRow.getCell(headings.get("HGVSc").intValue()).getStringCellValue();
@@ -97,20 +119,44 @@ public class DoNotCall {
                     System.exit(1);
         }
         donotcall.coordinate = (long)xslxDataRow.getCell(headings.get("Coordinate").intValue()).getNumericCellValue();
-        if(calltype==1)
+        
+        }else
+        {
+            donotcall.annotator="Annovar";
+            if(xslxDataRow.getCell(headings.get("AAChange.refGene"))!=null)
+            {
+             donotcall.AAChange = xslxDataRow.getCell(headings.get("AAChange.refGene").intValue()).getStringCellValue();
+           
+            }
+            donotcall.coordinate = (long)xslxDataRow.getCell(headings.get("Start").intValue()).getNumericCellValue();
+            donotcall.pipeline = xslxDataRow.getCell(headings.get("Pipeline").intValue()).getStringCellValue();
+            donotcall.coordinate_end = (long)xslxDataRow.getCell(headings.get("End").intValue()).getNumericCellValue();
+            String tmpchr = xslxDataRow.getCell(headings.get("Chr").intValue()).getStringCellValue();
+            donotcall.chr=Integer.valueOf(tmpchr.substring(3));
+           
+
+            
+        }
+    
+        
+        
+        if(calltype==1||calltype==4)
         {
             donotcall.callType="Don't call, always";
-        }else if (calltype==2)
+        }else if (calltype==2||calltype==5)
         {
             donotcall.callType="If percentage low, don't call";
             
-        }else
+        }else if (calltype==3||calltype==6)
         {
             donotcall.callType= "On lab list, Unknown significance";
         }
        
         return donotcall;
     }
+    
+ 
+    
     
     
 }

@@ -60,6 +60,8 @@ public class MyExcelGenerator{
         Boolean consequenceCell = false;
         Boolean alleleMinorCell = false;
         Boolean containsDoNotCall = false;
+        Boolean intronicCell = false;
+        Boolean excludeCell = false;
         //XSSFCellStyle cellStyle = currentRow.getRowStyle();
        // Cell cellInterp = currentRow.createCell(0);
        // XSSFCellStyle cellStyle = (XSSFCellStyle)cellInterp.getCellStyle();
@@ -71,7 +73,7 @@ public class MyExcelGenerator{
        // XSSFColor myColor;
          // Tom Addition
                     //if any of these the text on Interp is "Do Not Call"
-                    if(currentVariant.consequence.contains("synonymous_variant") || 
+                    if((currentVariant.consequence.contains("synonymous") && !currentVariant.consequence.contains("nonsynonymous")) || (!currentVariant.NotIntronic) ||
                             currentVariant.altVariantFreq.floatValue()<=5 || currentVariant.typeOfDoNotCall.equals("Don't call, always"))
                     {
                         textOnInterp=textOnInterp+"Do Not Call -";
@@ -91,7 +93,7 @@ public class MyExcelGenerator{
                               }
                      
                         }
-                         if(currentVariant.consequence.contains("synonymous_variant"))
+                         if(currentVariant.consequence.contains("synonymous") && !currentVariant.consequence.contains("nonsynonymous"))
                         {
                             consequenceCell = true;
                                 //if the string size 
@@ -117,6 +119,29 @@ public class MyExcelGenerator{
                                  }
                        
                          }
+                        if(currentVariant.NotIntronic == false)
+                        {
+                        intronicCell = true;
+                             if(textOnInterp.lastIndexOf("-") == textOnInterp.length()-1)
+                                 {
+                                        textOnInterp=textOnInterp+" intronic variant";
+                                 }else
+                                 {
+                                        textOnInterp=textOnInterp+", intronic variant";
+                                 }
+                       
+                         }
+                        if(currentVariant.exclude)
+                        {
+                            excludeCell = true;
+                            if(textOnInterp.lastIndexOf("-") == textOnInterp.length()-1)
+                                 {
+                                        textOnInterp=textOnInterp+" Excluded gene (ie pseudogene)";
+                                 }else
+                                 {
+                                        textOnInterp=textOnInterp+", Excluded gene (ie pseudogene)";
+                                 }
+                        }
                 
                     }
                     //if any of these the text on Interp is "Warning"
@@ -221,31 +246,53 @@ public class MyExcelGenerator{
         
                         for(int x = 0; x < dataArray.length; x++) {
                                Cell cell = currentRow.createCell(x+3);
-                               //System.out.println(x);
-                               //System.out.println(this.tsvRearrangeConversion.get(x));
+                              if (currentSheet.equals("Illumina"))
+                              {
                                if(    (this.originalHeadingsArray[this.tsvRearrangeConversion.get(x)].contains("Filters_")&&filterCell) 
                                        || (this.originalHeadingsArray[this.tsvRearrangeConversion.get(x)].contains("Allele Freq Global Minor_")&&alleleMinorCell)  
                                        )
                                {
-                                  // cellStyle.setFillPattern(XSSFCellStyle.SOLID_FOREGROUND);
-                                  // cellStyle.setFillForegroundColor(new XSSFColor(Color.GRAY));
+                                  
                                    cellStyle = getDefaultCellStyle(currentRow,Color.YELLOW);
                                }else if( (this.originalHeadingsArray[this.tsvRearrangeConversion.get(x)].contains("Consequence_")&&consequenceCell) 
-                                       || (altVariantFreqCell && (this.originalHeadingsArray[this.tsvRearrangeConversion.get(x)].contains("Alt Variant Freq_"))) )
+                                       || (altVariantFreqCell && (this.originalHeadingsArray[this.tsvRearrangeConversion.get(x)].contains("Alt Variant Freq_")))
+                                        || (this.originalHeadingsArray[this.tsvRearrangeConversion.get(x)].contains("Exonic")&&intronicCell)  || excludeCell
+                                       )
                                {
                                     cellStyle = getDefaultCellStyle(currentRow,Color.GRAY);
                                }else
                                {
                                    cellStyle = getDefaultCellStyle(currentRow, Color.WHITE);
-                                   //cellStyle.setFillForegroundColor(new XSSFColor(Color.white));
+                                  
                                }
-                                 cell.setCellStyle(cellStyle);
-                              // XSSFCellStyle style = workbookcopy.createCellStyle();
-                              // XSSFColor myColor = new XSSFColor(Color.RED);
-                              // style.setFillPattern(XSSFCellStyle.SOLID_FOREGROUND);
-                              // style.setFillForegroundColor(myColor);
-                              
+                                cell.setCellStyle(cellStyle);
                                 cell.setCellValue(dataArray[this.tsvRearrangeConversion.get(x)]);
+                                
+                              }else
+                              {
+                                  
+                                  
+                                  if(    (this.originalHeadingsArray[x].contains("Filters")&&filterCell) 
+                                       || (this.originalHeadingsArray[x].contains("exac03")&&alleleMinorCell)  
+                                       )
+                               {
+                                  
+                                   cellStyle = getDefaultCellStyle(currentRow,Color.YELLOW);
+                               }else if( (this.originalHeadingsArray[x].equals("ExonicFunc.refGene")&&consequenceCell) 
+                                       || (altVariantFreqCell && (this.originalHeadingsArray[x].contains("Alt Variant Freq"))) 
+                                        || (this.originalHeadingsArray[x].equals("Func.refGene")&&intronicCell)  || excludeCell
+                                       )
+                               {
+                                    cellStyle = getDefaultCellStyle(currentRow,Color.GRAY);
+                               }else
+                               {
+                                   cellStyle = getDefaultCellStyle(currentRow, Color.WHITE);
+                                  
+                               }
+                                cell.setCellStyle(cellStyle);
+                                cell.setCellValue(dataArray[x]);
+                                  
+                              }
                                 
                              }
                         
@@ -267,9 +314,21 @@ public class MyExcelGenerator{
       
         HashMap<String, Integer> headings = new HashMap<String, Integer>();
         for(int x = 0; x < originalHeadingsArray.length; x++) {
-            headings.put(originalHeadingsArray[x].substring(0, originalHeadingsArray[x].indexOf("_")), x);
+            if (specifiedsheet.equals("Illumina"))
+            {
+                headings.put(originalHeadingsArray[x].substring(0, originalHeadingsArray[x].indexOf("_")), x);
+            }else
+            {
+                 headings.put(originalHeadingsArray[x], x);
+            }
+            
         }
+        //will not do rearrangement for annovar in java for now, will try to implement in pandas
+        if (specifiedsheet.equals("Illumina"))
+        {
         this.setRearrangedHashMap(headings);
+        }
+        
         this.originalHeadings=headings;
         
         //the headers for the first three columns
@@ -283,12 +342,12 @@ public class MyExcelGenerator{
                cell.setCellStyle(cellStyle);
                if(x==0)
                {
-                    cell.setCellValue("Tom's Interpretation");
-                    //cell.setCellValue("Fellow1's Interpretation");
+                    cell.setCellValue("Fellow 1 Interpretation");
+                   
                }else
                {
-               cell.setCellValue("Christina's Interpretation");
-               //cell.setCellValue("Fellow2's Interpretation");
+               cell.setCellValue("Fellow 2 Interpretation");
+               
                }
                
            }else if(x==2)
@@ -304,6 +363,8 @@ public class MyExcelGenerator{
            Cell cell = currentRow.createCell(x+3);
            cellStyle = getDefaultCellStyle(currentRow,Color.WHITE);
           // cell.setCellStyle(cellStyle);
+           if (specifiedsheet.equals("Illumina"))
+           {
                if(this.originalHeadingsArray[this.tsvRearrangeConversion.get(x)].contains("Gene_")
                        ||this.originalHeadingsArray[this.tsvRearrangeConversion.get(x)].contains("Variant_")
                        ||this.originalHeadingsArray[this.tsvRearrangeConversion.get(x)].contains("Chr_"))
@@ -318,11 +379,36 @@ public class MyExcelGenerator{
                {  
                 cellStyle.setRotation((short)90);      
                }
+           }else
+           {
+               //TODO may need to change
+                if(this.originalHeadingsArray[x].contains("Gene.refGene"))
+                     //  ||originalHeadingsArray[x].contains("Coordinate_")
+                    //   ||originalHeadingsArray[x].contains("Type_"))
+                     //  ||originalHeadingsArray[x-3].contains("Genotype_")
+                      // ||originalHeadingsArray[x-3].contains("Coordinate_")
+                     //  ||originalHeadingsArray[x-3].contains("Filters_"))
+               {
+                   cellStyle.setRotation((short)0);   
+               }else
+               {  
+                cellStyle.setRotation((short)90);      
+               }
+               
+               
+                
+           }
             
               cell.setCellStyle(cellStyle);
               //cell.setCellValue(originalHeadingsArray[x-3]);
              // this.tsvRearrangeConversion.get(x)
+              if (specifiedsheet.equals("Illumina"))
+              {
               cell.setCellValue(this.originalHeadingsArray[this.tsvRearrangeConversion.get(x)]);
+              }else
+              {
+              cell.setCellValue(this.originalHeadingsArray[x]);    
+              }
                //cell.setCellValue(headinsArray[headingsConversion.get(x-3)]);
            
            
@@ -332,6 +418,8 @@ public class MyExcelGenerator{
         
         //return currentRow;
     }
+    
+    
     
     
     public void excelFormator(String sheetName, File variantTsvFile) throws IOException
@@ -365,91 +453,30 @@ public class MyExcelGenerator{
                         currentSheet.getWorkbook().setPrintArea(0, 2, 20, 0, currentSheet.getLastRowNum());
                        
                         
-                       for(int x=0; x<currentSheet.getRow(0).getPhysicalNumberOfCells();x++)
+                        try
+                        {
+                            for(int x=0; x<currentSheet.getRow(0).getPhysicalNumberOfCells();x++)
                        {
+                           
                            currentSheet.autoSizeColumn(x);
                            if (x>33)
                            {    
                            currentSheet.setColumnHidden(x, true);
                            }
                        }
+                            
+                        }catch (IndexOutOfBoundsException e)
+                        {
+                            System.err.println("IndexOutOfBoundsException: " + e.getMessage());
+                            System.err.println("Cannot autofit columns, unknown how to fix this problem at this time, perhaps need updated poi verison");
+                        }
+//                       
                         currentSheet.setColumnWidth(0, 10000);
                         currentSheet.setColumnWidth(1, 10000);
                         currentSheet.setColumnWidth(2, 10000);
                      
                       
-                               
-//                 currentSheet.setColumnWidth(this.tsvRearrangeConversion.get(this.originalHeadings.get("Consequence"))+3, 3500);
-//                 currentSheet.setColumnHidden(this.tsvRearrangeConversion.get(this.originalHeadings.get("Gene"))+3, false);
-//                 currentSheet.setColumnHidden(this.tsvRearrangeConversion.get(this.originalHeadings.get("Variant"))+3, false);
-//                 currentSheet.setColumnHidden(this.tsvRearrangeConversion.get(this.originalHeadings.get("Chr"))+3, false);
-//                 currentSheet.setColumnHidden(this.tsvRearrangeConversion.get(this.originalHeadings.get("Coordinate"))+3, false);
-//                 currentSheet.setColumnHidden(this.tsvRearrangeConversion.get(this.originalHeadings.get("Type"))+3, false);
-//                 currentSheet.setColumnHidden(this.tsvRearrangeConversion.get(this.originalHeadings.get("Genotype"))+3, false);
-//                 currentSheet.setColumnHidden(this.tsvRearrangeConversion.get(this.originalHeadings.get("Exonic"))+3, false);
-//                 currentSheet.setColumnHidden(this.tsvRearrangeConversion.get(this.originalHeadings.get("Filters"))+3, false);
-//                 currentSheet.setColumnHidden(this.tsvRearrangeConversion.get(this.originalHeadings.get("Quality"))+3, false);
-//                 currentSheet.setColumnHidden(this.tsvRearrangeConversion.get(this.originalHeadings.get("GQX"))+3, false);
-//                 currentSheet.setColumnHidden(this.tsvRearrangeConversion.get(this.originalHeadings.get("Alt Variant Freq"))+3, false);
-//                 currentSheet.setColumnHidden(this.tsvRearrangeConversion.get(this.originalHeadings.get("Read Depth"))+3, false);
-//                 currentSheet.setColumnHidden(this.tsvRearrangeConversion.get(this.originalHeadings.get("Alt Read Depth"))+3, false);
-//                 currentSheet.setColumnHidden(this.tsvRearrangeConversion.get(this.originalHeadings.get("Consequence"))+3, false);
-//                 currentSheet.setColumnHidden(this.tsvRearrangeConversion.get(this.originalHeadings.get("Sift"))+3, false);
-//                 currentSheet.setColumnHidden(this.tsvRearrangeConversion.get(this.originalHeadings.get("PolyPhen"))+3, false);
-//                 currentSheet.setColumnHidden(this.tsvRearrangeConversion.get(this.originalHeadings.get("Allele Freq Global Minor"))+3, false);
-//                 currentSheet.setColumnHidden(this.tsvRearrangeConversion.get(this.originalHeadings.get("Classification"))+3, true);
-//                 currentSheet.setColumnHidden(this.tsvRearrangeConversion.get(this.originalHeadings.get("Inherited From"))+3, true);
-//                 currentSheet.setColumnHidden(this.tsvRearrangeConversion.get(this.originalHeadings.get("Allelic Depths"))+3, true); 
-//                 currentSheet.setColumnHidden(this.tsvRearrangeConversion.get(this.originalHeadings.get("Custom Annotation"))+3, true);
-//                 currentSheet.setColumnHidden(this.tsvRearrangeConversion.get(this.originalHeadings.get("Custom Gene Annotation"))+3, true);
-//                 currentSheet.setColumnHidden(this.tsvRearrangeConversion.get(this.originalHeadings.get("Num Transcripts"))+3, true);
-//                 currentSheet.setColumnHidden(this.tsvRearrangeConversion.get(this.originalHeadings.get("Transcript"))+3, true);
-//                 currentSheet.setColumnHidden(this.tsvRearrangeConversion.get(this.originalHeadings.get("cDNA Position"))+3, false);
-//                 currentSheet.setColumnHidden(this.tsvRearrangeConversion.get(this.originalHeadings.get("CDS Position"))+3, false);
-//                 currentSheet.setColumnHidden(this.tsvRearrangeConversion.get(this.originalHeadings.get("Protein Position"))+3, true);
-//                 currentSheet.setColumnHidden(this.tsvRearrangeConversion.get(this.originalHeadings.get("Amino Acids"))+3, true);
-//                 currentSheet.setColumnHidden(this.tsvRearrangeConversion.get(this.originalHeadings.get("Codons"))+3, true);
-//                 currentSheet.setColumnHidden(this.tsvRearrangeConversion.get(this.originalHeadings.get("HGNC"))+3, true);
-//                 currentSheet.setColumnHidden(this.tsvRearrangeConversion.get(this.originalHeadings.get("Transcript HGNC"))+3, true);
-//                 currentSheet.setColumnHidden(this.tsvRearrangeConversion.get(this.originalHeadings.get("Canonical"))+3, true);
-//                 //currentSheet.setColumnHidden(this.tsvRearrangeConversion.get(this.originalHeadings.get("Sift"))+3, false);
-//                 //currentSheet.setColumnHidden(this.tsvRearrangeConversion.get(this.originalHeadings.get("PolyPhen"))+3, false);
-//                 currentSheet.setColumnHidden(this.tsvRearrangeConversion.get(this.originalHeadings.get("ENSP"))+3, false);
-//                 currentSheet.setColumnHidden(this.tsvRearrangeConversion.get(this.originalHeadings.get("HGVSc"))+3, false);
-//                 currentSheet.setColumnHidden(this.tsvRearrangeConversion.get(this.originalHeadings.get("HGVSp"))+3, false);
-//                 currentSheet.setColumnHidden(this.tsvRearrangeConversion.get(this.originalHeadings.get("dbSNP ID"))+3, false);
-//                 currentSheet.setColumnHidden(this.tsvRearrangeConversion.get(this.originalHeadings.get("Ancestral Allele"))+3, true);
-//                 currentSheet.setColumnHidden(this.tsvRearrangeConversion.get(this.originalHeadings.get("Global Minor Allele"))+3, true);
-//                 currentSheet.setColumnHidden(this.tsvRearrangeConversion.get(this.originalHeadings.get("Allele Freq Amr"))+3, true);
-//                 currentSheet.setColumnHidden(this.tsvRearrangeConversion.get(this.originalHeadings.get("Allele Freq Asn"))+3, true);
-//                 currentSheet.setColumnHidden(this.tsvRearrangeConversion.get(this.originalHeadings.get("Allele Freq Af"))+3, true);
-//                 currentSheet.setColumnHidden(this.tsvRearrangeConversion.get(this.originalHeadings.get("Allele Freq Eur"))+3, true);
-//                 currentSheet.setColumnHidden(this.tsvRearrangeConversion.get(this.originalHeadings.get("Allele Freq Evs"))+3, true);
-//                 currentSheet.setColumnHidden(this.tsvRearrangeConversion.get(this.originalHeadings.get("EVS Coverage"))+3, true);
-//                 currentSheet.setColumnHidden(this.tsvRearrangeConversion.get(this.originalHeadings.get("EVS Samples"))+3, true);
-//                 currentSheet.setColumnHidden(this.tsvRearrangeConversion.get(this.originalHeadings.get("Conserved Sequence"))+3, true);
-//                 currentSheet.setColumnHidden(this.tsvRearrangeConversion.get(this.originalHeadings.get("COSMIC ID"))+3, false);
-//                 currentSheet.setColumnHidden(this.tsvRearrangeConversion.get(this.originalHeadings.get("COSMIC Wildtype"))+3, true);
-//                 currentSheet.setColumnHidden(this.tsvRearrangeConversion.get(this.originalHeadings.get("COSMIC Allele"))+3, true);
-//                 currentSheet.setColumnHidden(this.tsvRearrangeConversion.get(this.originalHeadings.get("COSMIC Gene"))+3, true);
-//                 currentSheet.setColumnHidden(this.tsvRearrangeConversion.get(this.originalHeadings.get("COSMIC Primary Site"))+3, false);
-//                 currentSheet.setColumnHidden(this.tsvRearrangeConversion.get(this.originalHeadings.get("COSMIC Histology"))+3, true);
-//                 currentSheet.setColumnHidden(this.tsvRearrangeConversion.get(this.originalHeadings.get("ClinVar Accession"))+3, false);
-//                 currentSheet.setColumnHidden(this.tsvRearrangeConversion.get(this.originalHeadings.get("ClinVar Ref"))+3, false);
-//                 currentSheet.setColumnHidden(this.tsvRearrangeConversion.get(this.originalHeadings.get("ClinVar Alleles"))+3, false);
-//                 currentSheet.setColumnHidden(this.tsvRearrangeConversion.get(this.originalHeadings.get("ClinVar Allele Type"))+3, false);
-//                 currentSheet.setColumnHidden(this.tsvRearrangeConversion.get(this.originalHeadings.get("ClinVar Significance"))+3, false);
-//                 currentSheet.setColumnHidden(this.tsvRearrangeConversion.get(this.originalHeadings.get("Alternate Alleles"))+3, true);
-//                 currentSheet.setColumnHidden(this.tsvRearrangeConversion.get(this.originalHeadings.get("Google Scholar"))+3, true);
-//                 currentSheet.setColumnHidden(this.tsvRearrangeConversion.get(this.originalHeadings.get("PubMed"))+3, true);
-//                 currentSheet.setColumnHidden(this.tsvRearrangeConversion.get(this.originalHeadings.get("UCSC Browser"))+3, true);
-//                 currentSheet.setColumnHidden(this.tsvRearrangeConversion.get(this.originalHeadings.get("ClinVar RS"))+3, true);
-//                 currentSheet.setColumnHidden(this.tsvRearrangeConversion.get(this.originalHeadings.get("ClinVar Disease Name"))+3, true);
-//                 currentSheet.setColumnHidden(this.tsvRearrangeConversion.get(this.originalHeadings.get("ClinVar MedGen"))+3, true);
-//                 currentSheet.setColumnHidden(this.tsvRearrangeConversion.get(this.originalHeadings.get("ClinVar OMIM"))+3, true);
-//                 currentSheet.setColumnHidden(this.tsvRearrangeConversion.get(this.originalHeadings.get("ClinVar Orphanet"))+3, true);
-//                 currentSheet.setColumnHidden(this.tsvRearrangeConversion.get(this.originalHeadings.get("ClinVar GeneReviews"))+3, true);
-//                 currentSheet.setColumnHidden(this.tsvRearrangeConversion.get(this.originalHeadings.get("ClinVar SnoMedCt ID"))+3, true);
+    
                 
                  
             
@@ -477,7 +504,15 @@ public class MyExcelGenerator{
        return cellStyle;
     }
     
-    
+    //place holder, for now not rearranging
+    //TODO
+    //may not eventually implement as I can do the arrangement using pandas python library
+     public void setRearrangedHashMapAnnovar(HashMap<String, Integer> originalHeadings)
+    {
+      
+        
+        
+    }
     
     public void setRearrangedHashMap(HashMap<String, Integer> originalHeadings)
     {

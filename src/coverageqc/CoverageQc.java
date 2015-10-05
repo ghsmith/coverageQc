@@ -1,4 +1,5 @@
 package coverageqc;
+import java.net.URL;
 import coverageqc.data.Amplicon;
 import coverageqc.data.Base;
 import coverageqc.data.Bin;
@@ -48,7 +49,7 @@ import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.PrintOrientation;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
-import org.apache.poi.ss.usermodel.Workbook;
+//import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.ss.usermodel.WorkbookFactory;
 import org.apache.poi.xssf.eventusermodel.XSSFReader;
 import org.apache.poi.xssf.model.SharedStringsTable;
@@ -58,11 +59,20 @@ import org.apache.poi.xssf.usermodel.XSSFPrintSetup;
 import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+import htsjdk.samtools.*;
+import htsjdk.samtools.util.CloseableIterator;
+import htsjdk.variant.vcf.*;
+import htsjdk.variant.variantcontext.*;
+import java.io.File;
+
+
+
 //end Tom addition
 
 /**
  *
  * @author geoffrey.hughes.smith@gmail.com
+ * @coauthor schneiderthomas@gmail.com
  */
 public class CoverageQc {
 
@@ -79,15 +89,15 @@ public class CoverageQc {
 	 *            OpenXML4JException and InvalidFormatException
      */
     public static void main(String[] args) throws OpenXML4JException,
-			InvalidFormatException, UnsupportedEncodingException, FileNotFoundException, IOException, JAXBException, TransformerConfigurationException, TransformerException {
+			InvalidFormatException, UnsupportedEncodingException, FileNotFoundException, IOException, JAXBException, TransformerConfigurationException, TransformerException, Exception {
 
         if(args.length == 0) {
             System.out.println("");
             //Tom Addition adding in argument doNotCall List
-            System.out.println("USAGE: java -jar coverageQc.jar VCF-file-name exon-BED-file amplicon-BED-file doNotCall-xlsx-file(optional)");
+            System.out.println("USAGE: java -jar coverageQc.jar VCF-file-name exon-BED-file amplicon-BED-file list-of-aligners-used-CSV-file types-of-Files-To-Collect-CSV-file genes-excluding-CSV-file doNotCall-xlsx-file(optional)");
             System.out.println("");
             //Tom Addition extended comment
-             System.out.println("If BED and file names are not specified, the system will attempt to use the\n\"exons_ensembl.bed\" and \"amplicons.bed\" files located in the same directory\nas this JAR (or exe) file.  If excel file name is not specified will look under exe file directory");
+             System.out.println("If BED and file names are not specified, the system will attempt to use the\n\"exons_ensembl.bed\", \"amplicons.bed\" , \"aligners.csv\", \"filestolookfor.csv\", and \"genes_excluding.csv\" files located in the same directory\nas this JAR (or exe) file.  If excel file name is not specified will look under exe file directory");
             return;
         }
         
@@ -98,6 +108,9 @@ public class CoverageQc {
 
         File exonBedFile;
         File ampliconBedFile;
+        File alignersFile;
+        File filesToUseFile;
+        File genesToExcludeFile;
         //Tom addition
         File doNotCallFile = null;
                  ///
@@ -116,6 +129,18 @@ public class CoverageQc {
                 @Override
                 public boolean accept(File pathname) { return(pathname.getName().endsWith("amplicons.bed")); }
             });
+            File[] alignerFiles = (new File(URLDecoder.decode(jarFile.getParent(), "UTF-8"))).listFiles(new FileFilter() {
+                @Override
+                public boolean accept(File pathname) { return(pathname.getName().endsWith("aligners.csv")); }
+            });
+            File[] genesToExcludeFiles = (new File(URLDecoder.decode(jarFile.getParent(), "UTF-8"))).listFiles(new FileFilter() {
+                @Override
+                public boolean accept(File pathname) { return(pathname.getName().endsWith("genes_excluding.csv")); }
+            });
+            File[] filesUsingFiles = (new File(URLDecoder.decode(jarFile.getParent(), "UTF-8"))).listFiles(new FileFilter() {
+                @Override
+                public boolean accept(File pathname) { return(pathname.getName().endsWith("filestolookfor.csv")); }
+            });
             if(exonFiles.length == 0 || ampliconFiles.length == 0) {
                 System.out.println("ERROR: Could not find exons.bed and/or amplicons.bed file(s) in " + URLDecoder.decode(jarFile.getParent(), "UTF-8"));
                 return;
@@ -124,6 +149,12 @@ public class CoverageQc {
             exonBedFile = exonFiles[0];
             Arrays.sort(ampliconFiles, Collections.reverseOrder());
             ampliconBedFile = ampliconFiles[0];
+            Arrays.sort(alignerFiles, Collections.reverseOrder());
+            alignersFile = alignerFiles[0];
+            Arrays.sort(filesUsingFiles, Collections.reverseOrder());
+            filesToUseFile = filesUsingFiles[0];
+            Arrays.sort(filesUsingFiles, Collections.reverseOrder());
+            genesToExcludeFile = genesToExcludeFiles[0];
             
              //Tom Addition
                         //assuming it is always in the jarfiledirectory
@@ -153,14 +184,72 @@ public class CoverageQc {
         else {
             exonBedFile = new File(args[1]);
             ampliconBedFile = new File(args[2]);
+            alignersFile = new File(args[3]);
+            filesToUseFile = new File(args[4]);
+            genesToExcludeFile = new File(args[5]);
              //Tom addition
-                        if (args.length>=4)
+                        if (args.length>=7)
                         {
-                        doNotCallFile = new File(args[3]);
+                        doNotCallFile = new File(args[6]);
                         }
+                          
              ////
         }
         
+        //excluding some genes in the vcf from being displayed in the CoverageQC html file (note they will still be put in the created xlsx file)
+        
+        Reader genesToExcludeReader = new FileReader(genesToExcludeFile);
+        BufferedReader genesToExcludeBufferedReader = new BufferedReader(genesToExcludeReader);
+        String genesToExcludeLine;
+        String variantExcludedString = "Exclude Genes: ";
+        ArrayList<String> genesToExcludeList = new ArrayList<String>();
+             
+               while((genesToExcludeLine = genesToExcludeBufferedReader.readLine()) != null)
+                {
+                    genesToExcludeList.add(genesToExcludeLine);
+                    variantExcludedString=variantExcludedString + genesToExcludeLine + ",";
+                }
+        
+        variantExcludedString=variantExcludedString + "Exclude: intronic variants, and variants with pool bias";
+        //will extract the aligner used in the genome vcf file
+        //will use aligner file to see what aligner used
+        
+        Reader alignerReader = new FileReader(alignersFile);
+        BufferedReader alignerBufferedReader = new BufferedReader(alignerReader);
+        String alignerLine;
+        ArrayList<String> alignersList = new ArrayList<String>();
+             
+               while((alignerLine = alignerBufferedReader.readLine()) != null)
+                {
+                    alignersList.add(alignerLine);
+                    
+                }
+               
+        Iterator<String> AlignerIterator = alignersList.iterator();
+        String vcfFileName=vcfFile.getCanonicalPath();
+        String vcfFileName2=vcfFile.getAbsolutePath();
+        System.out.println("DEBUGGING ONLY, THE NAME OF THE VCFILENAME IS:  " + vcfFileName);
+        System.out.println("DEBUGGING ONLY, THE NAME OF THE ABSOLUTE PATH IS:  " + vcfFileName2);
+        Boolean alignerFound=false;
+        String usedAligner="";
+        while(AlignerIterator.hasNext())
+        {
+            String currentAligner=AlignerIterator.next();
+            if (vcfFileName.contains(currentAligner))
+            {
+                alignerFound=true;
+                usedAligner=currentAligner;
+            }
+            
+        }
+        
+        if (!alignerFound)
+        {
+            //need to exit as the name of the vcf file does not contain a used aligner, which means parsing of the genome vcf failed
+            System.out.println("ERROR: Can't find in the name of the genome vcf the aligner used. Parsing error, check name of file and alignerlist.csv");
+                    return;
+        }
+
    
     
          
@@ -179,6 +268,8 @@ public class CoverageQc {
          Iterator<XSSFSheet> sheetIterator = workbook.iterator();
          int typeOfCall = 1;
 	int rowIndex;
+        //note the first three sheets are illumina do not calls
+        //the second three sheets are annovar do not calls
         while (sheetIterator.hasNext())
                 {
                     XSSFSheet sheet = sheetIterator.next();
@@ -218,16 +309,21 @@ public class CoverageQc {
                 
         
         
-        Reader vcfFileReader = new FileReader(vcfFile);
-        BufferedReader vcfBufferedReader = new BufferedReader(vcfFileReader);
+        //Tom addition using file reader from htsjdk instead instead
+        VCFFileReader this_vcf = new VCFFileReader(vcfFile);
+        //System.out.println(vcfFile);
+        //Reader vcfFileReader = new FileReader(vcfFile);
+        //BufferedReader vcfBufferedReader = new BufferedReader(vcfFileReader);
 
         Reader exonBedFileReader = new FileReader(exonBedFile);
         BufferedReader exonBedBufferedReader = new BufferedReader(exonBedFileReader);
 
         Reader ampliconBedFileReader = new FileReader(ampliconBedFile);
         BufferedReader ampliconBedBufferedReader = new BufferedReader(ampliconBedFileReader);
+        
+        
 
-        // is there a variant file to fold into the report?
+        // is there an Illumina variant file to fold into the report?
         File variantTsvFile = null;
         Integer variantTsvFileLineCount = null;
         Reader variantTsvFileReader = null;
@@ -256,7 +352,45 @@ public class CoverageQc {
             }
         }
         
+         // is there an Annovar variant file to fold into the report?
+        ArrayList<File> annovarTSVFiles= null;
+        File current_variantTSVFileAnnovar=null;
+        Reader variantTsvFileReaderAnnovar = null;
+        BufferedReader variantTsvBufferedReaderAnnovar = null;
+        {
+            //have to change geoff's old code because it won't allow local variavles
+            File[] filestemp = (new File (vcfFile.getCanonicalFile().getParent())).listFiles();
+            String file_to_look_for = usedAligner + ".allvariantcallers.final.hg19_multianno.txt";
+            for(int i =0; i<filestemp.length; i++)
+            {
+                if(filestemp[i].getName().toLowerCase().startsWith(vcfFile.getName().substring(0, vcfFile.getName().indexOf(".")).toLowerCase() + ".")
+                            && filestemp[i].getName().toLowerCase().endsWith(file_to_look_for))
+                {
+                    annovarTSVFiles = new ArrayList<File>();
+                    annovarTSVFiles.add(filestemp[i]);
+                }
+                
+            }
+            
+            
+        }
+        //System.out.println(annovarTSVFiles);
+        
+        
+        
+        
+        //TODO: editing a vcf so that it can contain multiple vcf
         Vcf vcf = new Vcf();
+        
+        
+        //TODO: IMPLEMENT ABILITY TO DISPLAY CONTENTS OF MULTIPLE ALIGNERS, FOR NOW, just using the aligner used in the current genome vcf
+
+        
+        
+        
+        
+        
+        
         vcf.runDate = new Date();
         vcf.fileName = vcfFile.getCanonicalPath();
         vcf.exonBedFileName = exonBedFile.getCanonicalPath();
@@ -272,34 +406,89 @@ public class CoverageQc {
         vcf.ampliconBedFileName = ampliconBedFile.getCanonicalPath();
         vcf.variantTsvFileName = (variantTsvFile != null ? variantTsvFile.getCanonicalPath() : null);
         vcf.variantTsvFileLineCount = variantTsvFileLineCount;
+        vcf.usedAligner=usedAligner;
+        vcf.alignersFileName = alignersFile.getCanonicalPath();
+        vcf.filesToUseFileName = filesToUseFile.getCanonicalPath();
+        vcf.genesToExcludeFileName = genesToExcludeFile.getCanonicalPath();
+        String annovarFilesString="";
+        if (annovarTSVFiles != null)
+        {
+            for(int i=0; i<annovarTSVFiles.size(); i++)
+            {
+                if(i==annovarTSVFiles.size()-1)
+                {
+                    annovarFilesString=annovarFilesString+annovarTSVFiles.get(i);
+                }else
+                {
+                    annovarFilesString=annovarFilesString+annovarTSVFiles.get(i) + ", ";
+                }
+            }
+        }
+        vcf.annovarFiles = annovarFilesString;
         
         // attempt to deduce the amplicon BED, patient BAM, and patient VCF
         // file names for this gVCF file, the assumption is that they are in
         // the same directory as the gVCF file
+      
+        Reader FilesToUseReader = new FileReader(filesToUseFile);
+        BufferedReader FilesToUseBufferedReader = new BufferedReader(FilesToUseReader);
+        String FilesToUseLine;
+        ArrayList<String> FilesToUseList = new ArrayList<String>();
+                
+                while((FilesToUseLine = FilesToUseBufferedReader.readLine()) != null)
+                {
+                    FilesToUseList.add(FilesToUseLine);
+                    
+                }        
+                
         {
-            File[] files = (new File(vcfFile.getCanonicalFile().getParent())).listFiles(new FileFilter() {
-                @Override
-                public boolean accept(File pathname) {
-                    return(
-                        (
-                            pathname.getName().toLowerCase().startsWith(vcfFile.getName().substring(0, vcfFile.getName().indexOf(".")).toLowerCase() + ".")
-                            && (pathname.getName().toLowerCase().endsWith(".bam") || (pathname.getName().toLowerCase().endsWith(".vcf")))
-                            && (pathname.getName().indexOf("genome") < 0)
-                        )
-                        ||
-                        (
-                            pathname.getName().toLowerCase().startsWith(vcfFile.getName().substring(0, vcfFile.getName().indexOf(".")).toLowerCase() + "_")
-                            && (pathname.getName().toLowerCase().endsWith(".bam") || (pathname.getName().toLowerCase().endsWith(".vcf")))
-                            && (pathname.getName().indexOf("genome") < 0)
-                        )
-                    );
+            //Iterator<String> AlignerIterator = alignersList.iterator();
+            Iterator<String> FilesToUseIterator = FilesToUseList.iterator();
+            String currentFileToUse;
+          //  String currentAligner;
+          //  while (AlignerIterator.hasNext())
+          //  {
+          //      ArrayList<URL> bedBamVcfFileUrls = new ArrayList<URL>();
+          //      currentAligner=AlignerIterator.next();
+            while (FilesToUseIterator.hasNext())
+            {
+                
+                currentFileToUse=FilesToUseIterator.next();
+                //NOW most of the files will have the word aligner in them ie .A.aligner.final.bam; the word aligner needs to be replaced by string contain in currentAligner
+                currentFileToUse=currentFileToUse.replace("aligner", usedAligner);
+                //gets the list of all the files
+                File[] filestemp = (new File (vcfFile.getCanonicalFile().getParent())).listFiles();
+                List<File> currentFilesUsingList = new ArrayList<File>();
+                for (int i = 0; i<filestemp.length; i++)
+                {
+                   //System.out.println(currentFileToUse);
+                    if (filestemp[i].getName().toLowerCase().startsWith(vcfFile.getName().substring(0, vcfFile.getName().indexOf(".")).toLowerCase() + ".")
+                            && filestemp[i].getName().toLowerCase().endsWith(currentFileToUse.toLowerCase()))
+                    {
+                        //System.out.println(currentFileToUse);
+                        currentFilesUsingList.add(filestemp[i]);
+                                
+                    }else if (filestemp[i].getName().toLowerCase().endsWith(currentFileToUse.toLowerCase())
+                            && filestemp[i].getName().toLowerCase().startsWith(vcfFile.getName().substring(0, vcfFile.getName().indexOf(".")).toLowerCase() + "_"))
+                    {
+                        currentFilesUsingList.add(filestemp[i]);
+                    }
+                        
                 }
-            });
-            for(File file : files) {
-                vcf.bedBamVcfFileUrls.add(file.toURI().toURL());
-            }
-            vcf.bedBamVcfFileUrls.add(ampliconBedFile.toURI().toURL());
+                //can't use Geoff's old code because can't use the variable currentString in inner class
+            
+           
+            for(File file : currentFilesUsingList) {
+            vcf.bedBamVcfFileUrls.add(file.toURI().toURL());
         }
+            
+            
+            } //while (FilesToUseIterator.hasNext())
+            
+            vcf.bedBamVcfFileUrls.add(ampliconBedFile.toURI().toURL());
+            //vcf.bedBamVCFFileUrlsList.add(bedBamVcfFileUrls);
+         // }//while (AlignerIterator.hasNext())
+        };
 
         // read exon BED file
         String exonBedLine;
@@ -307,6 +496,7 @@ public class CoverageQc {
             if(!exonBedLine.startsWith("chr")) {
                 continue;
             }
+            //System.out.println(exonBedLine);        
             vcf.geneExons.add(GeneExon.populate(exonBedLine));
         }
         LOGGER.info(vcf.geneExons.size() + " regions read from exon BED file");
@@ -335,11 +525,14 @@ public class CoverageQc {
         ampliconBedFileReader.close();
 
         // read gVCF file
-        String vcfLine;
-        while((vcfLine = vcfBufferedReader.readLine()) != null) {
-            if(vcfLine.startsWith("#")) {
-                continue;
-            }
+        //TOM additon, using htsjdk library for variants
+        //String vcfLine;
+        VariantContext vcfLine;
+        CloseableIterator<VariantContext> variant_iterator = this_vcf.iterator();
+        //the variantcontext file starts with each variant line
+        while(variant_iterator.hasNext())
+        {
+            vcfLine = variant_iterator.next();
             Base base = Base.populate(vcfLine, vcf.bases);
             boolean foundGeneExon = false;
             for(GeneExon geneExon : vcf.findGeneExonsForChrPos(base.chr, base.pos)) {
@@ -347,12 +540,15 @@ public class CoverageQc {
                 geneExon.bases.put(new Long(base.pos), base);
             }
             if(!foundGeneExon) {
-                LOGGER.info("the following base does not correspond to an exon region: " + vcfLine);
+                LOGGER.info("the following base does not correspond to an exon region: " + vcfLine.getContig() + " " + vcfLine.getStart());
             }
+            
+            
         }
+       
         LOGGER.info(vcf.getBaseCount() + " bases read from VCF file");
         LOGGER.info(vcf.getReadDepthCount() + " read depths read from VCF file");
-        vcfFileReader.close();
+        this_vcf.close();
 
         for(GeneExon geneExon : vcf.geneExons) {
             // if a position is absent, create it with read depth 0
@@ -397,7 +593,7 @@ public class CoverageQc {
         // read variant file
         //ArrayList<String> textFilesList = new ArrayList<String>();
         MyExcelGenerator excelgenerator= new MyExcelGenerator();
-        //textFilesList.add("TSV");
+        //textFilesList.add("ILLUMINA");
          // read variant file
          
         if(variantTsvFile != null) {
@@ -414,7 +610,7 @@ public class CoverageQc {
         //cellStyle.setWrapText(true);
        // XSSFRow row = sheet.createRow(0);
         
-         excelgenerator.excelHeadingCreator("TSV", variantTsvHeadingLine);
+         excelgenerator.excelHeadingCreator("ILLUMINA", variantTsvHeadingLine);
         
         int rownum =1;
         
@@ -422,17 +618,24 @@ public class CoverageQc {
             
             while((variantTsvDataLine = variantTsvBufferedReader.readLine()) != null) {
                 // Tom addition adding in variable doNotCallList
-                Variant variant = Variant.populate(variantTsvHeadingLine, variantTsvDataLine, donotcalls);
+                Variant variant = Variant.populate(variantTsvHeadingLine, variantTsvDataLine, donotcalls, genesToExcludeList);
                
                // XSSFRow row = sheet.createRow(rownum++);
-                excelgenerator.excelRowCreator(rownum++, "TSV", variant, variantTsvDataLine, donotcalls);
+                excelgenerator.excelRowCreator(rownum++, "ILLUMINA", variant, variantTsvDataLine, donotcalls);
                 
                  //end Tom addition
                 
                 boolean foundGeneExon = false;
                 for(GeneExon geneExon : vcf.findGeneExonsForChrPos("chr" + String.valueOf(variant.chr), variant.coordinate)) {
                     foundGeneExon = true;
+                    
+                    
                     geneExon.variants.add(variant);
+                    Base currentbase = vcf.bases.get("chr" + String.valueOf(variant.chr) + "|" + Long.toString(variant.coordinate));
+                    currentbase.variant = variant.variant;
+                    currentbase.variantText = "";
+                    currentbase.variantText += variant.variant + " (reads: " + variant.readDepth + ">" + variant.altReadDepth + ")";
+                    vcf.bases.put(currentbase.chr + "|" + Long.toString(currentbase.pos), currentbase);
                     
                     
                      if (variant.onTheDoNotCallList) {
@@ -446,15 +649,17 @@ public class CoverageQc {
                     
         
                 }
-                if(!foundGeneExon) {
+                if(!foundGeneExon && (!variant.exclude)) {
                     //LOGGER.info("the following variant does not correspond to an exon region: " + variantTsvDataLine);
+                    System.out.println("The variant gene name is: " + variant.gene);
+                    System.out.println("Is the variant excluded? " + variant.exclude);
                     System.out.println("ERROR: The following variant does not correspond to an exon region:\n" + variantTsvDataLine);
                     return;
                 }
             }
            
               //Adding page setup parameters per Dr. Carter, and column hiding options
-            excelgenerator.excelFormator("TSV", variantTsvFile);
+            excelgenerator.excelFormator("ILLUMINA", variantTsvFile);
           
             // end Tom addition
             
@@ -462,6 +667,117 @@ public class CoverageQc {
             
             variantTsvFileReader.close();
         }
+        
+        //NOW READ ANNOVAR VARIANTS WHICH COULD BE MULTIPLE AS MULTIPLE PIPELINES MAY BE IMPLEMENTED'
+        //ASSUMPTION: The headings should all be the same for each pipeline, will fail if this is NOT 
+        //the case
+        
+        
+        
+        if(annovarTSVFiles != null) {
+            int rownum =1;
+            String oldvariantTSVHeadingLineAnnovar = null;
+            //debugging, only doing vardict
+            for (int i = 0; i<annovarTSVFiles.size(); i++)
+            {
+                current_variantTSVFileAnnovar = annovarTSVFiles.get(i);
+                //System.out.println(annovarTSVFiles.get(i));
+                variantTsvFileReaderAnnovar = new FileReader(current_variantTSVFileAnnovar);
+                variantTsvBufferedReaderAnnovar = new BufferedReader(variantTsvFileReaderAnnovar);
+                 String variantTsvDataLineAnnovar=null;
+                 String variantTsvHeadingLineAnnovar = variantTsvBufferedReaderAnnovar.readLine();
+                 if (i==0)
+                 {
+                     oldvariantTSVHeadingLineAnnovar=variantTsvHeadingLineAnnovar;
+                     excelgenerator.excelHeadingCreator("ANNOVAR", variantTsvHeadingLineAnnovar);
+                 }else
+                 {
+                     if(!oldvariantTSVHeadingLineAnnovar.equals(variantTsvHeadingLineAnnovar))
+                     {
+                    System.out.println("ERROR: THE HEADINGS OF THE ANNOVAR FILES DO NOT MATCH!!! CANNOT PROCEED AS THIS IS A MAJOR"
+                            + "ASSUMPTION OF THIS PROGRAM!!!");
+                    return;
+                     }
+                 }
+                 
+                while ((variantTsvDataLineAnnovar = variantTsvBufferedReaderAnnovar.readLine()) != null) {
+
+                    Variant variant = Variant.populateAnnovar(variantTsvHeadingLineAnnovar, variantTsvDataLineAnnovar, donotcalls, genesToExcludeList);
+                    excelgenerator.excelRowCreator(rownum++, "ANNOVAR", variant, variantTsvDataLineAnnovar, donotcalls);
+
+                    boolean foundGeneExon = false;
+                    for (GeneExon geneExon : vcf.findGeneExonsForChrPos("chr" + String.valueOf(variant.chr), variant.coordinate)) {
+                        foundGeneExon = true;
+                        //if(variant.hgvscMap != null) {
+                        //variant.hgvsc = variant.hgvscMap.get(geneExon.refSeqAccNo);
+                         //  }
+                        // if(variant.hgvspMap != null) {
+                        //    variant.hgvsp = variant.hgvspMap.get(geneExon.refSeqAccNo);
+                        //  }
+                        //Geoff in the original pipeline had a check to get rid of frequencies lower than 3%, got rid off as variant 
+                         //callers should handle this preprocessing
+                         
+                         //coverageQC report will not highlight intronic variants as well as variants with probe bias in the html file
+                        
+                         if ((variant.NotIntronic) && variant.filters.equals("PASS"))
+                         {
+                               geneExon.variants.add(variant);
+                               Base currentbase= vcf.bases.get("chr" + String.valueOf(variant.chr) + "|" + Long.toString(variant.coordinate));
+                               currentbase.variant=variant.variant;
+                               currentbase.variantText="";
+                               currentbase.variantText+=variant.variant + " (reads: " + variant.readDepth + ">" + variant.altReadDepth + ")";
+                               vcf.bases.put(currentbase.chr + "|" + Long.toString(currentbase.pos), currentbase);
+                               
+                                  
+                               
+                         }
+
+                        if (variant.onTheDoNotCallList) {
+
+                            if (variant.typeOfDoNotCall.equals("Don't call, always")) {
+                                geneExon.containsDoNotCallAlways = true;
+                                geneExon.donotcallVariantsAlways.add(variant);
+                            }
+                        }
+
+                    }
+                    if (!foundGeneExon) {
+                        //LOGGER.info("the following variant does not correspond to an exon region: " + variantTsvDataLine);
+                        
+                        //will only output if this is an exonor a splic site variant since it should fail then, non-splicing intronic variants not reported
+                        if (variant.NotIntronic && (!variant.exclude))
+                                {
+                             System.out.println("The variant gene name is: " + variant.gene);
+                             System.out.println("Is the variant excluded? " + variant.exclude);       
+                             System.out.println("ERROR: The following exonic/splicing/UTR variant does not correspond to an exon region:\n" + variantTsvDataLineAnnovar);
+                             return;
+                             
+                                }
+                                
+                        
+                    }
+
+                }
+                 
+                variantTsvFileReaderAnnovar.close();
+                
+            }
+            
+            
+            //Adding page setup parameters per Dr. Carter, and column hiding options
+            //just need the location of the annovarTSV
+            //TODO: OPTIMIZE THIS, KIND OF DUMB HOW DOING THIS, JUST NEED TO PASS A STRING
+            excelgenerator.excelFormator("ANNOVAR", annovarTSVFiles.get(0));
+            
+            
+            
+            
+            
+            
+        }
+        
+        
+        vcf.variantsExcludedFromCoverageQC=variantExcludedString;
 
         // write to XML
         //File xmlTempFile = File.createTempFile("tmp", ".xml");
@@ -476,33 +792,42 @@ public class CoverageQc {
         
         //Tom addition
         //write to xlsx
-        if(variantTsvFile != null)
+        if(variantTsvFile != null || annovarTSVFiles != null)
         {
-         File xslxTempFile = new File(variantTsvFile.getCanonicalPath() + ".coverage_qc.xlsx");
-        OutputStream xslxOutputStream = new FileOutputStream(xslxTempFile);
+         
+         File xslxTempFile;
+         if (variantTsvFile != null)
+         {
+         xslxTempFile = new File(variantTsvFile.getCanonicalPath() + ".coverage_qc.xlsx");
+         }else
+         {
+         xslxTempFile = new File(annovarTSVFiles.get(0).getCanonicalPath() + ".coverage_qc.xlsx");    
+         }
+         OutputStream xslxOutputStream = new FileOutputStream(xslxTempFile);
          excelgenerator.workbookcopy.write(xslxOutputStream);
-    xslxOutputStream.close();
-     LOGGER.info(xslxTempFile.getCanonicalPath() + " created");
+         xslxOutputStream.close();
+         LOGGER.info(xslxTempFile.getCanonicalPath() + " created");
+
         }
         //end Tom addition
 
         // transform XML to HTML via XSLT
         Source xmlSource = new StreamSource(new FileInputStream(xmlTempFile.getCanonicalPath()));
         Source xslSource;
-        if((new File(jarFileDir + "/coverageQc.xsl")).exists()) {
-            xslSource = new StreamSource(new FileInputStream(jarFileDir + "/coverageQc.xsl"));
+       if((new File(jarFileDir + "/coverageQc.xsl")).exists()) {
+           xslSource = new StreamSource(new FileInputStream(jarFileDir + "/coverageQc.xsl"));
         }
-        else {
-            xslSource = new StreamSource(ClassLoader.getSystemResourceAsStream("coverageQc.xsl"));
-        }
-        Transformer trans = TransformerFactory.newInstance().newTransformer(xslSource);
-        trans.transform(xmlSource, new StreamResult(vcfFile.getCanonicalPath() + ".coverage_qc.html"));
-        LOGGER.info(vcfFile.getCanonicalPath() + ".coverage_qc.html created");
-        
-        // show HTML file in default browser
+       else {
+           xslSource = new StreamSource(ClassLoader.getSystemResourceAsStream("coverageQc.xsl"));
+           }
+          Transformer trans = TransformerFactory.newInstance().newTransformer(xslSource);
+          trans.transform(xmlSource, new StreamResult(vcfFile.getCanonicalPath() + ".coverage_qc.html"));
+          LOGGER.info(vcfFile.getCanonicalPath() + ".coverage_qc.html created");
+       
+         // show HTML file in default browser
         File htmlFile = new File(vcfFile.getPath() + ".coverage_qc.html");
         Desktop.getDesktop().browse(htmlFile.toURI());
-        
+       
     }
    
    

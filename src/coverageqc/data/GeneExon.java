@@ -175,7 +175,7 @@ public class GeneExon implements Comparable<Object> {
             }
         }
         {
-            Pattern pattern = Pattern.compile(".*\\|Ensembl-IDs: ([A-Z0-9\\.]*):([A-Z0-9\\.]*):([A-Z0-9\\.]*)\\|.*\\|.*\\|.*");
+            Pattern pattern = Pattern.compile(".*\\|Ensembl-IDs: ([A-Z0-9\\.]*):([A-Z0-9\\.]*):([A-Z0-9\\.]*)\\|");
             Matcher matcher = pattern.matcher(fields[5]);
             matcher.find();
             geneExon.ensemblGeneId = matcher.group(1);

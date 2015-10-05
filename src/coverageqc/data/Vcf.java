@@ -19,14 +19,22 @@ import javax.xml.bind.annotation.XmlTransient;
 public class Vcf {
 
     @XmlAttribute
-    final static String BUILD = "20150608";
+    final static String BUILD = "20150704";
     @XmlAttribute
-    final static String VERSION = "1.16";
+    final static String VERSION = "1.5";
     
     @XmlAttribute
     public String fileName;
     @XmlAttribute
+    public String variantsExcludedFromCoverageQC;
+    @XmlAttribute
     public String doNotCallFileName;
+    @XmlAttribute
+    public String filesToUseFileName;
+    @XmlAttribute
+    public String genesToExcludeFileName;
+    @XmlAttribute
+    public String alignersFileName;
     @XmlAttribute
     public String exonBedFileName;
     @XmlAttribute
@@ -34,13 +42,21 @@ public class Vcf {
     @XmlAttribute
     public String variantTsvFileName;
     @XmlAttribute
+    public String annovarFiles;
+    @XmlAttribute
     public Integer variantTsvFileLineCount;
     @XmlAttribute
     public Date runDate;
     @XmlElementWrapper(name = "geneExons")
     @XmlElement(name = "geneExon")
     public TreeSet<GeneExon> geneExons = new TreeSet<GeneExon>();
+    //making as an ArrayList with each array list specific for an aligner
+    @XmlAttribute
+    //public ArrayList<ArrayList<URL>> bedBamVCFFileUrlsList = new ArrayList<ArrayList<URL>>();
     public ArrayList<URL> bedBamVcfFileUrls = new ArrayList<URL>(); // these are used to construct an IGV link
+    @XmlAttribute
+    public String usedAligner;
+    
     @XmlTransient
     public TreeMap<String, Base> bases = new TreeMap<String, Base>(); // key is chr|pos (e.g., "chr9|320001")
 
@@ -109,6 +125,12 @@ public class Vcf {
         }
         return matchedGeneExons;
     }
+    
+ 
+    
+    
+    
+    
     
     /**
      * 

@@ -1,0 +1,6 @@
+varscan_all.aligner.final.vcf
+freebayes_all.aligner.final.vcf
+vardict_all.aligner.final.vcf
+gatk_all.aligner.final.vcf
+A.aligner.final.bam
+B.aligner.final.bam
