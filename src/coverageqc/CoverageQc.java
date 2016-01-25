@@ -719,7 +719,7 @@ public class CoverageQc {
                          
                          //coverageQC report will not highlight intronic variants as well as variants with probe bias in the html file
                         
-                         if ((variant.NotIntronic) && variant.filters.equals("PASS"))
+                         if ((variant.NotIntronic) && !variant.filters.contains("PB"))
                          {
                                geneExon.variants.add(variant);
                                Base currentbase= vcf.bases.get("chr" + String.valueOf(variant.chr) + "|" + Long.toString(variant.coordinate));
