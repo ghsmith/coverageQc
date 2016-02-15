@@ -12,7 +12,7 @@
 
             <xsl:text disable-output-escaping="yes">
             &lt;!--
-                author: geoffrey.hughes.smith@gmail.com
+                authors: geoffrey.hughes.smith@gmail.com, schneiderthomas@gmail.com
                 -->
             </xsl:text>
             

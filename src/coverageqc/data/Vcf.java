@@ -19,9 +19,9 @@ import javax.xml.bind.annotation.XmlTransient;
 public class Vcf {
 
     @XmlAttribute
-    final static String BUILD = "20150704";
+    final static String BUILD = "20160204";
     @XmlAttribute
-    final static String VERSION = "1.5";
+    final static String VERSION = "1.6";
     
     @XmlAttribute
     public String fileName;

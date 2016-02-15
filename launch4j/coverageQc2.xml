@@ -2,8 +2,8 @@
 <launch4jConfig>
   <dontWrapJar>false</dontWrapJar>
   <headerType>console</headerType>
-  <jar>\\vmware-host\Shared Folders\tom_linux\git\coverageQc\dist\coverageQc.jar</jar>
-  <outfile>\\vmware-host\Shared Folders\tom_linux\git\coverageQc\dist\coverageQc.exe</outfile>
+  <jar>C:\Users\slowm\Documents\GitHub\coverageQc\dist\coverageQc.jar</jar>
+  <outfile>C:\Users\slowm\Documents\GitHub\coverageQc\dist\coverageQc.exe</outfile>
   <errTitle></errTitle>
   <cmdLine></cmdLine>
   <chdir></chdir>
@@ -13,7 +13,7 @@
   <stayAlive>false</stayAlive>
   <restartOnCrash>false</restartOnCrash>
   <manifest></manifest>
-  <icon>\\vmware-host\Shared Folders\tom_linux\git\coverageQc\launch4j\icon.ico</icon>
+  <icon>C:\Users\slowm\Documents\GitHub\coverageQc\launch4j\icon.ico</icon>
   <jre>
     <path></path>
     <bundledJre64Bit>false</bundledJre64Bit>
