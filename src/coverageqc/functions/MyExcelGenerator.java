@@ -381,8 +381,10 @@ public class MyExcelGenerator{
                }
            }else
            {
-               //TODO may need to change
-                if(this.originalHeadingsArray[x].contains("Gene.refGene"))
+               
+               cellStyle.setRotation((short)0); 
+               //not rotating anymore for the alternative pipeline
+              /*  if(this.originalHeadingsArray[x].contains("Gene.refGene"))
                      //  ||originalHeadingsArray[x].contains("Coordinate_")
                     //   ||originalHeadingsArray[x].contains("Type_"))
                      //  ||originalHeadingsArray[x-3].contains("Genotype_")
@@ -392,8 +394,9 @@ public class MyExcelGenerator{
                    cellStyle.setRotation((short)0);   
                }else
                {  
+                //not    
                 cellStyle.setRotation((short)90);      
-               }
+               }*/
                
                
                 
@@ -448,7 +451,8 @@ public class MyExcelGenerator{
                         printSetup.setFitWidth((short)1);
                         printSetup.setFitHeight((short)3);
                        currentSheet.setRepeatingRows(CellRangeAddress.valueOf("1"));
-                        currentSheet.setFitToPage(true);
+                        //not making the rows hidden anymore for the alternative pipeline so I am not setting fit to page
+                        //currentSheet.setFitToPage(true);
                         //making it by default not print the fellow's interp
                         currentSheet.getWorkbook().setPrintArea(0, 2, 20, 0, currentSheet.getLastRowNum());
                        
@@ -459,10 +463,22 @@ public class MyExcelGenerator{
                        {
                            
                            currentSheet.autoSizeColumn(x);
+                          
+                           if(sheetName.equals("ILLUMINA"))
+                           {
                            if (x>33)
                            {    
                            currentSheet.setColumnHidden(x, true);
                            }
+                           }else
+                           {
+                               //want to show column AZ = 26+26=52, AY = 51
+                               if (x>25 &&!(x>=39 && x<=48))
+                                 {    
+                                   currentSheet.setColumnHidden(x, true);
+                                 }
+                           }
+                          
                        }
                             
                         }catch (IndexOutOfBoundsException e)

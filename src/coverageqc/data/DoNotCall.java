@@ -143,11 +143,15 @@ public class DoNotCall {
         if(calltype==1||calltype==4)
         {
             donotcall.callType="Don't call, always";
-        }else if (calltype==2||calltype==5)
+        }else if (calltype==2)
         {
             donotcall.callType="If percentage low, don't call";
             
-        }else if (calltype==3||calltype==6)
+        }else if (calltype==5)
+        {
+            donotcall.callType="If percentage low or strand bias don't call";
+        }
+        else if (calltype==3||calltype==6)
         {
             donotcall.callType= "On lab list, Unknown significance";
         }
