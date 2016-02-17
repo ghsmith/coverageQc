@@ -1,0 +1,1 @@
+java -jar coverageQc.jar /u01/tom_pipeline/select_output/new_validation_07_18_15/140801_M01382_0052_000000000-AAECF/C14-8777CAINION.bowtie2.gatk.genome.vcf cancer_panel_26.20150624.exons.bed cancer_panel_26.20150315.amplicons.bed 20150702_aligners.csv 20150702_filestolookfor.csv 20150705_genes_excluding.csv 'Do not call_26.20140716.list.xlsx'
