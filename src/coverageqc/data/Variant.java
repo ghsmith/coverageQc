@@ -235,6 +235,7 @@ public class Variant {
         variant.pipeline=dataArray[headings.get("Pipeline").intValue()];
         variant.ref=dataArray[headings.get("Ref").intValue()];
         variant.alt=dataArray[headings.get("Alt").intValue()];
+        variant.annotator="Annovar";
         variant.variant="";
         variant.variant+=variant.ref + ">" + variant.alt;
         variant.gene = dataArray[headings.get("Gene.refGene").intValue()];
@@ -461,7 +462,7 @@ public class Variant {
                             }
                         
                         }
-                        else if ("Annovar".equals(currentdonotcall.annotator) && !"Annovar".equals(variant2.annotator))
+                        else if ("Annovar".equals(currentdonotcall.annotator) && "Annovar".equals(variant2.annotator))
                         {
                             
                           

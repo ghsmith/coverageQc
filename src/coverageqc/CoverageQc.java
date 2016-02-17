@@ -210,7 +210,7 @@ public class CoverageQc {
                     variantExcludedString=variantExcludedString + genesToExcludeLine + ",";
                 }
         
-        variantExcludedString=variantExcludedString + "Exclude: intronic variants, and variants with pool bias";
+        variantExcludedString=variantExcludedString + "Exclude: intronic variants, and variants with pool bias(if Annovar file)";
         //will extract the aligner used in the genome vcf file
         //will use aligner file to see what aligner used
         
@@ -312,7 +312,9 @@ public class CoverageQc {
         
         
         //Tom addition using file reader from htsjdk instead instead
-        VCFFileReader this_vcf = new VCFFileReader(vcfFile);
+       // SamInputResource.index(vcfFile);
+        VCFFileReader this_vcf = new VCFFileReader(vcfFile,false);
+       
         //System.out.println(vcfFile);
         //Reader vcfFileReader = new FileReader(vcfFile);
         //BufferedReader vcfBufferedReader = new BufferedReader(vcfFileReader);
