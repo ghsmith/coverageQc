@@ -246,8 +246,10 @@ public class CoverageQc {
         if (!alignerFound)
         {
             //need to exit as the name of the vcf file does not contain a used aligner, which means parsing of the genome vcf failed
-            System.out.println("ERROR: Can't find in the name of the genome vcf the aligner used. Parsing error, check name of file and alignerlist.csv");
-                    return;
+           // System.out.println("ERROR: Can't find in the name of the genome vcf the aligner used. Parsing error, check name of file and alignerlist.csv");
+            //        return;
+            //assuming it is an illumina file
+            usedAligner="AmpliconDS";
         }
 
    
