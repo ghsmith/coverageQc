@@ -844,10 +844,9 @@ public class CoverageQc {
         if(sbOut.length() > 0) {
             System.out.print("Portions of the following captured regions were not sequenced sufficiently for clinical interpretation (at least one base in the sequenced portion of the coding region was read less than 500 times):\\n");
             System.out.print(sbOut);
-            System.out.println();
         }
         else {
-            System.out.println("All portions of the captured regions were sequenced sufficiently for clinical interpretation (all bases in the sequenced portion of the coding region were read more than 500 times).\\n");
+            System.out.print("All portions of the captured regions were sequenced sufficiently for clinical interpretation (all bases in the sequenced portion of the coding region were read more than 500 times).\\n");
         }
         
     }
