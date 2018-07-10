@@ -7,7 +7,7 @@ import coverageqc.data.DoNotCall;
 import coverageqc.data.GeneExon;
 import coverageqc.data.Variant;
 import coverageqc.data.Vcf;
-import coverageqc.functions.MyExcelGenerator;
+//import coverageqc.functions.MyExcelGenerator;
 import java.awt.Color;
 import java.awt.Desktop;
 import java.io.BufferedReader;
@@ -44,21 +44,21 @@ import javax.xml.transform.stream.StreamResult;
 import javax.xml.transform.stream.StreamSource;
 import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
 import org.apache.poi.openxml4j.exceptions.OpenXML4JException;
-import org.apache.poi.openxml4j.opc.OPCPackage;
-import org.apache.poi.ss.usermodel.Cell;
-import org.apache.poi.ss.usermodel.PrintOrientation;
-import org.apache.poi.ss.usermodel.Row;
-import org.apache.poi.ss.usermodel.Sheet;
-//import org.apache.poi.ss.usermodel.Workbook;
-import org.apache.poi.ss.usermodel.WorkbookFactory;
-import org.apache.poi.xssf.eventusermodel.XSSFReader;
-import org.apache.poi.xssf.model.SharedStringsTable;
-import org.apache.poi.xssf.usermodel.XSSFCellStyle;
-import org.apache.poi.xssf.usermodel.XSSFColor;
-import org.apache.poi.xssf.usermodel.XSSFPrintSetup;
-import org.apache.poi.xssf.usermodel.XSSFRow;
-import org.apache.poi.xssf.usermodel.XSSFSheet;
-import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+//import org.apache.poi.openxml4j.opc.OPCPackage;
+//import org.apache.poi.ss.usermodel.Cell;
+//import org.apache.poi.ss.usermodel.PrintOrientation;
+//import org.apache.poi.ss.usermodel.Row;
+//import org.apache.poi.ss.usermodel.Sheet;
+////import org.apache.poi.ss.usermodel.Workbook;
+//import org.apache.poi.ss.usermodel.WorkbookFactory;
+//import org.apache.poi.xssf.eventusermodel.XSSFReader;
+//import org.apache.poi.xssf.model.SharedStringsTable;
+//import org.apache.poi.xssf.usermodel.XSSFCellStyle;
+//import org.apache.poi.xssf.usermodel.XSSFColor;
+//import org.apache.poi.xssf.usermodel.XSSFPrintSetup;
+//import org.apache.poi.xssf.usermodel.XSSFRow;
+//import org.apache.poi.xssf.usermodel.XSSFSheet;
+//#import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import htsjdk.samtools.*;
 import htsjdk.samtools.util.CloseableIterator;
 import htsjdk.variant.vcf.*;
@@ -228,8 +228,8 @@ public class CoverageQc {
         Iterator<String> AlignerIterator = alignersList.iterator();
         String vcfFileName=vcfFile.getCanonicalPath();
         String vcfFileName2=vcfFile.getAbsolutePath();
-        System.out.println("DEBUGGING ONLY, THE NAME OF THE VCFILENAME IS:  " + vcfFileName);
-        System.out.println("DEBUGGING ONLY, THE NAME OF THE ABSOLUTE PATH IS:  " + vcfFileName2);
+        //System.out.println("DEBUGGING ONLY, THE NAME OF THE VCFILENAME IS:  " + vcfFileName);
+        //System.out.println("DEBUGGING ONLY, THE NAME OF THE ABSOLUTE PATH IS:  " + vcfFileName2);
         Boolean alignerFound=false;
         String usedAligner="";
         while(AlignerIterator.hasNext())
@@ -255,7 +255,7 @@ public class CoverageQc {
    
     
          
-        
+/*        
            // TOM ADDITION
 		// ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 	//Will populate doNotCall, reading XSLX file	
@@ -302,7 +302,7 @@ public class CoverageQc {
                     //system.out.println()
                 }//end while sheetiterator     
         }//end if doNotCallFile is null
-        
+*/        
         
        
 		
@@ -594,6 +594,8 @@ public class CoverageQc {
             }
         }
 
+
+/*        
         // read variant file
         //ArrayList<String> textFilesList = new ArrayList<String>();
         MyExcelGenerator excelgenerator= new MyExcelGenerator();
@@ -780,7 +782,6 @@ public class CoverageQc {
             
         }
         
-        
         vcf.variantsExcludedFromCoverageQC=variantExcludedString;
 
         // write to XML
@@ -793,7 +794,7 @@ public class CoverageQc {
         m.marshal(vcf, xmlOutputStream);        
         xmlOutputStream.close();
         LOGGER.info(xmlTempFile.getCanonicalPath() + " created");
-        
+
         //Tom addition
         //write to xlsx
         if(variantTsvFile != null || annovarTSVFiles != null)
@@ -831,7 +832,23 @@ public class CoverageQc {
          // show HTML file in default browser
         File htmlFile = new File(vcfFile.getPath() + ".coverage_qc.html");
         Desktop.getDesktop().browse(htmlFile.toURI());
-       
+
+*/
+
+        StringBuffer sbOut = new StringBuffer();
+        for(GeneExon geneExon : vcf.geneExons) {
+            if(geneExon.bins.get(0).pct +  geneExon.bins.get(1).pct > 0) {
+                sbOut.append(String.format("gene/locus %s/%s:%d-%d pct-of-locus-failing-QC: %d%n", geneExon.name.replaceFirst("ex.*$", ""), geneExon.chr, geneExon.codingRegion.startPos, geneExon.codingRegion.endPos, geneExon.bins.get(0).pct +  geneExon.bins.get(1).pct));
+            }
+        }
+        if(sbOut.length() > 0) {
+            System.out.println("Portions of the following captured regions were not sequenced sufficiently for clinical interpretation (at least one base in the sequenced portion of the coding region was read less than 500 times):");
+            System.out.println(sbOut);
+        }
+        else {
+            System.out.println("All portions of the captured regions were sequenced sufficiently for clinical interpretation (all bases in the sequenced portion of the coding region were read more than 500 times).");
+        }
+        
     }
    
    
