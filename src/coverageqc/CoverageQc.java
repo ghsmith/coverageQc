@@ -838,15 +838,16 @@ public class CoverageQc {
         StringBuffer sbOut = new StringBuffer();
         for(GeneExon geneExon : vcf.geneExons) {
             if(geneExon.bins.get(0).pct +  geneExon.bins.get(1).pct > 0) {
-                sbOut.append(String.format("gene/locus %s/%s:%d-%d pct-of-locus-failing-QC: %d%n", geneExon.name.replaceFirst("ex.*$", ""), geneExon.chr, geneExon.codingRegion.startPos, geneExon.codingRegion.endPos, geneExon.bins.get(0).pct +  geneExon.bins.get(1).pct));
+                sbOut.append(String.format("gene/locus %s/%s:%d-%d pct-of-locus-failing-QC: %d\\n", geneExon.name.replaceFirst("ex.*$", ""), geneExon.chr, geneExon.codingRegion.startPos, geneExon.codingRegion.endPos, geneExon.bins.get(0).pct +  geneExon.bins.get(1).pct));
             }
         }
         if(sbOut.length() > 0) {
-            System.out.println("Portions of the following captured regions were not sequenced sufficiently for clinical interpretation (at least one base in the sequenced portion of the coding region was read less than 500 times):");
-            System.out.println(sbOut);
+            System.out.print("Portions of the following captured regions were not sequenced sufficiently for clinical interpretation (at least one base in the sequenced portion of the coding region was read less than 500 times):\\n");
+            System.out.print(sbOut);
+            System.out.println();
         }
         else {
-            System.out.println("All portions of the captured regions were sequenced sufficiently for clinical interpretation (all bases in the sequenced portion of the coding region were read more than 500 times).");
+            System.out.println("All portions of the captured regions were sequenced sufficiently for clinical interpretation (all bases in the sequenced portion of the coding region were read more than 500 times).\\n");
         }
         
     }
