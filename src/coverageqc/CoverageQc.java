@@ -838,7 +838,7 @@ public class CoverageQc {
         StringBuffer sbOut = new StringBuffer();
         for(GeneExon geneExon : vcf.geneExons) {
             if(geneExon.bins.get(0).pct +  geneExon.bins.get(1).pct > 0) {
-                sbOut.append(String.format("gene/locus %s/%s:%d-%d pct-of-locus-failing-QC: %d\\n", geneExon.name.replaceFirst("ex.*$", ""), geneExon.chr, geneExon.codingRegion.startPos, geneExon.codingRegion.endPos, geneExon.bins.get(0).pct +  geneExon.bins.get(1).pct));
+                sbOut.append(String.format("gene/locus %s/%s:%d-%d pct-of-locus-failing-QC: %d<br/>", geneExon.name.replaceFirst("ex.*$", ""), geneExon.chr, geneExon.codingRegion.startPos, geneExon.codingRegion.endPos, geneExon.bins.get(0).pct +  geneExon.bins.get(1).pct));
             }
         }
         if(sbOut.length() > 0) {
